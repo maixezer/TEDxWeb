@@ -43,7 +43,7 @@ module.exports = {
       'styles': 'styles'
     }
 
-    config.plugin.push(
+    config.plugins.push(
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
