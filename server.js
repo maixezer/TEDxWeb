@@ -1,7 +1,6 @@
 import moduleAlias from 'module-alias'
 import next from 'next'
-import { createServer } from 'http'
-import { parse } from 'url' 
+import express from 'express'
 
 import { IS_DEV, WEB_PORT, STATIC_PATH } from './const'
 
@@ -15,25 +14,32 @@ const handle = app.getRequestHandler()
 
 app.prepare()
 .then(() => {
-  createServer((req, res) => {
-    const parsedUrl = parse(req.url, true)
-    const { pathname, query } = parsedUrl
+  const server = express()
+  server.use(STATIC_PATH, express.static('static'))
 
-    if (pathname === '/about' ) {
-      app.render(req, res, '/about', query)
-    } else if (pathname === '/read') {
-      app.render(req, res, '/read', req.query)
-    } else if (pathname === 'watch') {
-      app.render(req, res, '/watch', req.query)
-    } else if (pathname === '/partners') {
-      app.render(req, res, '/partners', req.query)
-    } else {
-      handle(req, res, parsedUrl)
-    }
+  server.get('/about', (req, res) => {
+    return app.render(req, res, '/about', req.query)
   })
-  .listen(WEB_PORT, (err) => {
+
+  server.get('/read', (req, res) => {
+    return app.render(req, res, '/read', req.query)
+  })
+
+  server.get('/watch', (req, res) => {
+    return app.render(req, res, '/watch', req.query)
+  })
+
+  server.get('/partners', (req, res) => {
+    return app.render(req, res, '/partners', req.query)
+  })
+
+  server.get('*', (req, res) => {
+    return handle(req, res)
+  })
+
+  server.listen(WEB_PORT, (err) => {
     if (err) throw err
     console.log(`=> Ready on http://localhost:${WEB_PORT}`)
-  })
+  })  
 })
 
