@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   webpack: function (config, { dev }) {
@@ -38,8 +39,18 @@ module.exports = {
 
     config.resolve.alias = {
       'react': 'preact-compat/dist/preact-compat',
-      'react-dom': 'preact-compat/dist/preact-compat'
+      'react-dom': 'preact-compat/dist/preact-compat',
+      'styles': 'styles'
     }
+
+    config.plugin.push(
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        Popper: ['popper.js', 'default']
+      })
+    )
 
     return config
   }
