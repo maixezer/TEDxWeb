@@ -1,0 +1,24 @@
+@font-face {
+  font-family: latoBlack;
+  src: url('fonts/Lato/Lato-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: latoBold;
+  src: url('fonts/Lato/Lato-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: latoHeavy;
+  src: url('fonts/Lato/Lato-Heavy.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: latoBoldItalic;
+  src: url('fonts/Lato/Lato-BoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: latoRegular;
+  src: url('fonts/Lato/Lato-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
