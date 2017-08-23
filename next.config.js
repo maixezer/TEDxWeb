@@ -43,15 +43,6 @@ module.exports = {
       'styles': 'styles'
     }
 
-    config.plugins.push(
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        Popper: ['popper.js', 'default']
-      })
-    )
-
     return config
   }
 }

@@ -2,6 +2,7 @@ import Layout from '../components/layout'
 
 export default () => (
   <Layout>
-    This is Landing
+    <section id="landing-page">
+    </section>
   </Layout>
 )

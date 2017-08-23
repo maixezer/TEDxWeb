@@ -1,0 +1,19 @@
+#__next {
+  height: 100%;
+  width: 100%;
+
+  > div {
+    height: inherit;
+    width: inherit;
+  }
+
+  #tedx_body {
+    height: inherit;
+    width: inherit;
+  }
+  
+  #tedx_main_container {
+    height: inherit;
+    width: inherit;
+  }
+}

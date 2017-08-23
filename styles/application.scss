@@ -1,13 +1,15 @@
 @import 'normalize.css';
 
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import '_variables.scss';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 // Common
+@import 'shared/_base.scss';
+@import 'shared/_layout.scss';
 @import 'shared/_navbar.scss';
 
 // Home
-@import 'home/h.scss';
+@import 'home/_landing.scss';
 
 // About
 @import 'about/a.scss';
@@ -17,3 +19,7 @@
 // Watch
 
 // Partners
+
+body {
+  background-color: black;
+}
