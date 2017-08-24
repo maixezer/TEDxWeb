@@ -20,6 +20,5 @@ export default ({ children, title = 'TEDxCharoenkrung' }) => (
     </main>
     <script src="/static/js/jquery-3.2.1.slim.min.js" />
     <script src="/static/js/bootstrap.min.js" />
-    <script src="/static/js/hamburger_animate.js" />
   </div>
 )
