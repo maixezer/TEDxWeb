@@ -2,6 +2,15 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
+  exportPathMap: function () {
+    return {
+      "/": { page: "index" },
+      "/about": { page: "/about" },
+      "/watch": { page: "/watch" },
+      "/partners": { page: "/partners" },
+      "/read": { page: "/read" },
+    }
+  },
   webpack: function (config, { dev }) {
     config.plugins = config.plugins.filter(
       (plugin) => (plugin.constructor.name !== 'UglifyJsPlugin')
