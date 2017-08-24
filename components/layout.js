@@ -18,7 +18,7 @@ export default ({ children, title = 'TEDxCharoenkrung' }) => (
     <main id="tedx_main_container">
       {children}
     </main>
-    <script src="static/js/jquery-3.2.1.slim.min.js" />
+    <script src="static/js/jquery-3.2.1.slim.min.js" /> 
     <script src="static/js/bootstrap.min.js" />
   </div>
 )
