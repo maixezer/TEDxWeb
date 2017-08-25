@@ -4,7 +4,7 @@ const webpack = require('webpack')
 module.exports = {
   exportPathMap: function () {
     return {
-      "/": { page: "index" },
+      "/": { page: "/" },
       "/about": { page: "/about" },
       "/watch": { page: "/watch" },
       "/partners": { page: "/partners" },
