@@ -1,17 +1,17 @@
 
-          window.__NEXT_REGISTER_PAGE('/partners', function() {
+          window.__NEXT_REGISTER_PAGE('/about', function() {
             var comp = module.exports =
-webpackJsonp([6],{
+webpackJsonp([8],{
 
-/***/ 201:
+/***/ 183:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(202);
+module.exports = __webpack_require__(184);
 
 
 /***/ }),
 
-/***/ 202:
+/***/ 184:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28,7 +28,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 
-var _layout = __webpack_require__(33);
+var _layout = __webpack_require__(34);
 
 var _layout2 = _interopRequireDefault(_layout);
 
@@ -37,12 +37,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = function () {
-  return _react2.default.createElement(_layout2.default, null, 'This is Partner');
+  return _react2.default.createElement(_layout2.default, null, "This is ", _react2.default.createElement("div", { className: "hello-about" }, "about"));
 };
 
 /***/ })
 
-},[201]);
+},[183]);
             return { page: comp.default }
           })
         

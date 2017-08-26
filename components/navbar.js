@@ -36,26 +36,26 @@ export default class Navbar extends Component {
             <span className="icon-bar"></span>
           </div>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`collapse navbar-collapse ${this.isOpen() ? 'show': ''}`} id="navbarNav">
           <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
             <Link prefetch href='/watch'>
               <li className="nav-item tedx_menu_item">
-                <a className="nav-link tedx_link" href="#">Watch</a>
+                <a className="nav-link tedx_link" href="#" onClick={() => this.toggleHamburger()}>Watch</a>
               </li>
             </Link>
             <Link prefetch href='/read'>
               <li className="nav-item tedx_menu_item">
-                <a className="nav-link tedx_link" href="#">Read</a>
+                <a className="nav-link tedx_link" href="#" onClick={() => this.toggleHamburger()}>Read</a>
               </li>
             </Link>
             <Link prefetch href='/partners'>
               <li className="nav-item tedx_menu_item">
-                <a className="nav-link tedx_link" href="#">Partners</a>
+                <a className="nav-link tedx_link" href="#" onClick={() => this.toggleHamburger()}>Partners</a>
               </li>
             </Link>
             <Link prefetch href='/about'>
               <li className="nav-item tedx_menu_item">
-                <a className="nav-link tedx_link" href="#">About</a>
+                <a className="nav-link tedx_link" href="#" onClick={() => this.toggleHamburger()}>About</a>
               </li>
             </Link>
           </ul>

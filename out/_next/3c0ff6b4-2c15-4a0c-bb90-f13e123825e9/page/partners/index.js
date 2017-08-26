@@ -1,7 +1,7 @@
 
-          window.__NEXT_REGISTER_PAGE('/watch', function() {
+          window.__NEXT_REGISTER_PAGE('/partners', function() {
             var comp = module.exports =
-webpackJsonp([4],{
+webpackJsonp([6],{
 
 /***/ 205:
 /***/ (function(module, exports, __webpack_require__) {
@@ -28,7 +28,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 
-var _layout = __webpack_require__(33);
+var _layout = __webpack_require__(34);
 
 var _layout2 = _interopRequireDefault(_layout);
 
@@ -37,7 +37,7 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = function () {
-  return _react2.default.createElement(_layout2.default, null, 'This is Watch');
+  return _react2.default.createElement(_layout2.default, null, 'This is Partner');
 };
 
 /***/ })

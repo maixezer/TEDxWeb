@@ -45,13 +45,19 @@ module.exports = {
       return config
     }
 
-
     config.resolve.alias = {
       'react': 'preact-compat/dist/preact-compat',
       'react-dom': 'preact-compat/dist/preact-compat',
       'styles': 'styles'
     }
 
+    config.plugins.push(
+      new webpack.ProvidePlugin({
+        '$': 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    );
     return config
   }
 }

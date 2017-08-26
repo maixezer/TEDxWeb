@@ -2,6 +2,7 @@
   "dependencies": {
     "bootstrap": "4.0.0-beta",
     "express": "^4.15.4",
+    "fullpage.js": "^2.9.4",
     "jquery": "^3.2.1",
     "module-alias": "^2.0.1",
     "next": "^3.0.6",
