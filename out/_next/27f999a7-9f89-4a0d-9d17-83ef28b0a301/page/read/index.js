@@ -1,23 +1,23 @@
 
-          window.__NEXT_REGISTER_PAGE('/about', function() {
+          window.__NEXT_REGISTER_PAGE('/read', function() {
             var comp = module.exports =
-webpackJsonp([8],{
+webpackJsonp([6],{
 
-/***/ 183:
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(184);
+module.exports = __webpack_require__(212);
 
 
 /***/ }),
 
-/***/ 184:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault2(_react);
 
@@ -28,7 +28,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 
-var _layout = __webpack_require__(34);
+var _layout = __webpack_require__(33);
 
 var _layout2 = _interopRequireDefault(_layout);
 
@@ -37,12 +37,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = function () {
-  return _react2.default.createElement(_layout2.default, null, "This is ", _react2.default.createElement("div", { className: "hello-about" }, "about"));
+  return _react2.default.createElement(_layout2.default, null, 'This is Read');
 };
 
 /***/ })
 
-},[183]);
+},[211]);
             return { page: comp.default }
           })
         
