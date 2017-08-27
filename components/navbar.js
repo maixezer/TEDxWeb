@@ -1,11 +1,24 @@
 import { Component } from 'react'
 import Link from 'next/link'
 
+import $ from 'jquery'
+
 export default class Navbar extends Component {
   constructor(props) {
     super(props)
-    this.state = { isOpen: '' }
+    this.state = {
+      isOpen: '',
+      colorStyle: ''
+    }
   }
+
+  navigateTo(page) {
+    this.setState({
+      colorStyle: page ? 'black' : 'white'
+    })
+    this.toggleHamburger()
+  }
+
 
   toggleHamburger() {
     const isOpen = this.state.isOpen
@@ -14,48 +27,70 @@ export default class Navbar extends Component {
     })
   }
 
-  isOpen() {
-    return this.state.isOpen
+  updateStyle() {
+    return this.state.colorStyle
+  }
+
+  componentDidMount() {
+    const location = window.location
+    this.setState({
+      colorStyle: location.pathname !== '/' || location.hash === '#home_page' ? 'black' : 'white'
+    })
+
+    window.addEventListener("hashchange", function () {
+      updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
+
+      function updateStyle(hash, els) {
+        els.map((el) => {
+          if (hash === '#landing_page') {
+            el.removeClass('black')
+            el.addClass('white')
+          } else {
+            el.removeClass('white')
+            el.addClass('black')
+          }
+        })
+      }
+    }, false);
   }
 
   render() {
     return (
       <nav className="navbar navbar-expand-md bg-faded justify-content-center tedx_navbar">
         <Link prefetch href='/'>
-          <a className="tedx_logo navbar-brand mr-auto" href="#">
+          <a className={`tedx_logo navbar-brand mr-auto ${this.updateStyle()}`} href="#"
+            onClick={() => this.navigateTo()} >
             <span className="sr-only">TEDxCharoenkrung</span>
           </a>
         </Link>
-        <button className="navbar-toggler tedx_hamburger_button" type="button" data-toggle="collapse"
-          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-          aria-label="Toggle navigation" onClick={() => this.toggleHamburger()}>
-          {/* <span className="navbar-toggler-icon tedx_hamburger_icon"></span> */}
-          <div id="tedx_hamburger_icon" className={this.isOpen()}>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
+        <button className="navbar-toggler tedx_hamburger_button" type="button"
+          onClick={() => this.toggleHamburger()}>
+          <div id="tedx_hamburger_icon" className={this.state.isOpen}>
+            <span className={`icon-bar ${this.updateStyle()}`}></span>
+            <span className={`icon-bar ${this.updateStyle()}`}></span>
+            <span className={`icon-bar ${this.updateStyle()}`}></span>
           </div>
         </button>
-        <div className={`collapse navbar-collapse ${this.isOpen() ? 'show': ''}`} id="navbarNav">
+        <div className={`collapse navbar-collapse ${this.state.isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
-            <Link prefetch href='/watch'>
+            <Link prefetch href='/'>
               <li className="nav-item tedx_menu_item">
-                <a className="nav-link tedx_link" href="#" onClick={() => this.toggleHamburger()}>Watch</a>
+                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Watch</a>
               </li>
             </Link>
-            <Link prefetch href='/read'>
+            <Link prefetch href='/'>
               <li className="nav-item tedx_menu_item">
-                <a className="nav-link tedx_link" href="#" onClick={() => this.toggleHamburger()}>Read</a>
+                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Read</a>
               </li>
             </Link>
-            <Link prefetch href='/partners'>
+            <Link prefetch href='/'>
               <li className="nav-item tedx_menu_item">
-                <a className="nav-link tedx_link" href="#" onClick={() => this.toggleHamburger()}>Partners</a>
+                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Partners</a>
               </li>
             </Link>
-            <Link prefetch href='/about'>
+            <Link prefetch href='/'>
               <li className="nav-item tedx_menu_item">
-                <a className="nav-link tedx_link" href="#" onClick={() => this.toggleHamburger()}>About</a>
+                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>About</a>
               </li>
             </Link>
           </ul>

@@ -1,5 +1,3 @@
-import dynamic from 'next/dynamic'
-
 import Head from 'next/head'
 import Navbar from './navbar'
 
