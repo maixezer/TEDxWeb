@@ -10,13 +10,13 @@ export default class Timeline extends Component {
       <div id="tedx_timeline">
         <div id="line">
           <div className="circle">
-            <div className="popupSpan">Ready</div>
+            <div className="popupSpan" id="ready">READY</div>
           </div>
           <div className="circle" style={{ 'left': '50%' }}>
-            <div className="popupSpan"></div>
+            <div className="popupSpan" id="set">SET</div>
           </div>
           <div className="circle" style={{ 'left': '100%' }}>
-            <div className="popupSpan"></div>
+            <div className="popupSpan" id="grow">GROW</div>
           </div>
         </div>
       </div>

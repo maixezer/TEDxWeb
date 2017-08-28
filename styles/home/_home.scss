@@ -7,23 +7,25 @@
     position: absolute;
     bottom: 2rem;
     left: 0;
-    width: 50%;
     min-width: 100%;
 
     @include media-breakpoint-up(md) { 
       bottom: 3.125rem;
-      width: 40%;
     }
 
     #line {
       height: 3px;
-      width: 40%;
+      width: 12rem;
       background: white;
       border-radius: 5px;
       margin: auto;
       top: 50%;
       transform: translateY(-50%);
       position: relative;
+
+      @include media-breakpoint-up(md) { 
+        width: 18.5rem;
+      }
     }
 
     .circle {
@@ -77,10 +79,22 @@
         display: inline-block;
         color: white;
         position: absolute;
-        top: 20px;
-        left: -75px;
-        display: none;
-        transition: all 0.1s ease-out;
+        top: -40px;
+        display: block;
+        font-family: 'latoBold';
+        font-size: 1em;
+
+        &#ready {
+          left: -30px;
+        }
+
+        &#set {
+          left: -17px;
+        }
+
+        &#grow {
+          left: -30px;
+        }
       }
     }
   }
@@ -150,11 +164,11 @@
     }
 
     .carousel-indicators {
-      bottom: 3rem;
+      bottom: 5rem;
       width: 75%;
 
       @include media-breakpoint-up(md) { 
-        bottom: 5rem;
+        bottom: 6rem;
       }
 
       li {
