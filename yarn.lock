@@ -2481,6 +2481,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+jump.js@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/jump.js/-/jump.js-1.0.1.tgz#0de2b1631ba9a1c2c6b8572ad277d877e8503600"
+
 junk@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/junk/-/junk-1.0.3.tgz#87be63488649cbdca6f53ab39bec9ccd2347f592"
@@ -3733,6 +3737,13 @@ react-proxy@^3.0.0-alpha.0:
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
   dependencies:
     lodash "^4.6.1"
+
+react-scrollable-anchor@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-scrollable-anchor/-/react-scrollable-anchor-0.5.0.tgz#a1b87958976118dcee09381fd30b0e6b0233c9be"
+  dependencies:
+    jump.js "1.0.1"
+    prop-types "^15.5.10"
 
 react@^15.6.1:
   version "15.6.1"

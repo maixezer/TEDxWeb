@@ -2,6 +2,15 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+      "/about": { page: "/about" },
+      "/watch": { page: "/watch" },
+      "/partners": { page: "/partners" },
+      "/read": { page: "/read" },
+    }
+  },
   webpack: function (config, { dev }) {
     config.plugins = config.plugins.filter(
       (plugin) => (plugin.constructor.name !== 'UglifyJsPlugin')
@@ -36,7 +45,6 @@ module.exports = {
       return config
     }
 
-
     config.resolve.alias = {
       'react': 'preact-compat/dist/preact-compat',
       'react-dom': 'preact-compat/dist/preact-compat',
@@ -45,13 +53,11 @@ module.exports = {
 
     config.plugins.push(
       new webpack.ProvidePlugin({
-        $: 'jquery',
+        '$': 'jquery',
         jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        Popper: ['popper.js', 'default']
+        'window.jQuery': 'jquery'
       })
-    )
-
+    );
     return config
   }
 }
