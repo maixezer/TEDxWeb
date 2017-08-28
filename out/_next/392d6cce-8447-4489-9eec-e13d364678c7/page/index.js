@@ -244,18 +244,6 @@ var Home = function (_Component) {
       (0, _reactScrollableAnchor.configureAnchors)({ scrollDuration: 1000 });
     }
   }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      window.addEventListener('scroll', function () {
-        var scroll = (0, _jquery2.default)(window).scrollTop();
-        if (scroll < (0, _jquery2.default)(window).height()) {
-          (0, _jquery2.default)('.carousel-inner').removeClass('have_padding');
-        } else {
-          (0, _jquery2.default)('.carousel-inner').addClass('have_padding');
-        }
-      }, false);
-    }
-  }, {
     key: 'render',
     value: function render() {
       return _react3.default.createElement(_layout2.default, null, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing_page' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home_page' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home_page' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null), _react3.default.createElement(_timeline2.default, null))));
@@ -609,7 +597,7 @@ var Carousel = function (_Component) {
       var itemImages = ['static/images/' + path + '/home_bg.jpg', 'static/images/' + path + '/home_bg.jpg', 'static/images/' + path + '/home_bg.jpg', 'static/images/' + path + '/home_bg.jpg', 'static/images/' + path + '/home_bg.jpg'];
 
       return itemImages.map(function (image, index) {
-        return _react3.default.createElement('div', { key: index, className: 'carousel-item ' + (index === 1 ? 'active' : ''),
+        return _react3.default.createElement('div', { key: index, className: 'carousel-item ' + (index === 1 ? 'active' : '') + ' bg_plus_pos_y',
           style: { 'backgroundImage': 'url(' + image + ')' } }, _react3.default.createElement('div', { className: 'slide_content_container' }, _react3.default.createElement('h1', { className: 'text-center slide_content_topic' }, 'Charoenkrung Road'), _react3.default.createElement('h1', { className: 'text-center slide_content_desc' }, '\u0E01\u0E23\u0E38\u0E07\u0E40\u0E08\u0E23\u0E34\u0E0D = \u0E40\u0E08\u0E23\u0E34\u0E0D\u0E01\u0E23\u0E38\u0E07')));
       });
     }
