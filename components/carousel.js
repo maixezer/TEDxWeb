@@ -19,7 +19,7 @@ export default class Carousel extends Component {
     ]
 
     return itemImages.map((image, index) => (
-      <div key={index} className={`carousel-item ${index === 1 ? 'active' : ''}`}
+      <div key={index} className={`carousel-item ${index === 1 ? 'active' : ''} bg_plus_pos_y`}
         style={{ 'backgroundImage': `url(${image})` }}>
         <div className="slide_content_container">
           <h1 className="text-center slide_content_topic">Charoenkrung Road</h1>

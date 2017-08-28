@@ -16,17 +16,6 @@ export default class Home extends Component {
     configureAnchors({ scrollDuration: 1000 })
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', () => {
-      const scroll = $(window).scrollTop()
-      if(scroll < $(window).height()) {
-        $('.carousel-inner').removeClass('have_padding')
-      } else {
-        $('.carousel-inner').addClass('have_padding')
-      }
-    }, false)
-  }
-
   render() {
     return (
       <Layout>
