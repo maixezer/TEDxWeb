@@ -129,35 +129,35 @@
         }
 
         .slide_content_container {
+          display: table-cell;
+          vertical-align: middle;
           visibility: hidden;
+          letter-spacing: 0.1em;
+          color: $white;
+
+          .slide_content_topic {
+            font-family: 'latoBlack';
+            width: 100%;
+            font-size: 1.5em;
+        
+            @include media-breakpoint-up(md) {
+              font-size: 2em;
+            }
+          }
+        
+          .slide_content_desc {
+            margin-top: 1rem;
+            font-family: 'promptSemiBold';
+            font-size: 1.2em;
+            color: $white;
+          }
         }
 
         &.active {
           display: table;
 
           .slide_content_container {
-            display: table-cell;
-            vertical-align: middle;
             visibility: visible;
-            letter-spacing: 0.1em;
-            color: $white;
-  
-            .slide_content_topic {
-              font-family: 'latoBlack';
-              width: 100%;
-              font-size: 1.5em;
-          
-              @include media-breakpoint-up(md) {
-                font-size: 2em;
-              }
-            }
-          
-            .slide_content_desc {
-              margin-top: 1rem;
-              font-family: 'promptSemiBold';
-              font-size: 1.2em;
-              color: $white;
-            }
           }
         }
       }
