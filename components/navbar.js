@@ -37,7 +37,7 @@ export default class Navbar extends Component {
       colorStyle: location.pathname !== '/' || location.hash === '#home_page' ? 'black' : 'white'
     })
 
-    window.addEventListener("hashchange", function () {
+    window.addEventListener("hashchange", () => {
       updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
 
       function updateStyle(hash, els) {

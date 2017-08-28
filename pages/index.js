@@ -1,8 +1,11 @@
 import { Component } from 'react'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import { configureAnchors } from 'react-scrollable-anchor'
+import $ from 'jquery'
 
 import Layout from '../components/layout'
+import Carousel from '../components/carousel'
+import Timeline from '../components/timeline'
 
 export default class Home extends Component {
   constructor(props) {
@@ -13,6 +16,17 @@ export default class Home extends Component {
     configureAnchors({ scrollDuration: 1000 })
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      const scroll = $(window).scrollTop()
+      if(scroll < $(window).height()) {
+        $('.carousel-inner').removeClass('have_padding')
+      } else {
+        $('.carousel-inner').addClass('have_padding')
+      }
+    }, false)
+  }
+
   render() {
     return (
       <Layout>
@@ -21,14 +35,15 @@ export default class Home extends Component {
             <div className="section_content_container">
               <h1 className="section_content text-center white">Charoenkrung is a Prosperous City</h1>
             </div>
-            <a className="section_link" href="#home_page">
+            <a className="section_bottom" href="#home_page">
               <span className="scroll_down"></span>
             </a>
           </section>
         </ScrollableAnchor>
         <ScrollableAnchor id="home_page">
           <section id="home-section">
-            
+            <Carousel />
+            <Timeline />
           </section>
         </ScrollableAnchor>
       </Layout>
