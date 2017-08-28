@@ -1,0 +1,15 @@
+#home-section {
+  min-height: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-image: url('static/images/mobile/home_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 85%;
+  background-origin: border-box;
+  background-position-y: 6rem;
+
+  @include media-breakpoint-up(md) { 
+    background-position-y: 8.25rem;
+    background-image: url('static/images/desktop/home_bg.jpg');
+  }
+}
