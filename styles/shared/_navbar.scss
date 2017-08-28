@@ -142,10 +142,18 @@
 
     .tedx_link.white {
       color: $white;
+
+      &:hover {
+        color: $link-hover-color;
+      }
     }
 
     .tedx_link.black {
       color: #000;
+
+      &:hover {
+        color: $link-hover-color;
+      }
     }
   }
 }
