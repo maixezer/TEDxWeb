@@ -13,7 +13,7 @@ export default class Carousel extends Component {
     const items = [
       {
         imageUrl: `static/images/${path}/home_bg.jpg`,
-        topic: 'Charoenkrun Road',
+        topic: 'Charoenkrung Road',
         desc: 'กรุงเจริญ = เจริญกรุง'
       },
       {
