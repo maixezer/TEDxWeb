@@ -9,7 +9,9 @@
 @import 'shared/_navbar.scss';
 
 // Home
+@import 'home/_shared.scss';
 @import 'home/_landing.scss';
+@import 'home/_home.scss';
 
 // About
 @import 'about/a.scss';

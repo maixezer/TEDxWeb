@@ -22,3 +22,8 @@
   font-family: latoRegular;
   src: url('./fonts/Lato/Lato-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
+
+@font-face {
+  font-family: promptSemiBold;
+  src: url('./fonts/Prompt/Prompt-SemiBold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}

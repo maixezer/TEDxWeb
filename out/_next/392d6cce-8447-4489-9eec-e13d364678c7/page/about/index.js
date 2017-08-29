@@ -1,17 +1,17 @@
 
-          window.__NEXT_REGISTER_PAGE('/partners', function() {
+          window.__NEXT_REGISTER_PAGE('/about', function() {
             var comp = module.exports =
-webpackJsonp([7],{
+webpackJsonp([8],{
 
-/***/ 209:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(210);
+module.exports = __webpack_require__(187);
 
 
 /***/ }),
 
-/***/ 210:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37,12 +37,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = function () {
-  return _react2.default.createElement(_layout2.default, null, 'This is Partner');
+  return _react2.default.createElement(_layout2.default, null, "This is ", _react2.default.createElement("div", { className: "hello-about" }, "about"));
 };
 
 /***/ })
 
-},[209]);
+},[186]);
             return { page: comp.default }
           })
         
