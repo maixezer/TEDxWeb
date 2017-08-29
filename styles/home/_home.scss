@@ -3,102 +3,6 @@
   height: 100%;
   display: block;
 
-  #tedx_timeline {
-    position: absolute;
-    bottom: 2rem;
-    left: 0;
-    min-width: 100%;
-
-    @include media-breakpoint-up(md) { 
-      bottom: 3.125rem;
-    }
-
-    #line {
-      height: 3px;
-      width: 12rem;
-      background: white;
-      border-radius: 5px;
-      margin: auto;
-      top: 50%;
-      transform: translateY(-50%);
-      position: relative;
-
-      @include media-breakpoint-up(md) { 
-        width: 18.5rem;
-      }
-    }
-
-    .circle {
-      width: 20px;
-      height: 20px;
-      background: #fc2e1f;
-      border-radius: 15px;
-      position: absolute;
-      top: -9px;
-      border: 3px solid white;
-      cursor: pointer;
-
-      &::before {
-        content: '';
-        width: 10px;
-        height: 10px;
-        background: white;
-        position: absolute;
-        border-radius: 100%;
-        top: 2px;
-        left: 2px;
-        display: none;
-      }
-
-      /* ---- Hover effects ---- */
-      @keyframes blink-red {
-        0% { box-shadow: 0 0 15px red; }
-        50% { box-shadow: none; }
-        100% { box-shadow: 0 0 15px red; }
-      }
-
-      @-webkit-keyframes blink-red {
-        0% { box-shadow: 0 0 15px red; }
-        50% { box-shadow: 0 0 0; }
-        100% { box-shadow: 0 0 15px red; }
-      }
-
-      &:hover {
-        -webkit-animation: blink-red 1.0s linear infinite;
-        -moz-animation: blink-red 1.0s linear infinite;
-        -ms-animation: blink-red 1.0s linear infinite;
-        -o-animation: blink-red 1.0s linear infinite;
-        animation: blink-red 1.0s linear infinite;
-      }
-
-      .popupSpan {
-        width: auto;
-        height: auto;
-        padding: 10px;
-        white-space: nowrap;
-        display: inline-block;
-        color: white;
-        position: absolute;
-        top: -40px;
-        display: block;
-        font-family: 'latoBold';
-        font-size: 1em;
-
-        &#ready {
-          left: -30px;
-        }
-
-        &#set {
-          left: -17px;
-        }
-
-        &#grow {
-          left: -30px;
-        }
-      }
-    }
-  }
-
   .home_section_slide {
     position: absolute;
     bottom: 0;
@@ -113,6 +17,7 @@
         height: 100%;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        opacity: 0.85;
 
         &.bg_plus_pos_y {
           background-position-y: 6rem;
@@ -127,7 +32,7 @@
           display: table-cell;
           vertical-align: middle;
           visibility: hidden;
-          letter-spacing: 0.1em;
+          letter-spacing: 0.15em;
           color: $white;
 
           .slide_content_topic {
@@ -159,11 +64,10 @@
     }
 
     .carousel-indicators {
-      bottom: 5rem;
-      width: 75%;
+      bottom: 1rem;
 
       @include media-breakpoint-up(md) { 
-        bottom: 6rem;
+        bottom: 2rem;
       }
 
       li {

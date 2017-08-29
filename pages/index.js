@@ -5,7 +5,6 @@ import $ from 'jquery'
 
 import Layout from '../components/layout'
 import Carousel from '../components/carousel'
-import Timeline from '../components/timeline'
 
 export default class Home extends Component {
   constructor(props) {
@@ -14,6 +13,13 @@ export default class Home extends Component {
 
   componentWillMount() {
     configureAnchors({ scrollDuration: 1000 })
+  }
+
+  componentDidMount() {
+    $('#landing-section').on('scroll', function() {
+      console.log($(this).scrollTop())
+    })
+    
   }
 
   render() {
@@ -32,7 +38,6 @@ export default class Home extends Component {
         <ScrollableAnchor id="home_page">
           <section id="home-section">
             <Carousel />
-            <Timeline />
           </section>
         </ScrollableAnchor>
       </Layout>
