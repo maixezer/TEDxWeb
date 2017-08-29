@@ -184,23 +184,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = __webpack_require__(8);
+var _getPrototypeOf = __webpack_require__(9);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(3);
+var _classCallCheck2 = __webpack_require__(4);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(4);
+var _createClass2 = __webpack_require__(5);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(9);
+var _possibleConstructorReturn2 = __webpack_require__(10);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(10);
+var _inherits2 = __webpack_require__(11);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -222,10 +222,6 @@ var _carousel = __webpack_require__(209);
 
 var _carousel2 = _interopRequireDefault(_carousel);
 
-var _timeline = __webpack_require__(210);
-
-var _timeline2 = _interopRequireDefault(_timeline);
-
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -244,9 +240,16 @@ var Home = function (_Component) {
       (0, _reactScrollableAnchor.configureAnchors)({ scrollDuration: 1000 });
     }
   }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      (0, _jquery2.default)('#landing-section').on('scroll', function () {
+        console.log((0, _jquery2.default)(this).scrollTop());
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      return _react3.default.createElement(_layout2.default, null, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing_page' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home_page' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home_page' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null), _react3.default.createElement(_timeline2.default, null))));
+      return _react3.default.createElement(_layout2.default, null, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing_page' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home_page' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home_page' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null))));
     }
   }]);
   return Home;
@@ -550,23 +553,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = __webpack_require__(8);
+var _getPrototypeOf = __webpack_require__(9);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(3);
+var _classCallCheck2 = __webpack_require__(4);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(4);
+var _createClass2 = __webpack_require__(5);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(9);
+var _possibleConstructorReturn2 = __webpack_require__(10);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(10);
+var _inherits2 = __webpack_require__(11);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -594,11 +597,27 @@ var Carousel = function (_Component) {
     key: 'carouselItems',
     value: function carouselItems() {
       var path = this.state.isMobile ? 'mobile' : 'desktop';
-      var itemImages = ['static/images/' + path + '/home_bg.jpg', 'static/images/' + path + '/home_bg.jpg', 'static/images/' + path + '/home_bg.jpg', 'static/images/' + path + '/home_bg.jpg', 'static/images/' + path + '/home_bg.jpg'];
+      var items = [{
+        imageUrl: 'static/images/' + path + '/home_bg.jpg',
+        topic: 'Charoenkrung Road',
+        desc: 'กรุงเจริญ = เจริญกรุง'
+      }, {
+        imageUrl: 'static/images/contents/bg_01.jpg',
+        topic: 'Lalalala',
+        desc: 'ลาลาลาลา'
+      }, {
+        imageUrl: 'static/images/contents/bg_02.jpg',
+        topic: 'Why Charoenkrung?',
+        desc: 'ทำไมต้องเจริญกรุง'
+      }, {
+        imageUrl: 'static/images/contents/bg_03.jpg',
+        topic: 'Everything has its first time...',
+        desc: 'ครั้งแรกของ TED'
+      }];
 
-      return itemImages.map(function (image, index) {
+      return items.map(function (item, index) {
         return _react3.default.createElement('div', { key: index, className: 'carousel-item ' + (index === 1 ? 'active' : '') + ' bg_plus_pos_y',
-          style: { 'backgroundImage': 'url(' + image + ')' } }, _react3.default.createElement('div', { className: 'slide_content_container' }, _react3.default.createElement('h1', { className: 'text-center slide_content_topic' }, 'Charoenkrung Road'), _react3.default.createElement('h1', { className: 'text-center slide_content_desc' }, '\u0E01\u0E23\u0E38\u0E07\u0E40\u0E08\u0E23\u0E34\u0E0D = \u0E40\u0E08\u0E23\u0E34\u0E0D\u0E01\u0E23\u0E38\u0E07')));
+          style: { 'backgroundImage': 'url(' + item.imageUrl + ')' } }, _react3.default.createElement('div', { className: 'slide_content_container' }, _react3.default.createElement('h1', { className: 'text-center slide_content_topic' }, item.topic), _react3.default.createElement('h1', { className: 'text-center slide_content_desc' }, item.desc)));
       });
     }
   }, {
@@ -617,76 +636,13 @@ var Carousel = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react3.default.createElement('div', { className: 'home_section_slide' }, _react3.default.createElement('div', { id: 'carouselExampleIndicators', className: 'carousel slide', 'data-ride': 'carousel' }, _react3.default.createElement('ol', { className: 'carousel-indicators' }, _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '0', className: 'active' }), _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '1' }), _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '2' }), _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '3' }), _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '4' })), _react3.default.createElement('div', { className: 'carousel-inner', role: 'listbox' }, this.carouselItems())));
+      return _react3.default.createElement('div', { className: 'home_section_slide' }, _react3.default.createElement('div', { id: 'carouselExampleIndicators', className: 'carousel slide', 'data-ride': 'carousel' }, _react3.default.createElement('ol', { className: 'carousel-indicators' }, _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '0', className: 'active' }), _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '1' }), _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '2' }), _react3.default.createElement('li', { 'data-target': '#carouselExampleIndicators', 'data-slide-to': '3' })), _react3.default.createElement('div', { className: 'carousel-inner', role: 'listbox' }, this.carouselItems())));
     }
   }]);
   return Carousel;
 }(_react.Component);
 
 exports.default = Carousel;
-
-/***/ }),
-
-/***/ 210:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _react2 = __webpack_require__(0);
-
-var _react3 = _interopRequireDefault2(_react2);
-
-function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = __webpack_require__(8);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(9);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(10);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(0);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-var Timeline = function (_Component) {
-  (0, _inherits3.default)(Timeline, _Component);
-
-  function Timeline(props) {
-    (0, _classCallCheck3.default)(this, Timeline);
-    return (0, _possibleConstructorReturn3.default)(this, (Timeline.__proto__ || (0, _getPrototypeOf2.default)(Timeline)).call(this, props));
-  }
-
-  (0, _createClass3.default)(Timeline, [{
-    key: "render",
-    value: function render() {
-      return _react3.default.createElement("div", { id: "tedx_timeline" }, _react3.default.createElement("div", { id: "line" }, _react3.default.createElement("div", { className: "circle" }, _react3.default.createElement("div", { className: "popupSpan", id: "ready" }, "READY")), _react3.default.createElement("div", { className: "circle", style: { 'left': '50%' } }, _react3.default.createElement("div", { className: "popupSpan", id: "set" }, "SET")), _react3.default.createElement("div", { className: "circle", style: { 'left': '100%' } }, _react3.default.createElement("div", { className: "popupSpan", id: "grow" }, "GROW"))));
-    }
-  }]);
-  return Timeline;
-}(_react.Component);
-
-exports.default = Timeline;
 
 /***/ })
 

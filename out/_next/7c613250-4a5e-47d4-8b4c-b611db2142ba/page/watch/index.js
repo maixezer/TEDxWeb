@@ -1,17 +1,17 @@
 
-          window.__NEXT_REGISTER_PAGE('/read', function() {
+          window.__NEXT_REGISTER_PAGE('/watch', function() {
             var comp = module.exports =
-webpackJsonp([6],{
+webpackJsonp([5],{
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(214);
+module.exports = __webpack_require__(215);
 
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37,12 +37,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = function () {
-  return _react2.default.createElement(_layout2.default, null, 'This is Read');
+  return _react2.default.createElement(_layout2.default, null, 'This is Watch');
 };
 
 /***/ })
 
-},[213]);
+},[214]);
             return { page: comp.default }
           })
         
