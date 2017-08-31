@@ -3,7 +3,7 @@ import Navbar from './navbar'
 
 import stylesheet from 'styles/application.scss'
 
-export default ({ children, title = 'TEDxCharoenkrung' }) => (
+export default ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inherit', width: 'inherit' } }) => (
   <div id="tedx_body">
     <Head>
       <title>{title}</title>
@@ -15,7 +15,7 @@ export default ({ children, title = 'TEDxCharoenkrung' }) => (
     <header id="tedx_header">
       <Navbar />
     </header>
-    <main id="tedx_main_container">
+    <main id="tedx_main_container" style={{ 'height': styles.height, 'width': styles.width }}>
       {children}
     </main>
     <script src="static/js/jquery-3.2.1.slim.min.js" />

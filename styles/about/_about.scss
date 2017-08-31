@@ -1,0 +1,34 @@
+#tedx_about_container {
+  background-color: #b7b7b7;
+  color: $white;
+  font-family: 'latoRegular';
+  padding: 6rem 4rem 0 4rem;
+
+  #tedx_history {
+    height: auto;
+    padding-bottom: 2rem;
+  
+    > div {
+      height: auto;
+    }
+  }
+
+  #tedx_contact {
+    height: auto;
+  }
+
+  .head {
+    text-transform: uppercase;
+    font-family: 'latoBlack';
+    padding-bottom: 1rem;
+    letter-spacing: 0.2em;
+  }
+  
+  .content {
+    padding-bottom: 1rem;
+  }
+
+  .bottom {
+    font-family: 'latoBoldItalic';
+  }
+}

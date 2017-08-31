@@ -2,17 +2,12 @@
   height: 100%;
   width: 100%;
 
-  > div {
+  div:first-child {
     height: inherit;
     width: inherit;
   }
 
   #tedx_body {
-    height: inherit;
-    width: inherit;
-  }
-  
-  #tedx_main_container {
     height: inherit;
     width: inherit;
   }

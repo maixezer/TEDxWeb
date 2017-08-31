@@ -15,6 +15,28 @@ export default class Home extends Component {
     configureAnchors({ scrollDuration: 1000 })
   }
 
+  componentDidMount() {
+    window.addEventListener("hashchange", () => {
+      updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
+
+      function updateStyle(hash, els) {
+        els.map((el) => {
+          if (hash === '#landing_page') {
+            el.removeClass('black')
+            el.addClass('white')
+            document.getElementById('tedx_header')
+              .style.backgroundColor = 'transparent'
+          } else {
+            el.removeClass('white')
+            el.addClass('black')
+            document.getElementById('tedx_header')
+              .style.backgroundColor = '#fff'
+          }
+        })
+      }
+    }, false);
+  }
+
   render() {
     return (
       <Layout>
