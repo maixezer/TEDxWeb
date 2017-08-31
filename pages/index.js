@@ -15,13 +15,6 @@ export default class Home extends Component {
     configureAnchors({ scrollDuration: 1000 })
   }
 
-  componentDidMount() {
-    $('#landing-section').on('scroll', function() {
-      console.log($(this).scrollTop())
-    })
-    
-  }
-
   render() {
     return (
       <Layout>
