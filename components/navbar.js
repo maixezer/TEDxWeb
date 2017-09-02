@@ -42,7 +42,6 @@ export default class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-md bg-faded justify-content-center tedx_navbar">
-        {console.warn(this.state.colorStyle)}
         <Link prefetch href='/'>
           <a className={`tedx_logo navbar-brand mr-auto ${this.state.colorStyle}`} href="#"
             onClick={() => this.navigateTo()} >
