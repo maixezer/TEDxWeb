@@ -4,13 +4,10 @@ import $ from 'jquery'
 export default class Carousel extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      isMobile: false
-    }
   }
 
   carouselItems() {
-    const path = this.state.isMobile ? 'mobile' : 'desktop'
+    const path = this.props.isMobile ? 'mobile' : 'desktop'
     const items = [
       {
         imageUrl: `static/images/${path}/home_bg.jpg`,
@@ -43,30 +40,6 @@ export default class Carousel extends Component {
         </div>
       </div>
     ))
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('load', false)
-    window.removeEventListener('resize', false)
-  }
-
-  componentDidMount() {
-    const _self = this
-    window.addEventListener('load', () => {
-      checkWindowSize()
-    }, false)
-
-    window.addEventListener('resize', () => {
-      checkWindowSize()
-    }, false)
-
-    function checkWindowSize() {
-      if (window.innerWidth < 768) {
-        _self.setState({ isMobile: true })
-      } else {
-        _self.setState({ isMobile: false })
-      }
-    }
   }
 
   render() {
