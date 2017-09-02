@@ -18,12 +18,12 @@ export default class Home extends Component {
 
       function updateStyle(hash, els) {
         els.map((el) => {
-          if (hash === '#landing_page') {
+          if (hash === '#landing' || hash === '') {
             el.removeClass('black')
             el.addClass('white')
             document.getElementById('tedx_header')
               .style.backgroundColor = 'transparent'
-          } else {
+          } else if (hash === '#home'){
             el.removeClass('white')
             el.addClass('black')
             document.getElementById('tedx_header')
@@ -37,17 +37,17 @@ export default class Home extends Component {
   render() {
     return (
       <Layout>
-        <ScrollableAnchor id="landing_page">
+        <ScrollableAnchor id="landing">
           <section id="landing-section">
             <div className="section_content_container">
               <h1 className="section_content text-center white">Charoenkrung is a Prosperous City</h1>
             </div>
-            <a className="section_bottom" href="#home_page">
+            <a className="section_bottom" href="#home">
               <span className="scroll_down"></span>
             </a>
           </section>
         </ScrollableAnchor>
-        <ScrollableAnchor id="home_page">
+        <ScrollableAnchor id="home">
           <section id="home-section">
             <Carousel />
           </section>
