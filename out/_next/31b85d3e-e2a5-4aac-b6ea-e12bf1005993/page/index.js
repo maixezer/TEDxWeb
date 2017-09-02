@@ -3,7 +3,7 @@
             var comp = module.exports =
 webpackJsonp([2],{
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ var removeHash = exports.removeHash = function removeHash() {
 
 /***/ }),
 
-/***/ 107:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51,7 +51,7 @@ var _func = __webpack_require__(210);
 
 var _scroll = __webpack_require__(211);
 
-var _hash = __webpack_require__(106);
+var _hash = __webpack_require__(107);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -296,7 +296,7 @@ var Home = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react3.default.createElement(_layout2.default, { styles: this.calculateStyles() }, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null))));
+      return _react3.default.createElement(_layout2.default, { styles: this.calculateStyles(), active: { home: "#fc2e1f" } }, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null))));
     }
   }]);
   return Home;
@@ -317,7 +317,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = exports.removeHash = exports.goToAnchor = exports.configureAnchors = exports.goToTop = undefined;
 
-var _hash = __webpack_require__(106);
+var _hash = __webpack_require__(107);
 
 Object.defineProperty(exports, 'goToAnchor', {
   enumerable: true,
@@ -341,7 +341,7 @@ Object.defineProperty(exports, 'default', {
   }
 });
 
-var _Manager = __webpack_require__(107);
+var _Manager = __webpack_require__(108);
 
 var _Manager2 = _interopRequireDefault(_Manager);
 
@@ -376,7 +376,7 @@ var _propTypes = __webpack_require__(20);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Manager = __webpack_require__(107);
+var _Manager = __webpack_require__(108);
 
 var _Manager2 = _interopRequireDefault(_Manager);
 
