@@ -8,7 +8,7 @@ export default class Navbar extends Component {
     super(props)
     this.state = {
       isOpen: '',
-      colorStyle: ''
+      colorStyle: 'black'
     }
   }
 
@@ -42,7 +42,8 @@ export default class Navbar extends Component {
   componentDidMount() {
     const location = window.location
     this.setState({
-      colorStyle: location.hash === '#home_page' ? 'black' : 'white'
+      colorStyle: location.hash === '#home' || location.pathname === '/read'
+        ? 'black' : 'white'
     })
     this.updateActiveNavbarItem()
   }
@@ -71,9 +72,9 @@ export default class Navbar extends Component {
                 <a id="watch" className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Watch</a>
               </li>
             </Link>
-            <Link prefetch href='/'>
+            <Link prefetch href='/read'>
               <li className="nav-item tedx_menu_item">
-                <a id="read" className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Read</a>
+                <a id="read" className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo('read')}>Read</a>
               </li>
             </Link>
             <Link prefetch href='/'>

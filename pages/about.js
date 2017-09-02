@@ -67,9 +67,6 @@ export default class About extends Component {
   componentDidMount() {
     const _self = this
     window.addEventListener('load', () => {
-      document.getElementById('tedx_header')
-        .style.backgroundColor = '#b7b7b7'
-
       checkWindowSize()
     }, false)
 
