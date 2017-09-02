@@ -7,6 +7,26 @@ import Layout from '../components/layout'
 import Carousel from '../components/carousel'
 
 export default class Home extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLanding: true
+    }
+  }
+
+  calculateStyles() {
+    return this.state.isLanding ?
+      {
+        height: 'inherit',
+        width: 'inherit',
+        bgColor: 'transparent'
+      } :
+      {
+        height: 'inherit',
+        width: 'inherit',
+        bgColor: '#fff'
+      }
+  }
 
   componentWillMount() {
     configureAnchors({ scrollDuration: 1000 })
@@ -18,6 +38,8 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
+    const _self = this
+
     window.addEventListener("load", () => {
       updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
     }, false)
@@ -33,11 +55,13 @@ export default class Home extends Component {
           el.addClass('white')
           document.getElementById('tedx_header')
             .style.backgroundColor = 'transparent'
+          _self.setState({ isLanding: true })
         } else if (hash === '#home') {
           el.removeClass('white')
           el.addClass('black')
           document.getElementById('tedx_header')
             .style.backgroundColor = '#fff'
+          _self.setState({ isLanding: false })
         }
       })
     }
@@ -45,7 +69,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout styles={this.calculateStyles()}>
         <ScrollableAnchor id="landing">
           <section id="landing-section">
             <div className="section_content_container">
