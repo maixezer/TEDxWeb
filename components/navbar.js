@@ -13,9 +13,6 @@ export default class Navbar extends Component {
   }
 
   navigateTo(page) {
-    this.setState({
-      colorStyle: page || page !== 'about' ? 'black' : 'white'
-    })
     this.toggleHamburger()
   }
 
