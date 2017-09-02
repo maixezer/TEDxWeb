@@ -58,9 +58,7 @@ export default class About extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', () => {
-      checkWindowSize()
-    }, false)
+    window.removeEventListener('resize', false)
   }
 
   componentDidMount() {
