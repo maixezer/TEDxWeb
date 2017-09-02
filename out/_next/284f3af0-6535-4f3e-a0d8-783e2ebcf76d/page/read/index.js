@@ -1,17 +1,17 @@
 
-          window.__NEXT_REGISTER_PAGE('/partners', function() {
+          window.__NEXT_REGISTER_PAGE('/read', function() {
             var comp = module.exports =
 webpackJsonp([7],{
 
-/***/ 210:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(211);
+module.exports = __webpack_require__(216);
 
 
 /***/ }),
 
-/***/ 211:
+/***/ 216:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37,12 +37,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = function () {
-  return _react2.default.createElement(_layout2.default, null, 'This is Partner');
+  return _react2.default.createElement(_layout2.default, null, 'This is Read');
 };
 
 /***/ })
 
-},[210]);
+},[215]);
             return { page: comp.default }
           })
         

@@ -3,7 +3,7 @@
             var comp = module.exports =
 webpackJsonp([2],{
 
-/***/ 105:
+/***/ 106:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ var removeHash = exports.removeHash = function removeHash() {
 
 /***/ }),
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43,15 +43,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _jump = __webpack_require__(206);
+var _jump = __webpack_require__(209);
 
 var _jump2 = _interopRequireDefault(_jump);
 
-var _func = __webpack_require__(207);
+var _func = __webpack_require__(210);
 
-var _scroll = __webpack_require__(208);
+var _scroll = __webpack_require__(211);
 
-var _hash = __webpack_require__(105);
+var _hash = __webpack_require__(106);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -160,15 +160,15 @@ exports.default = new Manager();
 
 /***/ }),
 
-/***/ 202:
+/***/ 205:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(203);
+module.exports = __webpack_require__(206);
 
 
 /***/ }),
 
-/***/ 203:
+/***/ 206:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -184,33 +184,33 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = __webpack_require__(9);
+var _getPrototypeOf = __webpack_require__(8);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(4);
+var _classCallCheck2 = __webpack_require__(3);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(5);
+var _createClass2 = __webpack_require__(4);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(10);
+var _possibleConstructorReturn2 = __webpack_require__(9);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(11);
+var _inherits2 = __webpack_require__(10);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = __webpack_require__(0);
 
-var _reactScrollableAnchor = __webpack_require__(204);
+var _reactScrollableAnchor = __webpack_require__(207);
 
 var _reactScrollableAnchor2 = _interopRequireDefault(_reactScrollableAnchor);
 
-var _jquery = __webpack_require__(104);
+var _jquery = __webpack_require__(44);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -218,7 +218,7 @@ var _layout = __webpack_require__(33);
 
 var _layout2 = _interopRequireDefault(_layout);
 
-var _carousel = __webpack_require__(209);
+var _carousel = __webpack_require__(212);
 
 var _carousel2 = _interopRequireDefault(_carousel);
 
@@ -229,9 +229,9 @@ function _interopRequireDefault(obj) {
 var Home = function (_Component) {
   (0, _inherits3.default)(Home, _Component);
 
-  function Home(props) {
+  function Home() {
     (0, _classCallCheck3.default)(this, Home);
-    return (0, _possibleConstructorReturn3.default)(this, (Home.__proto__ || (0, _getPrototypeOf2.default)(Home)).call(this, props));
+    return (0, _possibleConstructorReturn3.default)(this, (Home.__proto__ || (0, _getPrototypeOf2.default)(Home)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Home, [{
@@ -242,9 +242,23 @@ var Home = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      (0, _jquery2.default)('#landing-section').on('scroll', function () {
-        console.log((0, _jquery2.default)(this).scrollTop());
-      });
+      window.addEventListener("hashchange", function () {
+        updateStyle(window.location.hash, [(0, _jquery2.default)('.icon-bar'), (0, _jquery2.default)('.tedx_logo'), (0, _jquery2.default)('.tedx_link')]);
+
+        function updateStyle(hash, els) {
+          els.map(function (el) {
+            if (hash === '#landing_page') {
+              el.removeClass('black');
+              el.addClass('white');
+              document.getElementById('tedx_header').style.backgroundColor = 'transparent';
+            } else {
+              el.removeClass('white');
+              el.addClass('black');
+              document.getElementById('tedx_header').style.backgroundColor = '#fff';
+            }
+          });
+        }
+      }, false);
     }
   }, {
     key: 'render',
@@ -259,7 +273,7 @@ exports.default = Home;
 
 /***/ }),
 
-/***/ 204:
+/***/ 207:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -270,7 +284,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = exports.removeHash = exports.goToAnchor = exports.configureAnchors = exports.goToTop = undefined;
 
-var _hash = __webpack_require__(105);
+var _hash = __webpack_require__(106);
 
 Object.defineProperty(exports, 'goToAnchor', {
   enumerable: true,
@@ -285,7 +299,7 @@ Object.defineProperty(exports, 'removeHash', {
   }
 });
 
-var _ScrollableAnchor = __webpack_require__(205);
+var _ScrollableAnchor = __webpack_require__(208);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -294,7 +308,7 @@ Object.defineProperty(exports, 'default', {
   }
 });
 
-var _Manager = __webpack_require__(106);
+var _Manager = __webpack_require__(107);
 
 var _Manager2 = _interopRequireDefault(_Manager);
 
@@ -305,7 +319,7 @@ var configureAnchors = exports.configureAnchors = _Manager2.default.configure;
 
 /***/ }),
 
-/***/ 205:
+/***/ 208:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -329,7 +343,7 @@ var _propTypes = __webpack_require__(20);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _Manager = __webpack_require__(106);
+var _Manager = __webpack_require__(107);
 
 var _Manager2 = _interopRequireDefault(_Manager);
 
@@ -389,7 +403,7 @@ exports.default = ScrollableAnchor;
 
 /***/ }),
 
-/***/ 206:
+/***/ 209:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -402,7 +416,7 @@ exports.default = ScrollableAnchor;
 
 /***/ }),
 
-/***/ 207:
+/***/ 210:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -434,7 +448,7 @@ var debounce = exports.debounce = function debounce(func, wait, immediate) {
 
 /***/ }),
 
-/***/ 208:
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -537,7 +551,7 @@ var getBestAnchorGivenScrollLocation = exports.getBestAnchorGivenScrollLocation 
 
 /***/ }),
 
-/***/ 209:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -553,27 +567,31 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = __webpack_require__(9);
+var _getPrototypeOf = __webpack_require__(8);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = __webpack_require__(4);
+var _classCallCheck2 = __webpack_require__(3);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = __webpack_require__(5);
+var _createClass2 = __webpack_require__(4);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(10);
+var _possibleConstructorReturn2 = __webpack_require__(9);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(11);
+var _inherits2 = __webpack_require__(10);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _react = __webpack_require__(0);
+
+var _jquery = __webpack_require__(44);
+
+var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
@@ -621,17 +639,31 @@ var Carousel = function (_Component) {
       });
     }
   }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      window.removeEventListener('resize', function () {
+        checkWindowSize();
+      }, false);
+    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
+      var _self = this;
+      (0, _jquery2.default)(function () {
+        checkWindowSize();
+      });
 
       window.addEventListener('resize', function () {
-        if (window.innerWidth <= 768) {
-          _this2.setState({ isMobile: true });
-        } else {
-          _this2.setState({ isMobile: false });
-        }
+        checkWindowSize();
       }, false);
+
+      function checkWindowSize() {
+        if (window.innerWidth < 768) {
+          _self.setState({ isMobile: true });
+        } else {
+          _self.setState({ isMobile: false });
+        }
+      }
     }
   }, {
     key: 'render',
@@ -646,7 +678,7 @@ exports.default = Carousel;
 
 /***/ })
 
-},[202]);
+},[205]);
             return { page: comp.default }
           })
         
