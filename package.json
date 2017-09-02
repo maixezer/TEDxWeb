@@ -15,7 +15,7 @@
     "build": "cross-env NODE_ENV=production next build",
     "start": "cross-env NODE_ENV=production next start",
     "predeploy": "yarn run build && cross-env NODE_ENV=production next export && touch out/.nojekyll && echo \"ppanya.me\" > out/CNAME",
-    "deploy": "git add -A && git commit -m \"update website\" && git subtree push --force --prefix out origin gh-pages"
+    "deploy": "git add -A && git commit -m \"update website\" && git push origin `git subtree split --prefix out origin gh-pages`:gh-pages --force"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^2.7.1",
