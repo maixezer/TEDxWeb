@@ -19,8 +19,8 @@ const Layout = ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inhe
       style={{ 'height': styles.height, 'width': styles.width, 'backgroundColor': styles.bgColor, 'display': 'table' }}>
       {children}
     </main>
-    <script src="static/js/jquery-3.2.1.slim.min.js" />
-    <script src="static/js/bootstrap.min.js" />
+    <script src="../static/js/jquery-3.2.1.slim.min.js" />
+    <script src="../static/js/bootstrap.min.js" />
   </div>
 )
 
