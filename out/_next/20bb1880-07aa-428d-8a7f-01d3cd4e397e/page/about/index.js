@@ -131,8 +131,6 @@ var About = function (_Component) {
     value: function componentDidMount() {
       var _self = this;
       window.addEventListener('load', function () {
-        document.getElementById('tedx_header').style.backgroundColor = '#b7b7b7';
-
         checkWindowSize();
       }, false);
 

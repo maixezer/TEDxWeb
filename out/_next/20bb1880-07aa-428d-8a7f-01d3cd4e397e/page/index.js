@@ -674,15 +674,16 @@ var Carousel = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      window.removeEventListener('load', false);
       window.removeEventListener('resize', false);
     }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _self = this;
-      (0, _jquery2.default)(function () {
+      window.addEventListener('load', function () {
         checkWindowSize();
-      });
+      }, false);
 
       window.addEventListener('resize', function () {
         checkWindowSize();
