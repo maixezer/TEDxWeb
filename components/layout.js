@@ -4,7 +4,7 @@ import Navbar from './navbar'
 
 import stylesheet from 'styles/application.scss'
 
-const Layout = ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inherit', width: 'inherit', bgColor: '#fff' } }) => (
+const Layout = ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inherit', width: 'inherit', bgColor: 'transparent' } }) => (
   <div id="tedx_body">
     <Head>
       <title>{title}</title>
