@@ -20128,7 +20128,7 @@ var Navbar = function (_Component) {
 
     _this.state = {
       isOpen: '',
-      colorStyle: ''
+      colorStyle: 'black'
     };
     return _this;
   }
@@ -20168,7 +20168,7 @@ var Navbar = function (_Component) {
     value: function componentDidMount() {
       var location = window.location;
       this.setState({
-        colorStyle: location.hash === '#home_page' ? 'black' : 'white'
+        colorStyle: location.hash === '#home' || location.pathname === '/read' ? 'black' : 'white'
       });
       this.updateActiveNavbarItem();
     }
@@ -20185,8 +20185,8 @@ var Navbar = function (_Component) {
           return _this2.toggleHamburger();
         } }, _react3.default.createElement('div', { id: 'tedx_hamburger_icon', className: this.state.isOpen }, _react3.default.createElement('span', { className: 'icon-bar ' + this.updateStyle() }), _react3.default.createElement('span', { className: 'icon-bar ' + this.updateStyle() }), _react3.default.createElement('span', { className: 'icon-bar ' + this.updateStyle() }))), _react3.default.createElement('div', { className: 'collapse navbar-collapse ' + (this.state.isOpen ? 'show' : ''), id: 'navbarNav' }, _react3.default.createElement('ul', { className: 'nav navbar-nav ml-auto w-100 justify-content-end' }, _react3.default.createElement(_link2.default, { prefetch: true, href: '/' }, _react3.default.createElement('li', { className: 'nav-item tedx_menu_item' }, _react3.default.createElement('a', { id: 'watch', className: 'nav-link tedx_link ' + this.updateStyle(), href: '#', onClick: function onClick() {
           return _this2.navigateTo();
-        } }, 'Watch'))), _react3.default.createElement(_link2.default, { prefetch: true, href: '/' }, _react3.default.createElement('li', { className: 'nav-item tedx_menu_item' }, _react3.default.createElement('a', { id: 'read', className: 'nav-link tedx_link ' + this.updateStyle(), href: '#', onClick: function onClick() {
-          return _this2.navigateTo();
+        } }, 'Watch'))), _react3.default.createElement(_link2.default, { prefetch: true, href: '/read' }, _react3.default.createElement('li', { className: 'nav-item tedx_menu_item' }, _react3.default.createElement('a', { id: 'read', className: 'nav-link tedx_link ' + this.updateStyle(), href: '#', onClick: function onClick() {
+          return _this2.navigateTo('read');
         } }, 'Read'))), _react3.default.createElement(_link2.default, { prefetch: true, href: '/' }, _react3.default.createElement('li', { className: 'nav-item tedx_menu_item' }, _react3.default.createElement('a', { id: 'partners', className: 'nav-link tedx_link ' + this.updateStyle(), href: '#', onClick: function onClick() {
           return _this2.navigateTo();
         } }, 'Partners'))), _react3.default.createElement(_link2.default, { prefetch: true, href: '/about' }, _react3.default.createElement('li', { className: 'nav-item tedx_menu_item' }, _react3.default.createElement('a', { id: 'about', className: 'nav-link tedx_link ' + this.updateStyle(), href: '#', onClick: function onClick() {
