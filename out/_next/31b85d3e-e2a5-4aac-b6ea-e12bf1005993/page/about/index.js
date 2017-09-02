@@ -1,17 +1,17 @@
 
           window.__NEXT_REGISTER_PAGE('/about', function() {
             var comp = module.exports =
-webpackJsonp([4],{
+webpackJsonp([8],{
 
-/***/ 186:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(187);
+module.exports = __webpack_require__(188);
 
 
 /***/ }),
 
-/***/ 187:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27,7 +27,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = __webpack_require__(188);
+var _keys = __webpack_require__(102);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -123,17 +123,18 @@ var About = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      window.removeEventListener('load', false);
       window.removeEventListener('resize', false);
     }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _self = this;
-      (0, _jquery2.default)(function () {
+      window.addEventListener('load', function () {
         document.getElementById('tedx_header').style.backgroundColor = '#b7b7b7';
 
         checkWindowSize();
-      });
+      }, false);
 
       window.addEventListener('resize', function () {
         checkWindowSize();
@@ -150,7 +151,7 @@ var About = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react3.default.createElement(_layout2.default, { styles: this.calculateStyles() }, _react3.default.createElement('div', { id: 'tedx_about_container' }, _react3.default.createElement('div', { id: 'tedx_history' }, _react3.default.createElement('div', { className: 'head' }, 'History'), _react3.default.createElement('div', { className: 'content' }, 'TEDxCharoenkrung is an independently organized TED event. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet sed libero gravida ultrices. Mauris lobortis ex vel orci venenatis venenatis. Sed vitae vulputate risus, ac hendrerit neque. Sed sit amet lectus tortor. Ut ullamcorper congue ante non venenatis. Nullam volutpat et orci nec placerat. Ut feugiat neque sit amet pharetra scelerisque. Vestibulum sodales leo lectus, a sodales metus consectetur sit amet. Nam ultrices tempor ante, in rhoncus augue tincidunt sit amet.'), _react3.default.createElement('div', { className: 'bottom' }, 'See all our teamates')), _react3.default.createElement('div', { id: 'tedx_contact' }, _react3.default.createElement('div', { className: 'head' }, 'Contact'), _react3.default.createElement('div', { className: 'content' }, this.contactList()))));
+      return _react3.default.createElement(_layout2.default, { styles: this.calculateStyles(), active: { about: "#fc2e1f" } }, _react3.default.createElement('div', { id: 'tedx_about_container' }, _react3.default.createElement('div', { id: 'tedx_history' }, _react3.default.createElement('div', { className: 'head' }, 'History'), _react3.default.createElement('div', { className: 'content' }, 'TEDxCharoenkrung is an independently organized TED event. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris imperdiet sed libero gravida ultrices. Mauris lobortis ex vel orci venenatis venenatis. Sed vitae vulputate risus, ac hendrerit neque. Sed sit amet lectus tortor. Ut ullamcorper congue ante non venenatis. Nullam volutpat et orci nec placerat. Ut feugiat neque sit amet pharetra scelerisque. Vestibulum sodales leo lectus, a sodales metus consectetur sit amet. Nam ultrices tempor ante, in rhoncus augue tincidunt sit amet.'), _react3.default.createElement('div', { className: 'bottom' }, 'See all our teamates')), _react3.default.createElement('div', { id: 'tedx_contact' }, _react3.default.createElement('div', { className: 'head' }, 'Contact'), _react3.default.createElement('div', { className: 'content' }, this.contactList()))));
     }
   }]);
   return About;
@@ -158,41 +159,9 @@ var About = function (_Component) {
 
 exports.default = About;
 
-/***/ }),
-
-/***/ 188:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(189), __esModule: true };
-
-/***/ }),
-
-/***/ 189:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(190);
-module.exports = __webpack_require__(1).Object.keys;
-
-
-/***/ }),
-
-/***/ 190:
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(24);
-var $keys = __webpack_require__(23);
-
-__webpack_require__(99)('keys', function () {
-  return function keys(it) {
-    return $keys(toObject(it));
-  };
-});
-
-
 /***/ })
 
-},[186]);
+},[187]);
             return { page: comp.default }
           })
         
