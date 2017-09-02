@@ -247,11 +247,11 @@ var Home = function (_Component) {
 
         function updateStyle(hash, els) {
           els.map(function (el) {
-            if (hash === '#landing_page') {
+            if (hash === '#landing' || hash === '') {
               el.removeClass('black');
               el.addClass('white');
               document.getElementById('tedx_header').style.backgroundColor = 'transparent';
-            } else {
+            } else if (hash === '#home') {
               el.removeClass('white');
               el.addClass('black');
               document.getElementById('tedx_header').style.backgroundColor = '#fff';
@@ -263,7 +263,7 @@ var Home = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react3.default.createElement(_layout2.default, null, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing_page' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home_page' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home_page' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null))));
+      return _react3.default.createElement(_layout2.default, null, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null))));
     }
   }]);
   return Home;
