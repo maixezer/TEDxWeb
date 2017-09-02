@@ -48,25 +48,36 @@ export default class About extends Component {
       {
         height: 'auto',
         width: 'auto',
+        bgColor: '#b7b7b7'
       } :
-      undefined
+      {
+        height: 'inherit',
+        width: 'inherit',
+        bgColor: '#b7b7b7'
+      }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', () => {
+      checkWindowSize()
+    }, false)
   }
 
   componentDidMount() {
+    const _self = this
     $(() => {
       document.getElementById('tedx_header')
         .style.backgroundColor = '#b7b7b7'
 
-      checkWindowSize(this)
-
-      window.addEventListener('resize', () => {
-        checkWindowSize(this)
-      }, false)
+      checkWindowSize()
     })
 
+    window.addEventListener('resize', () => {
+      checkWindowSize()
+    }, false)
 
-    function checkWindowSize(_self) {
-      if (window.innerWidth <= 768) {
+    function checkWindowSize() {
+      if (window.innerWidth < 768) {
         _self.setState({ isMobile: true })
       } else {
         _self.setState({ isMobile: false })

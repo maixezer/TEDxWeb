@@ -1,8 +1,14 @@
 #tedx_about_container {
   background-color: #b7b7b7;
   color: $white;
+  display: table-cell;
+  vertical-align: middle;
   font-family: 'latoRegular';
-  padding: 6rem 4rem 0 4rem;
+  padding: 8rem 4rem 0 4rem;
+
+  @include media-breakpoint-up(md) {
+    padding: 8rem;
+  }
 
   #tedx_history {
     height: auto;
@@ -11,10 +17,21 @@
     > div {
       height: auto;
     }
+
+    @include media-breakpoint-up(md) { 
+      width: 50%;
+      float: left;
+    }
   }
 
   #tedx_contact {
     height: auto;
+
+    @include media-breakpoint-up(md) { 
+      width: 50%;
+      float: right;
+      padding-left: 6.25rem;
+    }
   }
 
   .head {

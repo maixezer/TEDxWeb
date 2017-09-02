@@ -1,9 +1,10 @@
 import Head from 'next/head'
+import React from 'react'
 import Navbar from './navbar'
 
 import stylesheet from 'styles/application.scss'
 
-export default ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inherit', width: 'inherit' } }) => (
+const Layout = ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inherit', width: 'inherit', bgColor: '#fff' } }) => (
   <div id="tedx_body">
     <Head>
       <title>{title}</title>
@@ -15,10 +16,13 @@ export default ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inhe
     <header id="tedx_header">
       <Navbar />
     </header>
-    <main id="tedx_main_container" style={{ 'height': styles.height, 'width': styles.width }}>
+    <main id="tedx_main_container"
+      style={{ 'height': styles.height, 'width': styles.width, 'backgroundColor': styles.bgColor, 'display': 'table' }}>
       {children}
     </main>
     <script src="static/js/jquery-3.2.1.slim.min.js" />
     <script src="static/js/bootstrap.min.js" />
   </div>
 )
+
+export default Layout

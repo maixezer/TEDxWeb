@@ -45,22 +45,29 @@ export default class Carousel extends Component {
     ))
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', () => {
+      checkWindowSize()
+    }, false)
+  }
+
   componentDidMount() {
+    const _self = this
     $(() => {
-      checkWindowSize(this)
-
-      window.addEventListener('resize', () => {
-        checkWindowSize(this)
-      }, false)
-
-      function checkWindowSize(_self) {
-        if (window.innerWidth <= 768) {
-          _self.setState({ isMobile: true })
-        } else {
-          _self.setState({ isMobile: false })
-        }
-      }
+      checkWindowSize()
     })
+
+    window.addEventListener('resize', () => {
+      checkWindowSize()
+    }, false)
+
+    function checkWindowSize() {
+      if (window.innerWidth <  768) {
+        _self.setState({ isMobile: true })
+      } else {
+        _self.setState({ isMobile: false })
+      }
+    }
   }
 
   render() {

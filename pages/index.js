@@ -7,9 +7,6 @@ import Layout from '../components/layout'
 import Carousel from '../components/carousel'
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentWillMount() {
     configureAnchors({ scrollDuration: 1000 })
