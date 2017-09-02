@@ -16,10 +16,9 @@
     "dev": "next",
     "build": "cross-env NODE_ENV=production next build",
     "start": "cross-env NODE_ENV=production next start",
-    "restart": "pm2 startOrRestart ecosystem.config.js",
-    "ec2deploy": "pm2 deploy ecosystem.config.js production",
-    "predeploy": "yarn run build && cross-env NODE_ENV=production next export && touch out/.nojekyll && echo \"ppanya.me\" > out/CNAME",
-    "deploy": "git add -A && git commit -m \"update website\" && git subtree split --prefix out -b gh-pages && git push origin gh-pages:gh-pages --force && git branch -D gh-pages"
+    "restart": "pm2 startOrRestart ecosystem.config.js --env production",
+    "ec2setup": "pm2 deploy ecosystem.config.js production setup --env production",
+    "deploy": "pm2 deploy ecosystem.config.js production --env production"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^2.7.1",
