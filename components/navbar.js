@@ -28,11 +28,23 @@ export default class Navbar extends Component {
     return this.state.colorStyle
   }
 
+  updateActiveNavbarItem() {
+    const { active } = this.props
+
+    Object.keys(active).map((a) => {
+      const el = document.getElementById(a)
+      if (el) {
+        el.style.color = active[a]
+      }
+    })
+  }
+
   componentDidMount() {
     const location = window.location
     this.setState({
       colorStyle: location.hash === '#home_page' ? 'black' : 'white'
     })
+    this.updateActiveNavbarItem()
   }
 
   render() {
@@ -56,22 +68,22 @@ export default class Navbar extends Component {
           <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
             <Link prefetch href='/'>
               <li className="nav-item tedx_menu_item">
-                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Watch</a>
+                <a id="watch" className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Watch</a>
               </li>
             </Link>
             <Link prefetch href='/'>
               <li className="nav-item tedx_menu_item">
-                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Read</a>
+                <a id="read" className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Read</a>
               </li>
             </Link>
             <Link prefetch href='/'>
               <li className="nav-item tedx_menu_item">
-                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Partners</a>
+                <a id="partners" className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Partners</a>
               </li>
             </Link>
             <Link prefetch href='/about'>
               <li className="nav-item tedx_menu_item">
-                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo('about')}>About</a>
+                <a id="about" className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo('about')}>About</a>
               </li>
             </Link>
           </ul>

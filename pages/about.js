@@ -60,17 +60,18 @@ export default class About extends Component {
   }
 
   componentWillUnmount() {
+    window.removeEventListener('load', false)
     window.removeEventListener('resize', false)
   }
 
   componentDidMount() {
     const _self = this
-    $(() => {
+    window.addEventListener('load', () => {
       document.getElementById('tedx_header')
         .style.backgroundColor = '#b7b7b7'
 
       checkWindowSize()
-    })
+    }, false)
 
     window.addEventListener('resize', () => {
       checkWindowSize()
@@ -87,7 +88,7 @@ export default class About extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()}>
+      <Layout styles={this.calculateStyles()} active={{ about: "#fc2e1f" }}>
         <div id="tedx_about_container">
           <div id="tedx_history">
             <div className="head">
@@ -118,7 +119,7 @@ export default class About extends Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </Layout >
     )
   }
 }

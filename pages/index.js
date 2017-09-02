@@ -67,7 +67,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()}>
+      <Layout styles={this.calculateStyles()} active={{ home: "#fc2e1f" }}>
         <ScrollableAnchor id="landing">
           <section id="landing-section">
             <div className="section_content_container">
