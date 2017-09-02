@@ -10,6 +10,9 @@ export default class Home extends Component {
 
   componentWillMount() {
     configureAnchors({ scrollDuration: 1000 })
+  }
+
+  componentWillUnmount() {
     window.removeEventListener("hashchange", false)
   }
 
