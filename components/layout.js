@@ -10,7 +10,6 @@ const Layout = ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inhe
       <title>{title}</title>
       <meta charSet='utf-8' />
       <meta name='viewport' content='initiali-scale=1.0, width=device-width' />
-      <link rel="stylesheet" type="text/css" href="static/fonts.css" />
     </Head>
     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
     <header id="tedx_header">
