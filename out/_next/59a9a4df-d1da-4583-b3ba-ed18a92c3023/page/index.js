@@ -229,12 +229,31 @@ function _interopRequireDefault(obj) {
 var Home = function (_Component) {
   (0, _inherits3.default)(Home, _Component);
 
-  function Home() {
+  function Home(props) {
     (0, _classCallCheck3.default)(this, Home);
-    return (0, _possibleConstructorReturn3.default)(this, (Home.__proto__ || (0, _getPrototypeOf2.default)(Home)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Home.__proto__ || (0, _getPrototypeOf2.default)(Home)).call(this, props));
+
+    _this.state = {
+      isLanding: true
+    };
+    return _this;
   }
 
   (0, _createClass3.default)(Home, [{
+    key: 'calculateStyles',
+    value: function calculateStyles() {
+      return this.state.isLanding ? {
+        height: 'inherit',
+        width: 'inherit',
+        bgColor: 'transparent'
+      } : {
+        height: 'inherit',
+        width: 'inherit',
+        bgColor: '#fff'
+      };
+    }
+  }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
       (0, _reactScrollableAnchor.configureAnchors)({ scrollDuration: 1000 });
@@ -248,6 +267,8 @@ var Home = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _self = this;
+
       window.addEventListener("load", function () {
         updateStyle(window.location.hash, [(0, _jquery2.default)('.icon-bar'), (0, _jquery2.default)('.tedx_logo'), (0, _jquery2.default)('.tedx_link')]);
       }, false);
@@ -262,10 +283,12 @@ var Home = function (_Component) {
             el.removeClass('black');
             el.addClass('white');
             document.getElementById('tedx_header').style.backgroundColor = 'transparent';
+            _self.setState({ isLanding: true });
           } else if (hash === '#home') {
             el.removeClass('white');
             el.addClass('black');
             document.getElementById('tedx_header').style.backgroundColor = '#fff';
+            _self.setState({ isLanding: false });
           }
         });
       }
@@ -273,7 +296,7 @@ var Home = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react3.default.createElement(_layout2.default, null, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null))));
+      return _react3.default.createElement(_layout2.default, { styles: this.calculateStyles() }, _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'landing' }, _react3.default.createElement('section', { id: 'landing-section' }, _react3.default.createElement('div', { className: 'section_content_container' }, _react3.default.createElement('h1', { className: 'section_content text-center white' }, 'Charoenkrung is a Prosperous City')), _react3.default.createElement('a', { className: 'section_bottom', href: '#home' }, _react3.default.createElement('span', { className: 'scroll_down' })))), _react3.default.createElement(_reactScrollableAnchor2.default, { id: 'home' }, _react3.default.createElement('section', { id: 'home-section' }, _react3.default.createElement(_carousel2.default, null))));
     }
   }]);
   return Home;

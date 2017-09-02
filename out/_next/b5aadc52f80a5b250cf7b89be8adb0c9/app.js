@@ -1546,7 +1546,7 @@ var Layout = function Layout(_ref) {
       _ref$title = _ref.title,
       title = _ref$title === undefined ? 'TEDxCharoenkrung' : _ref$title,
       _ref$styles = _ref.styles,
-      styles = _ref$styles === undefined ? { height: 'inherit', width: 'inherit', bgColor: 'transparent' } : _ref$styles;
+      styles = _ref$styles === undefined ? { height: 'inherit', width: 'inherit', bgColor: '#fff' } : _ref$styles;
   return _react2.default.createElement('div', { id: 'tedx_body' }, _react2.default.createElement(_head2.default, null, _react2.default.createElement('title', null, title), _react2.default.createElement('meta', { charSet: 'utf-8' }), _react2.default.createElement('meta', { name: 'viewport', content: 'initiali-scale=1.0, width=device-width' })), _react2.default.createElement('style', { dangerouslySetInnerHTML: { __html: _application2.default } }), _react2.default.createElement('header', { id: 'tedx_header' }, _react2.default.createElement(_navbar2.default, null)), _react2.default.createElement('main', { id: 'tedx_main_container',
     style: { 'height': styles.height, 'width': styles.width, 'backgroundColor': styles.bgColor, 'display': 'table' } }, children), _react2.default.createElement('script', { src: '../static/js/jquery-3.2.1.slim.min.js' }), _react2.default.createElement('script', { src: '../static/js/bootstrap.min.js' }));
 };
