@@ -13,29 +13,34 @@ export default class Home extends Component {
   }
 
   componentWillUnmount() {
+    window.removeEventListener("load", false)
     window.removeEventListener("hashchange", false)
   }
 
   componentDidMount() {
+    window.addEventListener("load", () => {
+      updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
+    }, false)
+
     window.addEventListener("hashchange", () => {
       updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
-
-      function updateStyle(hash, els) {
-        els.map((el) => {
-          if (hash === '#landing' || hash === '') {
-            el.removeClass('black')
-            el.addClass('white')
-            document.getElementById('tedx_header')
-              .style.backgroundColor = 'transparent'
-          } else if (hash === '#home'){
-            el.removeClass('white')
-            el.addClass('black')
-            document.getElementById('tedx_header')
-              .style.backgroundColor = '#fff'
-          }
-        })
-      }
     }, false);
+
+    function updateStyle(hash, els) {
+      els.map((el) => {
+        if (hash === '#landing' || hash === '') {
+          el.removeClass('black')
+          el.addClass('white')
+          document.getElementById('tedx_header')
+            .style.backgroundColor = 'transparent'
+        } else if (hash === '#home') {
+          el.removeClass('white')
+          el.addClass('black')
+          document.getElementById('tedx_header')
+            .style.backgroundColor = '#fff'
+        }
+      })
+    }
   }
 
   render() {
