@@ -246,11 +246,13 @@ var Home = function (_Component) {
       return this.state.isLanding ? {
         height: 'inherit',
         width: 'inherit',
-        bgColor: 'transparent'
+        bgColor: 'transparent',
+        headerColor: 'transparent'
       } : {
         height: 'inherit',
         width: 'inherit',
-        bgColor: '#fff'
+        bgColor: '#fff',
+        headerColor: '#fff'
       };
     }
   }, {
@@ -282,12 +284,10 @@ var Home = function (_Component) {
           if (hash === '#landing' || hash === '') {
             el.removeClass('black');
             el.addClass('white');
-            document.getElementById('tedx_header').style.backgroundColor = 'transparent';
             _self.setState({ isLanding: true });
           } else if (hash === '#home') {
             el.removeClass('white');
             el.addClass('black');
-            document.getElementById('tedx_header').style.backgroundColor = '#fff';
             _self.setState({ isLanding: false });
           }
         });
