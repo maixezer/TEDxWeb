@@ -19,12 +19,14 @@ export default class Home extends Component {
       {
         height: 'inherit',
         width: 'inherit',
-        bgColor: 'transparent'
+        bgColor: 'transparent',
+        headerColor: 'transparent'
       } :
       {
         height: 'inherit',
         width: 'inherit',
-        bgColor: '#fff'
+        bgColor: '#fff',
+        headerColor: '#fff'
       }
   }
 
@@ -53,14 +55,10 @@ export default class Home extends Component {
         if (hash === '#landing' || hash === '') {
           el.removeClass('black')
           el.addClass('white')
-          document.getElementById('tedx_header')
-            .style.backgroundColor = 'transparent'
           _self.setState({ isLanding: true })
         } else if (hash === '#home') {
           el.removeClass('white')
           el.addClass('black')
-          document.getElementById('tedx_header')
-            .style.backgroundColor = '#fff'
           _self.setState({ isLanding: false })
         }
       })

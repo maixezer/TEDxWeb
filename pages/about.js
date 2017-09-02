@@ -48,12 +48,14 @@ export default class About extends Component {
       {
         height: 'auto',
         width: 'auto',
-        bgColor: '#b7b7b7'
+        bgColor: '#b7b7b7',
+        headerColor: '#b7b7b7'
       } :
       {
         height: 'inherit',
         width: 'inherit',
-        bgColor: '#b7b7b7'
+        bgColor: '#b7b7b7',
+        headerColor: '#b7b7b7'
       }
   }
 

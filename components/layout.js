@@ -4,7 +4,7 @@ import Navbar from './navbar'
 
 import stylesheet from 'styles/application.scss'
 
-const Layout = ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inherit', width: 'inherit', bgColor: '#fff' } }) => (
+const Layout = ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inherit', width: 'inherit', bgColor: '#fff', headerColor: 'transparent' } }) => (
   <div id="tedx_body">
     <Head>
       <title>{title}</title>
@@ -12,7 +12,7 @@ const Layout = ({ children, title = 'TEDxCharoenkrung', styles = { height: 'inhe
       <meta name='viewport' content='initiali-scale=1.0, width=device-width' />
     </Head>
     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-    <header id="tedx_header">
+    <header id="tedx_header" style={{'backgroundColor': styles.headerColor}}>
       <Navbar />
     </header>
     <main id="tedx_main_container"
