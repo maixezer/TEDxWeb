@@ -14,7 +14,7 @@ export default class Navbar extends Component {
 
   navigateTo(page) {
     this.setState({
-      colorStyle: page ? 'black' : 'white'
+      colorStyle: page || page !== 'about' ? 'black' : 'white'
     })
     this.toggleHamburger()
   }
@@ -34,24 +34,8 @@ export default class Navbar extends Component {
   componentDidMount() {
     const location = window.location
     this.setState({
-      colorStyle: location.pathname !== '/' || location.hash === '#home_page' ? 'black' : 'white'
+      colorStyle: location.hash === '#home_page' ? 'black' : 'white'
     })
-
-    window.addEventListener("hashchange", () => {
-      updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
-
-      function updateStyle(hash, els) {
-        els.map((el) => {
-          if (hash === '#landing_page') {
-            el.removeClass('black')
-            el.addClass('white')
-          } else {
-            el.removeClass('white')
-            el.addClass('black')
-          }
-        })
-      }
-    }, false);
   }
 
   render() {
@@ -88,9 +72,9 @@ export default class Navbar extends Component {
                 <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>Partners</a>
               </li>
             </Link>
-            <Link prefetch href='/'>
+            <Link prefetch href='/about'>
               <li className="nav-item tedx_menu_item">
-                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo()}>About</a>
+                <a className={`nav-link tedx_link ${this.updateStyle()}`} href="#" onClick={() => this.navigateTo('about')}>About</a>
               </li>
             </Link>
           </ul>

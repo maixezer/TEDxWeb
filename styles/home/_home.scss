@@ -20,11 +20,9 @@
         opacity: 0.85;
 
         &.bg_plus_pos_y {
-          background-position-y: 6rem;
 
           @include media-breakpoint-up(md) { 
             background-attachment: fixed;
-            background-position-y: 8.25rem;
           }
         }
 

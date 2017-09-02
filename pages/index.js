@@ -7,19 +7,31 @@ import Layout from '../components/layout'
 import Carousel from '../components/carousel'
 
 export default class Home extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   componentWillMount() {
     configureAnchors({ scrollDuration: 1000 })
   }
 
   componentDidMount() {
-    $('#landing-section').on('scroll', function() {
-      console.log($(this).scrollTop())
-    })
-    
+    window.addEventListener("hashchange", () => {
+      updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
+
+      function updateStyle(hash, els) {
+        els.map((el) => {
+          if (hash === '#landing_page') {
+            el.removeClass('black')
+            el.addClass('white')
+            document.getElementById('tedx_header')
+              .style.backgroundColor = 'transparent'
+          } else {
+            el.removeClass('white')
+            el.addClass('black')
+            document.getElementById('tedx_header')
+              .style.backgroundColor = '#fff'
+          }
+        })
+      }
+    }, false);
   }
 
   render() {

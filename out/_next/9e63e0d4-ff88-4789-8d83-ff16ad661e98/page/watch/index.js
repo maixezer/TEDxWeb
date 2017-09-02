@@ -1,17 +1,17 @@
 
-          window.__NEXT_REGISTER_PAGE('/about', function() {
+          window.__NEXT_REGISTER_PAGE('/watch', function() {
             var comp = module.exports =
-webpackJsonp([8],{
+webpackJsonp([6],{
 
-/***/ 186:
+/***/ 217:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(187);
+module.exports = __webpack_require__(218);
 
 
 /***/ }),
 
-/***/ 187:
+/***/ 218:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37,12 +37,12 @@ function _interopRequireDefault(obj) {
 }
 
 exports.default = function () {
-  return _react2.default.createElement(_layout2.default, null, "This is ", _react2.default.createElement("div", { className: "hello-about" }, "about"));
+  return _react2.default.createElement(_layout2.default, null, 'This is Watch');
 };
 
 /***/ })
 
-},[186]);
+},[217]);
             return { page: comp.default }
           })
         

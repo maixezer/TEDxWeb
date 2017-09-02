@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import $ from 'jquery'
 
 export default class Carousel extends Component {
   constructor(props) {
@@ -44,14 +45,29 @@ export default class Carousel extends Component {
     ))
   }
 
-  componentDidMount() {
-    window.addEventListener('resize', () => {
-      if (window.innerWidth <= 768) {
-        this.setState({ isMobile: true })
-      } else {
-        this.setState({ isMobile: false })
-      }
+  componentWillUnmount() {
+    window.removeEventListener('resize', () => {
+      checkWindowSize()
     }, false)
+  }
+
+  componentDidMount() {
+    const _self = this
+    $(() => {
+      checkWindowSize()
+    })
+
+    window.addEventListener('resize', () => {
+      checkWindowSize()
+    }, false)
+
+    function checkWindowSize() {
+      if (window.innerWidth <  768) {
+        _self.setState({ isMobile: true })
+      } else {
+        _self.setState({ isMobile: false })
+      }
+    }
   }
 
   render() {
