@@ -121,9 +121,7 @@ var About = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      window.removeEventListener('resize', function () {
-        checkWindowSize();
-      }, false);
+      window.removeEventListener('resize', false);
     }
   }, {
     key: 'componentDidMount',

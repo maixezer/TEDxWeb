@@ -240,6 +240,11 @@ var Home = function (_Component) {
       (0, _reactScrollableAnchor.configureAnchors)({ scrollDuration: 1000 });
     }
   }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      window.removeEventListener("hashchange", false);
+    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener("hashchange", function () {
@@ -641,9 +646,7 @@ var Carousel = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      window.removeEventListener('resize', function () {
-        checkWindowSize();
-      }, false);
+      window.removeEventListener('resize', false);
     }
   }, {
     key: 'componentDidMount',
