@@ -242,28 +242,33 @@ var Home = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      window.removeEventListener("load", false);
       window.removeEventListener("hashchange", false);
     }
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.addEventListener("load", function () {
+        updateStyle(window.location.hash, [(0, _jquery2.default)('.icon-bar'), (0, _jquery2.default)('.tedx_logo'), (0, _jquery2.default)('.tedx_link')]);
+      }, false);
+
       window.addEventListener("hashchange", function () {
         updateStyle(window.location.hash, [(0, _jquery2.default)('.icon-bar'), (0, _jquery2.default)('.tedx_logo'), (0, _jquery2.default)('.tedx_link')]);
-
-        function updateStyle(hash, els) {
-          els.map(function (el) {
-            if (hash === '#landing' || hash === '') {
-              el.removeClass('black');
-              el.addClass('white');
-              document.getElementById('tedx_header').style.backgroundColor = 'transparent';
-            } else if (hash === '#home') {
-              el.removeClass('white');
-              el.addClass('black');
-              document.getElementById('tedx_header').style.backgroundColor = '#fff';
-            }
-          });
-        }
       }, false);
+
+      function updateStyle(hash, els) {
+        els.map(function (el) {
+          if (hash === '#landing' || hash === '') {
+            el.removeClass('black');
+            el.addClass('white');
+            document.getElementById('tedx_header').style.backgroundColor = 'transparent';
+          } else if (hash === '#home') {
+            el.removeClass('white');
+            el.addClass('black');
+            document.getElementById('tedx_header').style.backgroundColor = '#fff';
+          }
+        });
+      }
     }
   }, {
     key: 'render',
