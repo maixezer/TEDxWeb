@@ -34,18 +34,18 @@
     }
   }
 
-  .head {
+  #history_head, #contact_head {
     text-transform: uppercase;
     font-family: 'latoBlack';
     padding-bottom: 1rem;
     letter-spacing: 0.2em;
   }
   
-  .content {
+  #history_content, #contact_content {
     padding-bottom: 1rem;
   }
 
-  .bottom {
+  #history_bottom {
     font-family: 'latoBoldItalic';
   }
 }

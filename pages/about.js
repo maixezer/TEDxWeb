@@ -78,10 +78,10 @@ export default class About extends Component {
         isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
         <div id="tedx_about_container">
           <div id="tedx_history">
-            <div className="head">
+            <div id="history_head">
               History
             </div>
-            <div className="content">
+            <div id="history_content">
               TEDxCharoenkrung is an independently organized TED event.
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Mauris imperdiet sed libero gravida ultrices.
@@ -93,15 +93,15 @@ export default class About extends Component {
               Vestibulum sodales leo lectus, a sodales metus consectetur sit amet.
               Nam ultrices tempor ante, in rhoncus augue tincidunt sit amet.
             </div>
-            <div className="bottom">
+            <div id="history_bottom">
               See all our teamates
             </div>
           </div>
           <div id="tedx_contact">
-            <div className="head">
+            <div id="contact_head">
               Contact
             </div>
-            <div className="content">
+            <div id="contact_content">
               {this.contactList()}
             </div>
           </div>
