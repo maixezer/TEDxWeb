@@ -70,7 +70,7 @@ export default class Navbar extends Component {
             </Link>
             <Link prefetch href='/'>
               <li className="nav-item tedx_menu_item">
-                <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo()}>Partners</a>
+                <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('partners')}>Partners</a>
               </li>
             </Link>
             <Link prefetch href='/about'>
