@@ -3,9 +3,8 @@ const Partners = ({ content, isMobile }) => (
     {content.topic}
     <div id="tedx_partners_contents_image">
       { content.imageUrl.map((imageUrl) =>
-        <img src={imageUrl} style={{ width: isMobile ? '7.5rem' : '7.5rem'
-          , display: isMobile ? 'block' : 'inline-flex'
-        }} className="img-thumbnail"></img>
+        <img src={imageUrl} style={{ padding: '10px', width: isMobile ? '80%' : '7.5rem' }}
+        className="img-fluid"></img>
       ) }
     </div>
   </div>

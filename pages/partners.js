@@ -31,6 +31,35 @@ export default class Partner extends Component {
         topic: 'Patron Partner',
         imageUrl: [
           `static/images/partners/isuzu.png`,
+        ]
+      },
+      {
+        topic: 'Platinum Partners',
+        imageUrl: [
+          `static/images/partners/isuzu.png`,
+          `static/images/partners/isuzu.png`,
+          `static/images/partners/isuzu.png`
+        ]
+      },
+      {
+        topic: 'Gold Partners',
+        imageUrl: [
+          `static/images/partners/isuzu.png`,
+        ]
+      },
+      {
+        topic: 'Venue',
+        imageUrl: [
+          `static/images/partners/isuzu.png`,
+          `static/images/partners/isuzu.png`,
+          `static/images/partners/isuzu.png`
+        ]
+      },
+      {
+        topic: 'Envent+Organizer',
+        imageUrl: [
+          `static/images/partners/isuzu.png`,
+          `static/images/partners/isuzu.png`,
           `static/images/partners/isuzu.png`
         ]
       },
