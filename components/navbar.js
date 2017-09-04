@@ -58,21 +58,17 @@ export default class Navbar extends Component {
         </button>
         <div className={`collapse navbar-collapse ${this.state.isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
-            <Link prefetch href='/'>
-              <li className="nav-item tedx_menu_item">
-                <a id="watch" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo()}>Watch</a>
-              </li>
-            </Link>
+            <li className="nav-item tedx_menu_item">
+              <a id="watch" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#">Watch</a>
+            </li>
             <Link prefetch href='/read'>
               <li className="nav-item tedx_menu_item">
                 <a id="read" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('read')}>Read</a>
               </li>
             </Link>
-            <Link prefetch href='/'>
-              <li className="nav-item tedx_menu_item">
-                <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo()}>Partners</a>
-              </li>
-            </Link>
+            <li className="nav-item tedx_menu_item">
+              <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#">Partners</a>
+            </li>
             <Link prefetch href='/about'>
               <li className="nav-item tedx_menu_item">
                 <a id="about" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('about')}>About</a>
