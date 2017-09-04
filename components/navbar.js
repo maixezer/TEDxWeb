@@ -8,14 +8,14 @@ export default class Navbar extends Component {
     super(props)
     this.state = {
       isOpen: '',
-      colorStyle: props.navbarColor
+      colorStyle: props.navbarColor,
+      currentPage: props.currentPage
     }
   }
 
   navigateTo(page) {
     this.toggleHamburger()
   }
-
 
   toggleHamburger() {
     const isOpen = this.state.isOpen
@@ -24,24 +24,18 @@ export default class Navbar extends Component {
     })
   }
 
-  updateActiveNavbarItem() {
-    const { active } = this.props
-
-    Object.keys(active).map((a) => {
-      const el = document.getElementById(a)
-      if (el) {
-        el.style.color = active[a]
-      }
-    })
+  componentWillUnmount() {
+    $(`#${this.state.currentPage}`).removeClass('active')
   }
 
   componentDidMount() {
-    this.updateActiveNavbarItem()
+    $(`#${this.state.currentPage}`).addClass('active')
   }
 
   render() {
     return (
       <nav className="navbar navbar-expand-md bg-faded justify-content-center tedx_navbar">
+        {console.warn(this.state.currentPage)}
         <Link prefetch href='/'>
           <a className={`tedx_logo navbar-brand mr-auto ${this.state.colorStyle}`} href="#"
             onClick={() => this.navigateTo()} >

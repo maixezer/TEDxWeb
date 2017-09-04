@@ -74,7 +74,7 @@ export default class About extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()} active={{ about: "#fc2e1f" }}
+      <Layout styles={this.calculateStyles()} currentPage={'about'}
         isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
         <div id="tedx_about_container">
           <div id="tedx_history">
