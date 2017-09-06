@@ -8,14 +8,14 @@ export default class Navbar extends Component {
     super(props)
     this.state = {
       isOpen: '',
-      colorStyle: props.navbarColor
+      colorStyle: props.navbarColor,
+      currentPage: props.currentPage
     }
   }
 
   navigateTo(page) {
     this.toggleHamburger()
   }
-
 
   toggleHamburger() {
     const isOpen = this.state.isOpen
@@ -24,19 +24,12 @@ export default class Navbar extends Component {
     })
   }
 
-  updateActiveNavbarItem() {
-    const { active } = this.props
-
-    Object.keys(active).map((a) => {
-      const el = document.getElementById(a)
-      if (el) {
-        el.style.color = active[a]
-      }
-    })
+  componentWillUnmount() {
+    $(`#${this.state.currentPage}`).removeClass('active')
   }
 
   componentDidMount() {
-    this.updateActiveNavbarItem()
+    $(`#${this.state.currentPage}`).addClass('active')
   }
 
   render() {
@@ -58,11 +51,9 @@ export default class Navbar extends Component {
         </button>
         <div className={`collapse navbar-collapse ${this.state.isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
-            <Link prefetch href='/'>
-              <li className="nav-item tedx_menu_item">
-                <a id="watch" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo()}>Watch</a>
-              </li>
-            </Link>
+            <li className="nav-item tedx_menu_item">
+              <a id="watch" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#">Watch</a>
+            </li>
             <Link prefetch href='/read'>
               <li className="nav-item tedx_menu_item">
                 <a id="read" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('read')}>Read</a>

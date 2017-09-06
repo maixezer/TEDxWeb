@@ -49,8 +49,8 @@ export default class Home extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("load", false)
-    window.removeEventListener("hashchange", false)
+    window.removeEventListener("load", () => { }, false)
+    window.removeEventListener("hashchange", () => { }, false)
   }
 
   componentDidMount() {
@@ -81,7 +81,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()} active={{ home: "#fc2e1f" }}
+      <Layout styles={this.calculateStyles()} currentPage={'home'}
         isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
         <ScrollableAnchor id="landing">
           <section id="landing-section">

@@ -64,7 +64,7 @@ export default class Read extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()} active={{ read: "#fc2e1f" }}
+      <Layout styles={this.calculateStyles()} currentPage={'read'}
         isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
         <div id="tedx_read_container">
           {
