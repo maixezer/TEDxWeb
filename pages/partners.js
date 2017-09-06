@@ -56,7 +56,7 @@ export default class Partner extends Component {
         ]
       },
       {
-        topic: 'Envent+Organizer',
+        topic: 'Envent & Organizer',
         imageUrl: [
           `static/images/partners/isuzu.png`,
           `static/images/partners/isuzu.png`,
@@ -77,7 +77,7 @@ export default class Partner extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()} active={{ partners: "#fc2e1f" }}
+      <Layout styles={this.calculateStyles()} currentPage={'partners'}
         isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
         <div id="tedx_partners_container">
           <div id="tedx_partners_header_top">
