@@ -5,7 +5,7 @@ const Content = ({ content, isMobile }) => (
     style={{
       backgroundImage: `url(${content.imageUrl})`, height: '50%'
       , width: isMobile ? '100%' : '50%'
-      , display: isMobile ? 'block' : 'inline-flex'
+      , display: isMobile ? 'block' : 'inline-block'
     }}>
     <div className="content_container">
       <div className="content_topic_container">
