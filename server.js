@@ -17,6 +17,10 @@ app.prepare()
   const server = express()
   server.use(STATIC_PATH, express.static('static'))
 
+  server.get('/', (req, res) => {
+    return app.render(req, res, '/home', req.query)
+  })
+  
   server.get('/about', (req, res) => {
     return app.render(req, res, '/about', req.query)
   })
