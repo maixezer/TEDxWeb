@@ -8,8 +8,7 @@ export default class Partner extends Component {
     super(props)
     const userAgent = props.userAgent
     this.state = {
-      isMobile: this.checkIsMobileDevice(userAgent),
-      navbarColor: 'black'
+      isMobile: this.checkIsMobileDevice(userAgent)
     }
   }
 
@@ -25,7 +24,7 @@ export default class Partner extends Component {
   }
 
   getContents() {
-    const path = this.props.isMobile ? 'mobile' : 'desktop'
+    const path = this.state.isMobile ? 'mobile' : 'desktop'
     return [
       {
         topic: 'Patron Partner',
@@ -78,7 +77,7 @@ export default class Partner extends Component {
   render() {
     return (
       <Layout styles={this.calculateStyles()} currentPage={'partners'}
-        isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
+        isMobile={this.state.isMobile} navbarColor={'black'}>
         <div id="tedx_partners_container">
           <div id="tedx_partners_header_top">
             PARTNERS

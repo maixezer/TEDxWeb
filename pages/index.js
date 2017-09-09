@@ -1,10 +1,10 @@
 import { Component } from 'react'
-import ScrollableAnchor from 'react-scrollable-anchor'
-import { configureAnchors } from 'react-scrollable-anchor'
 import $ from 'jquery'
 
 import Layout from '../components/layout'
 import Carousel from '../components/carousel'
+
+import { isElementInView } from '../utils'
 
 export default class Home extends Component {
   constructor(props) {
@@ -12,9 +12,12 @@ export default class Home extends Component {
     const userAgent = props.userAgent
     this.state = {
       isLanding: true,
-      isMobile: this.checkIsMobileDevice(userAgent),
-      navbarColor: 'white'
+      isMobile: this.checkIsMobileDevice(userAgent)
     }
+
+    this.checkElementInViewAndUpdateStyle = this.checkElementInViewAndUpdateStyle.bind(this)
+    this.updateStyle = this.updateStyle.bind(this)
+    this.smoothScrollingTo = this.smoothScrollingTo.bind(this)
   }
 
   static getInitialProps({ req }) {
@@ -44,60 +47,69 @@ export default class Home extends Component {
       }
   }
 
-  componentWillMount() {
-    configureAnchors({ scrollDuration: 1000 })
+  checkElementInViewAndUpdateStyle() {
+    //detect scroll end
+    clearTimeout($.data(this, 'scrollTimer'));
+    $.data(this, 'scrollTimer', setTimeout(() => {
+      if (isElementInView('#home')) {
+        this.smoothScrollingTo('#home')
+      }
+      else if (isElementInView('#landing')) {
+        this.smoothScrollingTo('#landing')
+      }
+    }, 750))
+
+    if (isElementInView('#home')) {
+      this.updateStyle(false, 'black', 'white')
+    }
+    else if (isElementInView('#landing')) {
+      this.updateStyle(true, 'white', 'black')
+    }
+  }
+
+  updateStyle(isLanding, addedClass, removedClass) {
+    [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')].map((el) => {
+      el.removeClass(removedClass)
+      el.addClass(addedClass)
+      this.setState({ isLanding: isLanding })
+    })
+  }
+
+  smoothScrollingTo(target) {
+    $('html,body').animate({
+      scrollTop: $(target || '#landing').offset().top
+    }, 1000)
   }
 
   componentWillUnmount() {
-    window.removeEventListener("load", () => { }, false)
-    window.removeEventListener("hashchange", () => { }, false)
+    window.removeEventListener('load', this.checkElementInViewAndUpdateStyle, false)
+    window.removeEventListener('scroll', this.checkElementInViewAndUpdateStyle, false)
   }
 
   componentDidMount() {
-    const _self = this
+    window.addEventListener('load', this.checkElementInViewAndUpdateStyle, false)
+    window.addEventListener('scroll', this.checkElementInViewAndUpdateStyle, false)
 
-    window.addEventListener("load", () => {
-      updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
-    }, false)
-
-    window.addEventListener("hashchange", () => {
-      updateStyle(window.location.hash, [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')])
-    }, false);
-
-    function updateStyle(hash, els) {
-      els.map((el) => {
-        if (hash === '#landing' || hash === '') {
-          el.removeClass('black')
-          el.addClass('white')
-          _self.setState({ isLanding: true })
-        } else if (hash === '#home') {
-          el.removeClass('white')
-          el.addClass('black')
-          _self.setState({ isLanding: false })
-        }
-      })
-    }
+    $('#goToHome').on('click', (e) => {
+      this.smoothScrollingTo('#home')
+    })
   }
 
   render() {
     return (
       <Layout styles={this.calculateStyles()} currentPage={'home'}
-        isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
-        <ScrollableAnchor id="landing">
-          <section id="landing-section">
-            <div className="section_content_container">
-              <h1 className="section_content text-center white">Charoenkrung is a Prosperous City</h1>
-            </div>
-            <a className="section_bottom" href="#home">
-              <span className="scroll_down"></span>
-            </a>
-          </section>
-        </ScrollableAnchor>
-        <ScrollableAnchor id="home">
-          <section id="home-section">
-            <Carousel isMobile={this.state.isMobile} />
-          </section>
-        </ScrollableAnchor>
+        isMobile={this.state.isMobile} navbarColor={'white'}>
+        <section id="landing">
+          <div className="section_content_container">
+            <h1 className="section_content text-center white">Charoenkrung is a Prosperous City</h1>
+          </div>
+          <a className="section_bottom" id="goToHome">
+            <span className="scroll_down"></span>
+          </a>
+        </section>
+        <section id="home">
+          <Carousel isMobile={this.state.isMobile} />
+        </section>
       </Layout>
     )
   }
