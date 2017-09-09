@@ -44,6 +44,40 @@
         font-size: 1.2em;
         color: $white;
       }
+
+      .topic_date {
+        display: block;
+        width: 300px;
+        margin: 1.5rem auto 0 auto;
+        font-family: 'promptSemiBold';
+        font-size: 0.5em;
+        color: $white;
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(md) {
+          width: 400px;
+          font-size: 0.75em;
+        }
+      }
+
+      .separator {
+        display: block;
+        height: 1px;
+        width: 300px;
+        background-color: $white;
+    
+        @include media-breakpoint-up(md) {
+          width: 400px;
+        }
+    
+        &.top {
+          margin: 0 auto 1.5rem auto;
+        }
+    
+        &.bottom {
+          margin: 1.5rem auto 0 auto;
+        }
+      }
     }
   
     .content_posted_date {
