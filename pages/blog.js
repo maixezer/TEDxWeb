@@ -1,12 +1,10 @@
 import { Component } from 'react'
-import Link from 'next/link'
+import contents from '../contents'
 
 import Layout from '../components/layout'
 import Content from '../components/content'
 
-import contents from '../contents'
-
-export default class Read extends Component {
+export default class Blog extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -15,10 +13,17 @@ export default class Read extends Component {
     }
   }
 
-  static getInitialProps({ req, query }) {
-    return req
-      ? { userAgent: req.headers['user-agent'] }
-      : { userAgent: navigator.userAgent }
+  static getInitialProps({ req, res, query }) {
+    if (!query || !query.uid) {
+      res.writeHead(301, {
+        Location: '/read'
+      })
+      res.end()
+      res.finished = true
+    }
+    return req && query
+      ? { userAgent: req.headers['user-agent'], uid: query.uid }
+      : { userAgent: navigator.userAgent, uid: query.uid }
   }
 
   checkIsMobileDevice(userAgent) {
@@ -44,14 +49,8 @@ export default class Read extends Component {
     return (
       <Layout styles={this.calculateStyles()} active={{ read: "#fc2e1f" }}
         isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
-        <div id="tedx_read_container">
-          {
-            this.getContents().map((content, index) => (
-              <Link prefetch href={{ pathname: '/blog', query: { uid: content.uid } }}>
-                <Content key={content.uid} content={content} isMobile={this.state.isMobile} />
-              </Link>
-            ))
-          }
+        <div id="tedx_blog_container">
+          <Content content={this.getContents().find((c) => c.uid === this.props.uid)} isMobile={this.state.isMobile} />
         </div>
       </Layout>
     )
