@@ -8,8 +8,7 @@ export default class Blog extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMobile: this.checkIsMobileDevice(props.userAgent),
-      navbarColor: 'black'
+      isMobile: this.checkIsMobileDevice(props.userAgent)
     }
   }
 
@@ -32,7 +31,7 @@ export default class Blog extends Component {
   }
 
   getContents() {
-    const path = this.props.isMobile ? 'mobile' : 'desktop'
+    const path = this.state.isMobile ? 'mobile' : 'desktop'
     return contents(path)
   }
 
@@ -47,10 +46,12 @@ export default class Blog extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()} active={{ read: "#fc2e1f" }}
-        isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
+      <Layout styles={this.calculateStyles()} currentPage={'blog'}
+        isMobile={this.state.isMobile} navbarColor={'black'}>
         <div id="tedx_blog_container">
-          <Content content={this.getContents().find((c) => c.uid === this.props.uid)} isMobile={this.state.isMobile} />
+          {console.warn(this.state.isMobile)}
+          <Content content={this.getContents().find((c) => c.uid === this.props.uid)} 
+            isMobile={this.state.isMobile} enabledHover={false} fromBlog={true}/>
         </div>
       </Layout>
     )

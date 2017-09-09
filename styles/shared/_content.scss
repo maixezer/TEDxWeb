@@ -2,19 +2,21 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
-  @include media-breakpoint-up(md) {
+  &.has-hover {
     &:hover {
-      box-shadow: 0px 0px 150px #000;
-      z-index: 2;
-      -webkit-transition: all 200ms ease-in;
-      -webkit-transform: scale(0.95);
-      -ms-transition: all 200ms ease-in;
-      -ms-transform: scale(0.95);   
-      -moz-transition: all 200ms ease-in;
-      -moz-transform: scale(0.95);
-      transition: all 200ms ease-in;
-      transform: scale(0.95);
-      cursor: pointer;
+      @include media-breakpoint-up(md) {
+        box-shadow: 0px 0px 150px #000;
+        z-index: 2;
+        -webkit-transition: all 200ms ease-in;
+        -webkit-transform: scale(0.95);
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(0.95);   
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(0.95);
+        transition: all 200ms ease-in;
+        transform: scale(0.95);
+        cursor: pointer;
+      }
     }
   }
 

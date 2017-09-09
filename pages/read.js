@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import Link from 'next/link'
 
 import Layout from '../components/layout'
 import Content from '../components/content'
@@ -10,11 +9,11 @@ export default class Read extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMobile: this.checkIsMobileDevice(userAgent)
+      isMobile: this.checkIsMobileDevice(props.userAgent)
     }
   }
 
-  static getInitialProps({ req, query }) {
+  static getInitialProps({ req }) {
     return req
       ? { userAgent: req.headers['user-agent'] }
       : { userAgent: navigator.userAgent }
@@ -46,9 +45,8 @@ export default class Read extends Component {
         <div id="tedx_read_container">
           {
             this.getContents().map((content, index) => (
-              <Link prefetch href={{ pathname: '/blog', query: { uid: content.uid } }}>
-                <Content key={content.uid} content={content} isMobile={this.state.isMobile} />
-              </Link>
+              <Content key={content.uid} content={content} 
+                isMobile={this.state.isMobile} enabledHover={true}/>
             ))
           }
         </div>

@@ -57,7 +57,7 @@ export default class Home extends Component {
       else if (isElementInView('#landing')) {
         this.smoothScrollingTo('#landing')
       }
-    }, 750))
+    }, 1000))
 
     if (isElementInView('#home')) {
       this.updateStyle(false, 'black', 'white')
