@@ -7,8 +7,7 @@ export default class About extends Component {
     super(props)
     const userAgent = props.userAgent
     this.state = {
-      isMobile: this.checkIsMobileDevice(userAgent),
-      navbarColor: 'white'
+      isMobile: this.checkIsMobileDevice(userAgent)
     }
   }
 
@@ -74,8 +73,8 @@ export default class About extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()} active={{ about: "#fc2e1f" }}
-        isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
+      <Layout styles={this.calculateStyles()} currentPage={'about'}
+        isMobile={this.state.isMobile} navbarColor={'white'}>
         <div id="tedx_about_container">
           <div id="tedx_history">
             <div id="history_head">

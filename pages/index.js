@@ -1,5 +1,4 @@
 import { Component } from 'react'
-import Router from 'next/router'
 import $ from 'jquery'
 
 import Layout from '../components/layout'
@@ -13,9 +12,12 @@ export default class Home extends Component {
     const userAgent = props.userAgent
     this.state = {
       isLanding: true,
-      isMobile: this.checkIsMobileDevice(userAgent),
-      navbarColor: 'white'
+      isMobile: this.checkIsMobileDevice(userAgent)
     }
+
+    this.checkElementInViewAndUpdateStyle = this.checkElementInViewAndUpdateStyle.bind(this)
+    this.updateStyle = this.updateStyle.bind(this)
+    this.smoothScrollingTo = this.smoothScrollingTo.bind(this)
   }
 
   static getInitialProps({ req }) {
@@ -45,55 +47,63 @@ export default class Home extends Component {
       }
   }
 
+  checkElementInViewAndUpdateStyle() {
+    // detect scroll end
+    clearTimeout($.data(this, 'scrollTimer'));
+    $.data(this, 'scrollTimer', setTimeout(() => {
+      if (isElementInView('#home')) {
+        this.smoothScrollingTo('#home')
+      }
+      else if (isElementInView('#landing')) {
+        this.smoothScrollingTo('#landing')
+      }
+    }, 750))
+
+    if (isElementInView('#home')) {
+      this.updateStyle(false, 'black', 'white')
+    }
+    else if (isElementInView('#landing')) {
+      this.updateStyle(true, 'white', 'black')
+    }
+  }
+
+  updateStyle(isLanding, addedClass, removedClass) {
+    [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')].map((el) => {
+      el.removeClass(removedClass)
+      el.addClass(addedClass)
+      this.setState({ isLanding: isLanding })
+    })
+  }
+
+  smoothScrollingTo(target) {
+    $('html,body').velocity('scroll', {
+      offset: $(target || '#landing').offset().top,
+      duration: 1000,
+      mobileHA: false
+    })
+  }
+
   componentWillUnmount() {
-    window.removeEventListener('load', () => { }, false)
-    window.removeEventListener('scroll', () => { }, false)
+    window.removeEventListener('load', this.checkElementInViewAndUpdateStyle, false)
+    window.removeEventListener('scroll', this.checkElementInViewAndUpdateStyle, false)
   }
 
   componentDidMount() {
-    const _self = this
+    window.jQuery = window.$ = require('jquery');
+    window.$.velocity = require('velocity-animate/velocity.js')
 
-    window.addEventListener('load', () => {
-      if (isElementInView('#home')) {
-        updateStyle(false, 'black', 'white')
-      }
-      else if (isElementInView('#landing')) {
-        updateStyle(true, 'white', 'black')
-      }
-    }, false)
-
-    window.addEventListener('scroll', () => {
-      if (isElementInView('#home')) {
-        updateStyle(false, 'black', 'white')
-      }
-      else if (isElementInView('#landing')) {
-        updateStyle(true, 'white', 'black')
-      }
-    }, false)
+    window.addEventListener('load', this.checkElementInViewAndUpdateStyle, false)
+    window.addEventListener('scroll', this.checkElementInViewAndUpdateStyle, false)
 
     $('#goToHome').on('click', (e) => {
-      smoothScrollingTo('#home');
+      this.smoothScrollingTo('#home')
     })
-
-    function smoothScrollingTo(target) {
-      $('html,body').animate({
-        scrollTop: $(target || '#landing').offset().top
-      }, 1000)
-    }
-
-    function updateStyle(isLanding, addedClass, removedClass) {
-      [$('.icon-bar'), $('.tedx_logo'), $('.tedx_link')].map((el) => {
-          el.removeClass(removedClass)
-          el.addClass(addedClass)
-          _self.setState({ isLanding: isLanding })
-      })
-    }
   }
 
   render() {
     return (
       <Layout styles={this.calculateStyles()} currentPage={'home'}
-        isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
+        isMobile={this.state.isMobile} navbarColor={'white'}>
         <section id="landing">
           <div className="section_content_container">
             <h1 className="section_content text-center white">Charoenkrung is a Prosperous City</h1>

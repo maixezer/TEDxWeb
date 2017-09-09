@@ -46,4 +46,3 @@ app.prepare()
       console.log(`=> Ready on http://localhost:${WEB_PORT}`)
     })
   })
-

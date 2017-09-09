@@ -151,5 +151,9 @@
         color: $link-hover-color;
       }
     }
+
+    .tedx_link.active {
+      color: #fc2e1f;
+    }
   }
 }

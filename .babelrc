@@ -13,6 +13,13 @@
       {
         "extensions": ["css$", "scss$"]
       }
+    ],
+    [
+      "transform-assets",
+      {
+        "extensions": ["txt", "svg", "png", "jpg"],
+        "name": "/static/[name].[ext]?[sha512:hash:base64:7]"
+      }
     ]
   ],
   "presets": [

@@ -10,8 +10,7 @@ export default class Read extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMobile: this.checkIsMobileDevice(props.userAgent),
-      navbarColor: 'black'
+      isMobile: this.checkIsMobileDevice(userAgent)
     }
   }
 
@@ -42,8 +41,8 @@ export default class Read extends Component {
 
   render() {
     return (
-      <Layout styles={this.calculateStyles()} active={{ read: "#fc2e1f" }}
-        isMobile={this.state.isMobile} navbarColor={this.state.navbarColor}>
+      <Layout styles={this.calculateStyles()} currentPage={'read'}
+        isMobile={this.state.isMobile} navbarColor={'black'}>
         <div id="tedx_read_container">
           {
             this.getContents().map((content, index) => (

@@ -4,7 +4,7 @@ import Navbar from './navbar'
 
 import stylesheet from 'styles/application.scss'
 
-const Layout = ({ children, isMobile, navbarColor, active, styles = { height: 'inherit', width: 'inherit', bgColor: '#fff', headerColor: 'transparent' } }) => (
+const Layout = ({ children, isMobile, navbarColor, currentPage, styles = { height: 'inherit', width: 'inherit', bgColor: '#fff', headerColor: 'transparent' } }) => (
   <div id="tedx_body">
     <Head>
       <title>TEDxCharoenkrung</title>
@@ -13,7 +13,7 @@ const Layout = ({ children, isMobile, navbarColor, active, styles = { height: 'i
     </Head>
     <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
     <header id="tedx_header" style={{ 'backgroundColor': styles.headerColor }}>
-      <Navbar active={active} isMobile={isMobile} navbarColor={navbarColor} />
+      <Navbar currentPage={currentPage} isMobile={isMobile} navbarColor={navbarColor} />
     </header>
     <main id="tedx_main_container"
       style={{
