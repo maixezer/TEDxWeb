@@ -20,7 +20,7 @@
     }
   }
 
-  .content_container {
+  .image_content_container {
     display: table;
     position: relative;
     width: 100%;
@@ -49,7 +49,7 @@
         display: block;
         width: 300px;
         margin: 1.5rem auto 0 auto;
-        font-family: 'promptSemiBold';
+        font-family: 'latoBold';
         font-size: 0.5em;
         color: $white;
         text-transform: uppercase;
