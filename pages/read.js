@@ -25,8 +25,7 @@ export default class Read extends Component {
   }
 
   getContents() {
-    const path = this.props.isMobile ? 'mobile' : 'desktop'
-    return contents(path)
+    return contents()
   }
 
   calculateStyles() {
@@ -45,7 +44,7 @@ export default class Read extends Component {
         <div id="tedx_read_container">
           {
             this.getContents().map((content, index) => (
-              <Content key={content.uid} content={content} 
+              <Content key={content.uid} content={content}
                 isMobile={this.state.isMobile} enabledHover={true}/>
             ))
           }
