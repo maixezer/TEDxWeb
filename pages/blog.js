@@ -49,7 +49,6 @@ export default class Blog extends Component {
       <Layout styles={this.calculateStyles()} currentPage={'blog'}
         isMobile={this.state.isMobile} navbarColor={'black'}>
         <div id="tedx_blog_container">
-          {console.warn(this.state.isMobile)}
           <Content content={this.getContents().find((c) => c.uid === this.props.uid)} 
             isMobile={this.state.isMobile} enabledHover={false} fromBlog={true}/>
         </div>

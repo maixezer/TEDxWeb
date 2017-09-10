@@ -49,15 +49,15 @@ export default class Home extends Component {
 
   checkElementInViewAndUpdateStyle() {
     // detect scroll end
-    clearTimeout($.data(this, 'scrollTimer'));
-    $.data(this, 'scrollTimer', setTimeout(() => {
-      if (isElementInView('#home')) {
-        this.smoothScrollingTo('#home')
-      }
-      else if (isElementInView('#landing')) {
-        this.smoothScrollingTo('#landing')
-      }
-    }, 1000))
+    // clearTimeout($.data(this, 'scrollTimer'));
+    // $.data(this, 'scrollTimer', setTimeout(() => {
+    //   if (isElementInView('#home')) {
+    //     this.smoothScrollingTo('#home')
+    //   }
+    //   else if (isElementInView('#landing')) {
+    //     this.smoothScrollingTo('#landing')
+    //   }
+    // }, 1000))
 
     if (isElementInView('#home')) {
       this.updateStyle(false, 'black', 'white')
