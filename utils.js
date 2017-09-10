@@ -11,6 +11,13 @@ export const isElementInView = (element, fullyInView = false) => {
   if (fullyInView === true) {
     return ((pageTop < elementTop) && (pageBottom > elementBottom));
   } else {
-    return ((elementTop < pageBottom - 100) && (elementBottom > pageTop - 100));
+    return ((elementTop < pageBottom) && (elementBottom > pageTop));
   }
+}
+
+export const easeInOutQuad = (t, b, c, d) => {
+  t /= d / 2
+  if (t < 1) return c / 2 * t * t + b
+  t--
+  return -c / 2 * (t * (t - 2) - 1) + b
 }

@@ -1,10 +1,11 @@
 import { Component } from 'react'
 import $ from 'jquery'
+import jump from 'jump.js'
 
 import Layout from '../components/layout'
 import Carousel from '../components/carousel'
 
-import { isElementInView } from '../utils'
+import { isElementInView, easeInOutQuad } from '../utils'
 
 export default class Home extends Component {
   constructor(props) {
@@ -48,22 +49,27 @@ export default class Home extends Component {
   }
 
   checkElementInViewAndUpdateStyle() {
+    let scroll = false
     // detect scroll end
     // clearTimeout($.data(this, 'scrollTimer'));
     // $.data(this, 'scrollTimer', setTimeout(() => {
     //   if (isElementInView('#home')) {
-    //     this.smoothScrollingTo('#home')
+    //     this.smoothScrollingTo('home')
     //   }
     //   else if (isElementInView('#landing')) {
-    //     this.smoothScrollingTo('#landing')
+    //     this.smoothScrollingTo('landing')
     //   }
-    // }, 1000))
+    // }, 500))
 
-    if (isElementInView('#home')) {
-      this.updateStyle(false, 'black', 'white')
-    }
-    else if (isElementInView('#landing')) {
-      this.updateStyle(true, 'white', 'black')
+    if (!scroll) {
+      if (isElementInView('#home')) {
+        scroll = true
+        this.updateStyle(false, 'black', 'white')
+      }
+      else if (isElementInView('#landing')) {
+        scroll = true
+        this.updateStyle(true, 'white', 'black')
+      }
     }
   }
 
@@ -75,11 +81,15 @@ export default class Home extends Component {
     })
   }
 
-  smoothScrollingTo(target) {
-    $('html,body').velocity('scroll', {
-      offset: $(target || '#landing').offset().top,
-      duration: 1000,
-      mobileHA: false
+  smoothScrollingTo(to, duration = 1000) {
+    const elementTo = document.getElementById(to).offsetTop
+
+    jump('body', {
+      duration: duration,
+      offset: elementTo,
+      callback: undefined,
+      easing: easeInOutQuad,
+      a11y: false
     })
   }
 
@@ -89,14 +99,11 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    window.jQuery = window.$ = require('jquery');
-    window.$.velocity = require('velocity-animate/velocity.js')
-
     window.addEventListener('load', this.checkElementInViewAndUpdateStyle, false)
     window.addEventListener('scroll', this.checkElementInViewAndUpdateStyle, false)
 
     $('#goToHome').on('click', (e) => {
-      this.smoothScrollingTo('#home')
+      this.smoothScrollingTo('home')
     })
   }
 
