@@ -10,6 +10,17 @@
     background-image: url('../../static/images/desktop/landing_bg.jpg');
   }
 
+  @include media-breakpoint-up(sm) {
+    iframe {
+      width: 560px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    iframe {
+      width: 100%;
+    }
+  }
+
   .white {
     color: $white;
   }
