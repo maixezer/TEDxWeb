@@ -83,18 +83,21 @@ class Navbar extends Component {
         <div className={`collapse navbar-collapse ${this.state.isOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
             <li className="nav-item tedx_menu_item">
-              <a id="watch" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#">{this.props.t('common:watch')}</a>
+              <a id="watch" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo()}>{this.props.t('common:watch')}</a>
             </li>
             <Link prefetch href={{ pathname: '/read', query: this.modifyLanguageQuery() }}>
               <li className="nav-item tedx_menu_item">
                 <a id="read" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('read')}>{this.props.t('common:read')}</a>
               </li>
             </Link>
-            <Link prefetch href={{ pathname: '/partners', query: this.modifyLanguageQuery() }}>
+            <li className="nav-item tedx_menu_item">
+              <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo()}>{this.props.t('common:partners')}</a>
+            </li>
+            {/* <Link prefetch href={{ pathname: '/partners', query: this.modifyLanguageQuery() }}>
               <li className="nav-item tedx_menu_item">
                 <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('partners')}>{this.props.t('common:partners')}</a>
               </li>
-            </Link>
+            </Link> */}
             <Link prefetch href={{ pathname: '/about', query: this.modifyLanguageQuery() }}>
               <li className="nav-item tedx_menu_item">
                 <a id="about" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('about')}>{this.props.t('common:about')}</a>
