@@ -9,6 +9,7 @@ import contents from '../contents'
 
 import Layout from '../components/layout'
 import Content from '../components/content'
+import $ from 'jquery'
 
 class Blog extends Component {
   constructor(props) {
@@ -86,11 +87,7 @@ class Blog extends Component {
             <h1 className="topic">{this.getContent().content.topic}</h1>
             <h1 className="topic_extend">{this.getContent().content.topic_extend}</h1>
             <span className="separator bottom"></span>
-            <div className="main_content">
-              <span>{this.getContent().content.desc.one}</span>
-              <span>{this.getContent().content.desc.two}</span>
-              <span>{this.getContent().content.desc.three}</span>
-            </div>
+            <div className="main_content" dangerouslySetInnerHTML={{__html: this.getContent().content.desc}}></div>
             <span className="separator bottom"></span>
             <div className="text-center link_container">
               {
