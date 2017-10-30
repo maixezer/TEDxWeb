@@ -46,13 +46,35 @@
   }
 
   .link_container {
+    position: relative;
     width: 100%;
     padding: 1.5rem 0;
 
     > a {
+      width: 100px;
       text-transform: uppercase;
       color: $desc_content_color;
       font-size: 0.8em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      float: none;
+      height: 1rem;
+      line-height: 1rem;
+
+      @include media-breakpoint-up(md) {
+        width: 200px;
+      }
+    }
+
+    > a:first-child {
+      float: left;
+      text-align: left;
+    }
+
+    > a:last-child {
+      float: right;
+      text-align: right;
     }
   }
 }

@@ -5,15 +5,18 @@ import jump from 'jump.js'
 import Layout from '../components/layout'
 import Carousel from '../components/carousel'
 
+import { withRouter } from 'next/router'
+import { translate } from 'react-i18next'
+import i18n from '../i18n'
+
 import { isElementInView, easeInOutQuad } from '../utils'
 
-export default class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props)
-    const userAgent = props.userAgent
     this.state = {
       isLanding: true,
-      isMobile: this.checkIsMobileDevice(userAgent)
+      isMobile: props.userAgent ? this.checkIsMobileDevice(props.userAgent) : false
     }
 
     this.checkElementInViewAndUpdateStyle = this.checkElementInViewAndUpdateStyle.bind(this)
@@ -21,7 +24,15 @@ export default class Home extends Component {
     this.smoothScrollingTo = this.smoothScrollingTo.bind(this)
   }
 
-  static getInitialProps({ req }) {
+  static async getInitialProps({ req }) {
+    if (req && !process.browser) {
+      return Object.assign(
+        i18n.getInitialProps(req, ['common', 'landing', 'home']),
+        req
+          ? { userAgent: req.headers['user-agent'] }
+          : { userAgent: navigator.userAgent }
+      )
+    }
     return req
       ? { userAgent: req.headers['user-agent'] }
       : { userAgent: navigator.userAgent }
@@ -110,10 +121,10 @@ export default class Home extends Component {
   render() {
     return (
       <Layout styles={this.calculateStyles()} currentPage={'home'}
-        isMobile={this.state.isMobile} navbarColor={'white'}>
+        isMobile={this.state.isMobile} navbarColor={'white'} router={this.props.router}>
         <section id="landing">
           <div className="section_content_container">
-            <h1 className="section_content text-center white">Charoenkrung is a Prosperous City</h1>
+            <h1 className="section_content text-center white">{this.props.t('main_caption')}</h1>
           </div>
           <a className="section_bottom" id="goToHome">
             <span className="scroll_down"></span>
@@ -126,3 +137,5 @@ export default class Home extends Component {
     )
   }
 }
+
+export default withRouter(translate(['landing', 'home'], { i18n, wait: process.browser })(Home))

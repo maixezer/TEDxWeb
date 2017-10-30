@@ -1,26 +1,40 @@
 import { Component } from 'react'
 import Link from 'next/link'
+import Router from 'next/router'
+import { withRouter } from 'next/router'
+import { translate } from 'react-i18next'
 
+import i18n from '../i18n'
 import contents from '../contents'
 
 import Layout from '../components/layout'
 import Content from '../components/content'
 
-export default class Blog extends Component {
+class Blog extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMobile: this.checkIsMobileDevice(props.userAgent)
+      isMobile: props.userAgent ? this.checkIsMobileDevice(props.userAgent) : false
     }
   }
 
-  static getInitialProps({ req, res, query }) {
-    if (!query || !query.uid) {
+  static async getInitialProps({ req, res, query }) {
+    const content = contents().find((c) => c.uid === query.uid)
+    if (!query || !query.uid || !content) {
       res.writeHead(301, {
         Location: '/read'
       })
       res.end()
       res.finished = true
+    }
+
+    if (req && !process.browser) {
+      return Object.assign(
+        i18n.getInitialProps(req, ['common', 'blog']),
+        req && query
+          ? { userAgent: req.headers['user-agent'], uid: query.uid }
+          : { userAgent: navigator.userAgent, uid: query.uid }
+      )
     }
     return req && query
       ? { userAgent: req.headers['user-agent'], uid: query.uid }
@@ -36,6 +50,22 @@ export default class Blog extends Component {
     return contents().find((c) => c.uid === this.props.uid)
   }
 
+  findBefore() {
+    const index = contents().findIndex((c) => c.uid === this.props.uid)
+    return {
+      idx: index - 1,
+      before: contents()[index - 1]
+    }
+  }
+
+  findAfter() {
+    const index = contents().findIndex((c) => c.uid === this.props.uid)
+    return {
+      idx: index + 1,
+      after: contents()[index + 1]
+    }
+  }
+
   calculateStyles() {
     return {
       height: 'inherit',
@@ -48,7 +78,7 @@ export default class Blog extends Component {
   render() {
     return (
       <Layout styles={this.calculateStyles()} currentPage={'blog'}
-        isMobile={this.state.isMobile} navbarColor={'black'}>
+        isMobile={this.state.isMobile} navbarColor={'black'} router={this.props.router}>
         <div id="tedx_blog_container">
           <Content content={this.getContent()}
             isMobile={this.state.isMobile} enabledHover={false} fromBlog={true} />
@@ -63,7 +93,21 @@ export default class Blog extends Component {
             </div>
             <span className="separator bottom"></span>
             <div className="text-center link_container">
+              {
+                this.findBefore().idx != -1
+                  ? <Link prefetch href={{ pathname: this.props.router.pathname, query: { uid: this.findBefore().before.uid } }}>
+                      <a href='#'>{this.findBefore().before.content.topic}</a>
+                    </Link>
+                  : undefined
+              }
               <Link prefetch href='/read'><a href='#'>back to read</a></Link>
+              {
+                this.findAfter().idx < contents().length
+                  ? <Link prefetch href={{ pathname: this.props.router.pathname, query: { uid: this.findAfter().after.uid } }}>
+                      <a href='#'>{this.findAfter().after.content.topic}</a>
+                    </Link>
+                  : undefined
+              }
             </div>
           </div>
         </div>
@@ -71,3 +115,5 @@ export default class Blog extends Component {
     )
   }
 }
+
+export default withRouter(translate(['blog'], { i18n, wait: process.browser })(Blog))

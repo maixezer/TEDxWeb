@@ -1,7 +1,8 @@
 import { Component } from 'react'
 import $ from 'jquery'
+import { translate } from 'react-i18next'
 
-export default class Carousel extends Component {
+class Carousel extends Component {
   constructor(props) {
     super(props)
   }
@@ -60,3 +61,5 @@ export default class Carousel extends Component {
     )
   }
 } 
+
+export default translate()(Carousel)

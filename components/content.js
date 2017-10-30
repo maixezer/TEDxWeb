@@ -1,5 +1,6 @@
 import moment from 'moment-timezone'
 import Link from 'next/link'
+import { translate } from 'react-i18next'
 
 const Content = ({ content, isMobile, enabledHover, fromBlog = false }) => (
   <Link href={{ pathname: '/blog', query: { uid: content.uid } }}>
@@ -52,4 +53,4 @@ const Content = ({ content, isMobile, enabledHover, fromBlog = false }) => (
   </Link>
 )
 
-export default Content
+export default translate()(Content)

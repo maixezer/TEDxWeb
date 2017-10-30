@@ -3,17 +3,29 @@ import { Component } from 'react'
 import Layout from '../components/layout'
 import Content from '../components/content'
 
+import { withRouter } from 'next/router'
+import { translate } from 'react-i18next'
+
+import i18n from '../i18n'
 import contents from '../contents'
 
-export default class Read extends Component {
+class Read extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isMobile: this.checkIsMobileDevice(props.userAgent)
+      isMobile: props.userAgent ? this.checkIsMobileDevice(props.userAgent) : false
     }
   }
 
-  static getInitialProps({ req }) {
+  static async getInitialProps({ req }) {
+    if (req && !process.browser) {
+      return Object.assign(
+        i18n.getInitialProps(req, ['common', 'read']),
+        req
+          ? { userAgent: req.headers['user-agent'] }
+          : { userAgent: navigator.userAgent }
+      )
+    }
     return req
       ? { userAgent: req.headers['user-agent'] }
       : { userAgent: navigator.userAgent }
@@ -40,7 +52,7 @@ export default class Read extends Component {
   render() {
     return (
       <Layout styles={this.calculateStyles()} currentPage={'read'}
-        isMobile={this.state.isMobile} navbarColor={'black'}>
+        isMobile={this.state.isMobile} navbarColor={'black'} router={this.props.router}>
         <div id="tedx_read_container">
           {
             this.getContents().map((content, index) => (
@@ -53,3 +65,5 @@ export default class Read extends Component {
     )
   }
 }
+
+export default withRouter(translate(['read'], { i18n, wait: process.browser })(Read))
