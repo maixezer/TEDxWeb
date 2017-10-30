@@ -1,6 +1,7 @@
 import moduleAlias from 'module-alias'
 import next from 'next'
 import express from 'express'
+import compression from 'compression'
 
 import { IS_DEV, WEB_PORT, STATIC_PATH } from './const'
 
@@ -30,6 +31,7 @@ i18n
     app.prepare()
       .then(() => {
         const server = express()
+        server.use(compression())
         // enable middleware for i18next
         server.use(i18nextMiddleware.handle(i18n))
         
