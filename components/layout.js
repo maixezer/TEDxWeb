@@ -37,6 +37,13 @@ export default class Layout extends Component {
           <meta name='viewport' content='initiali-scale=1.0, width=device-width' />
           <link rel="icon" href="static/icons/tedx.ico" />
           <meta name="description" content="TEDxChareonkrung คือการรวมตัวของกลุ่มคนที่เชื่อว่า ‘พลังความคิด’ สามารถสร้างแรงขับอันแรงกล้าเพื่อพัฒนา ‘กรุง’ ของเราให้ ‘เจริญ’ ยิ่งขึ้น"/>
+
+          <meta property="og:title" content="TEDxCharoenkrung" />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="https://tedxcharoenkrung.com/statici/images/tedx_charoenkrung.jpg" />
+          <meta property="og:url" content="https://tedxcharoenkrung.com" />
+          <meta property="og:site_name" content="TEDxCharoenkrung" />
+          <meta property="og:description" content="TEDxChareonkrung คือการรวมตัวของกลุ่มคนที่เชื่อว่า ‘พลังความคิด’ สามารถสร้างแรงขับอันแรงกล้าเพื่อพัฒนา ‘กรุง’ ของเราให้ ‘เจริญ’ ยิ่งขึ้น" />
         </Head>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <header id="tedx_header" style={{ 'backgroundColor': styles.headerColor }}>
