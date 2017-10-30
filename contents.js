@@ -737,7 +737,7 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
     {
       uid: '334a3cf4-8eac-48bd-b80f-29e91d9906dc',
       image: {
-        url: 'static/images/contents/14_1.jpg',
+        url: 'static/images/contents/14_01.jpg',
         topic: 'อินสตาแกรม...ทำให้เสียสุขภาพจิต',
         desc: 'เคยมั้ยที่รู้สึกหดหู่เวลาเล่นไอจี?'
       },
