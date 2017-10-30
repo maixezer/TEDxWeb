@@ -47,7 +47,7 @@ export default class Layout extends Component {
             height: styles.height,
             width: styles.width,
             backgroundColor: styles.bgColor,
-            display: 'table'
+            display: currentPage !== 'blog' ? 'table' : 'block'
           }}>
           {children}
         </main>
