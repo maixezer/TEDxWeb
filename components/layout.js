@@ -40,7 +40,7 @@ export default class Layout extends Component {
 
           <meta property="og:title" content="TEDxCharoenkrung" />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="//static/images/tedx_charoenkrung.jpg" />
+          <meta property="og:image" content="http://s3-ap-southeast-1.amazonaws.com/tedxcharoenkrung/tedx_charoenkrung.jpg" />
           <meta property="og:url" content="https://tedxcharoenkrung.com" />
           <meta property="og:site_name" content="TEDxCharoenkrung" />
           <meta property="og:description" content="TEDxChareonkrung คือการรวมตัวของกลุ่มคนที่เชื่อว่า ‘พลังความคิด’ สามารถสร้างแรงขับอันแรงกล้าเพื่อพัฒนา ‘กรุง’ ของเราให้ ‘เจริญ’ ยิ่งขึ้น" />
