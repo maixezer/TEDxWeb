@@ -81,7 +81,7 @@ class Blog extends Component {
         isMobile={this.state.isMobile} navbarColor={'black'} router={this.props.router}>
         <div id="tedx_blog_container">
           <Content content={this.getContent()}
-            isMobile={this.state.isMobile} enabledHover={false} fromBlog={true} />
+            isMobile={this.state.isMobile} enabledHover={false} fromBlog={true} lng={this.props.router.query.lng}/>
           <div className="desc_content_container">
             <h1 className="topic">{this.getContent().content.topic}</h1>
             <h1 className="topic_extend">{this.getContent().content.topic_extend}</h1>
@@ -95,7 +95,7 @@ class Blog extends Component {
             <div className="text-center link_container">
               {
                 this.findBefore().idx != -1
-                  ? <Link prefetch href={{ pathname: this.props.router.pathname, query: { uid: this.findBefore().before.uid } }}>
+                  ? <Link prefetch href={{ pathname: '/blog', query: { uid: this.findBefore().before.uid, lng: this.props.router.query.lng } }}>
                       <a href='#'>{this.findBefore().before.content.topic}</a>
                     </Link>
                   : undefined
@@ -103,7 +103,7 @@ class Blog extends Component {
               <Link prefetch href='/read'><a href='#'>back to read</a></Link>
               {
                 this.findAfter().idx < contents().length
-                  ? <Link prefetch href={{ pathname: this.props.router.pathname, query: { uid: this.findAfter().after.uid } }}>
+                  ? <Link prefetch href={{ pathname: '/blog', query: { uid: this.findAfter().after.uid, lng: this.props.router.query.lng } }}>
                       <a href='#'>{this.findAfter().after.content.topic}</a>
                     </Link>
                   : undefined

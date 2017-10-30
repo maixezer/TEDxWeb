@@ -41,10 +41,32 @@ class Navbar extends Component {
     $(`#${this.state.currentPage}`).addClass('active')
   }
 
+  getParameterByName(name, url) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  modifyLanguageQuery(lng) {
+    const currentPath = this.props.router.pathname
+    const currentLngQuery = this.props.router.query.lng
+    const lngQuery = this.getParameterByName('lng', this.props.router.asPath)
+    const uidQuery = this.getParameterByName('uid', this.props.router.asPath)
+
+    if (currentPath !== '/blog' && uidQuery && lngQuery) return Object.assign({}, { lng: lngQuery })
+    if (uidQuery && lngQuery && lng) {
+      return Object.assign({}, { uid: uidQuery }, lng)
+    }
+    return Object.assign({}, lng ? lng : {lng: currentLngQuery})
+  }
+
   render() {
     return (
       <nav className="navbar navbar-expand-md bg-faded justify-content-center tedx_navbar">
-        <Link prefetch href='/'>
+        <Link prefetch href={{ pathname: '/', query: this.modifyLanguageQuery() }}>
           <a className={`tedx_logo navbar-brand mr-auto ${this.state.colorStyle}`} href="#"
             onClick={() => this.navigateTo()} >
             <span className="sr-only">TEDxCharoenkrung</span>
@@ -63,26 +85,26 @@ class Navbar extends Component {
             <li className="nav-item tedx_menu_item">
               <a id="watch" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#">{this.props.t('common:watch')}</a>
             </li>
-            <Link prefetch href='/read'>
+            <Link prefetch href={{ pathname: '/read', query: this.modifyLanguageQuery() }}>
               <li className="nav-item tedx_menu_item">
                 <a id="read" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('read')}>{this.props.t('common:read')}</a>
               </li>
             </Link>
-            <Link prefetch href='/partners'>
+            <Link prefetch href={{ pathname: '/partners', query: this.modifyLanguageQuery() }}>
               <li className="nav-item tedx_menu_item">
                 <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('partners')}>{this.props.t('common:partners')}</a>
               </li>
             </Link>
-            <Link prefetch href='/about'>
+            <Link prefetch href={{ pathname: '/about', query: this.modifyLanguageQuery() }}>
               <li className="nav-item tedx_menu_item">
                 <a id="about" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('about')}>{this.props.t('common:about')}</a>
               </li>
             </Link>
-            <Link href={{ pathname: this.props.router.pathname, query: { lng: 'en' } }}>
+            <Link href={{ pathname: this.props.router.pathname, query: this.modifyLanguageQuery({ lng: 'en' }) }}>
               <li className="nav-item tedx_menu_item">
-                <span 
-                  id="lngEN" 
-                  className={`nav-link tedx_link`} 
+                <span
+                  id="lngEN"
+                  className={`nav-link tedx_link`}
                   style={{
                     height: 24,
                     width: 24,
@@ -91,16 +113,16 @@ class Navbar extends Component {
                     backgroundSize: 'contain',
                     cursor: 'pointer',
                     display: 'block'
-                  }} 
+                  }}
                   onClick={() => this.navigateTo()}>
                 </span>
               </li>
             </Link>
-            <Link href={{ pathname: this.props.router.pathname, query: { lng: 'th' } }}>
+            <Link href={{ pathname: this.props.router.pathname, query: this.modifyLanguageQuery({ lng: 'th' }) }}>
               <li className="nav-item tedx_menu_item">
-              <span 
-                  id="lngTH" 
-                  className={`nav-link tedx_link`} 
+                <span
+                  id="lngTH"
+                  className={`nav-link tedx_link`}
                   style={{
                     height: 24,
                     width: 24,
@@ -109,7 +131,7 @@ class Navbar extends Component {
                     backgroundSize: 'contain',
                     cursor: 'pointer',
                     display: 'block'
-                  }} 
+                  }}
                   onClick={() => this.navigateTo()}>
                 </span>
               </li>
