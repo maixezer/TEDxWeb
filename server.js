@@ -61,6 +61,24 @@ i18n
           return app.render(req, res, '/partners', req.query)
         })
 
+        server.get('/robots.txt', (req, res) => {
+          return res.status(200).sendFile('robots.txt', {
+            root: __dirname + '/static/seo',
+            headers: {
+              'Content-Type': 'text/plain;charset=UTF-8',
+            }
+          })
+        })
+
+        server.get('/sitemap.xml', (req, res) => {
+          return res.status(200).sendFile('sitemap.xml', {
+            root: __dirname + '/static/seo',
+            headers: {
+              'Content-Type': 'text/xml;charset=UTF-8',
+            }
+          })
+        })
+
         server.get('*', (req, res) => {
           return handle(req, res)
         })

@@ -32,8 +32,11 @@ export default class Layout extends Component {
         <Head>
           <title>TEDxCharoenkrung</title>
           <meta charSet='utf-8' />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+          <meta name="google-site-verification" content="vG0fl4beH0zBzva-O48fr36I4vuPh7kRxa_VwguUT1w" />
           <meta name='viewport' content='initiali-scale=1.0, width=device-width' />
           <link rel="icon" href="static/icons/tedx.ico" />
+          <meta name="description=" content="TEDxChareonkrung คือการรวมตัวของกลุ่มคนที่เชื่อว่า ‘พลังความคิด’ สามารถสร้างแรงขับอันแรงกล้าเพื่อพัฒนา ‘กรุง’ ของเราให้ ‘เจริญ’ ยิ่งขึ้น"/>
         </Head>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <header id="tedx_header" style={{ 'backgroundColor': styles.headerColor }}>
