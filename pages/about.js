@@ -1,17 +1,28 @@
 import { Component } from 'react'
 import $ from 'jquery'
+import { withRouter } from 'next/router'
+import { translate } from 'react-i18next'
+
+import i18n from '../i18n'
 import Layout from '../components/layout'
 
-export default class About extends Component {
+class About extends Component {
   constructor(props) {
     super(props)
-    const userAgent = props.userAgent
     this.state = {
-      isMobile: this.checkIsMobileDevice(userAgent)
+      isMobile: props.userAgent ? this.checkIsMobileDevice(props.userAgent) : false
     }
   }
 
-  static getInitialProps({ req }) {
+  static async getInitialProps({ req }) {
+    if (req && !process.browser) {
+      return Object.assign(
+        i18n.getInitialProps(req, ['common', 'about']),
+        req
+          ? { userAgent: req.headers['user-agent'] }
+          : { userAgent: navigator.userAgent }
+      )
+    }
     return req
       ? { userAgent: req.headers['user-agent'] }
       : { userAgent: navigator.userAgent }
@@ -74,31 +85,22 @@ export default class About extends Component {
   render() {
     return (
       <Layout styles={this.calculateStyles()} currentPage={'about'}
-        isMobile={this.state.isMobile} navbarColor={'white'}>
+        isMobile={this.state.isMobile} navbarColor={'white'} router={this.props.router}>
         <div id="tedx_about_container">
           <div id="tedx_history">
             <div id="history_head">
-              History
+              {this.props.t('history.title')}
             </div>
             <div id="history_content">
-              TEDxCharoenkrung is an independently organized TED event.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Mauris imperdiet sed libero gravida ultrices.
-              Mauris lobortis ex vel orci venenatis venenatis.
-              Sed vitae vulputate risus, ac hendrerit neque.
-              Sed sit amet lectus tortor. Ut ullamcorper congue ante non venenatis.
-              Nullam volutpat et orci nec placerat.
-              Ut feugiat neque sit amet pharetra scelerisque.
-              Vestibulum sodales leo lectus, a sodales metus consectetur sit amet.
-              Nam ultrices tempor ante, in rhoncus augue tincidunt sit amet.
+              {this.props.t('history.content')}
             </div>
             <div id="history_bottom">
-              See all our teamates
+              {this.props.t('history.bottom')}
             </div>
           </div>
           <div id="tedx_contact">
             <div id="contact_head">
-              Contact
+              {this.props.t('contact.title')}
             </div>
             <div id="contact_content">
               {this.contactList()}
@@ -109,3 +111,5 @@ export default class About extends Component {
     )
   }
 }
+
+export default withRouter(translate(['about'], { i18n, wait: process.browser })(About))

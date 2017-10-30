@@ -1,18 +1,29 @@
 import { Component } from 'react'
 
+import { withRouter } from 'next/router'
+import { translate } from 'react-i18next'
+
+import i18n from '../i18n'
 import Layout from '../components/layout'
 import Partners from '../components/partners'
 
-export default class Partner extends Component {
+class Partner extends Component {
   constructor(props) {
     super(props)
-    const userAgent = props.userAgent
     this.state = {
-      isMobile: this.checkIsMobileDevice(userAgent)
+      isMobile: props.userAgent ? this.checkIsMobileDevice(props.userAgent) : false
     }
   }
 
-  static getInitialProps({ req }) {
+  static async getInitialProps({ req }) {
+    if (req && !process.browser) {
+      return Object.assign(
+        i18n.getInitialProps(req, ['common', 'partners']),
+        req
+          ? { userAgent: req.headers['user-agent'] }
+          : { userAgent: navigator.userAgent }
+      )
+    }
     return req
       ? { userAgent: req.headers['user-agent'] }
       : { userAgent: navigator.userAgent }
@@ -77,7 +88,7 @@ export default class Partner extends Component {
   render() {
     return (
       <Layout styles={this.calculateStyles()} currentPage={'partners'}
-        isMobile={this.state.isMobile} navbarColor={'black'}>
+        isMobile={this.state.isMobile} navbarColor={'black'} router={this.props.router}>
         <div id="tedx_partners_container">
           <div id="tedx_partners_header_top">
             PARTNERS
@@ -107,3 +118,5 @@ export default class Partner extends Component {
     )
   }
 }
+
+export default withRouter(translate(['partners'], { i18n, wait: process.browser })(Partner))

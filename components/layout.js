@@ -19,17 +19,25 @@ export default class Layout extends Component {
   }
 
   render() {
-    const { children, isMobile, navbarColor, currentPage, styles = { height: 'inherit', width: 'inherit', bgColor: '#fff', headerColor: 'transparent' } } = this.props
+    const { 
+      children, 
+      isMobile, 
+      navbarColor,
+      currentPage, 
+      styles = { height: 'inherit', width: 'inherit', bgColor: '#fff', headerColor: 'transparent' },
+      router
+    } = this.props
     return (
       <div id="tedx_body">
         <Head>
           <title>TEDxCharoenkrung</title>
           <meta charSet='utf-8' />
           <meta name='viewport' content='initiali-scale=1.0, width=device-width' />
+          <link rel="icon" href="static/icons/tedx.ico" />
         </Head>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <header id="tedx_header" style={{ 'backgroundColor': styles.headerColor }}>
-          <Navbar currentPage={currentPage} isMobile={isMobile} navbarColor={navbarColor} />
+          <Navbar currentPage={currentPage} isMobile={isMobile} navbarColor={navbarColor} router={router}/>
         </header>
         <main id="tedx_main_container"
           style={{
