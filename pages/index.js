@@ -123,11 +123,7 @@ class Home extends Component {
       <Layout styles={this.calculateStyles()} currentPage={'home'}
         isMobile={this.state.isMobile} navbarColor={'white'} router={this.props.router}>
         <section id="landing">
-
-          <div className="section_content_container">
-            <span><center><iframe src="https://drive.google.com/file/d/0B1Hhr1QXJewjY1FacnV6a211bTQ/preview" height="315"></iframe></center></span><br></br>
-            <h1 className="section_content text-center white">{this.props.t('main_caption')}</h1>
-          </div>
+          <iframe src="https://www.youtube.com/embed/n55JDHCa8D8?controls=0&showinfo=0&rel=0&autoplay=1&loop=1" frameBorder="0"></iframe>
           <a className="section_bottom" id="goToHome">
             <span className="scroll_down"></span>
           </a>
