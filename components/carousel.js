@@ -1,46 +1,13 @@
-import { Component } from 'react'
+import { PureComponent } from 'react'
 import $ from 'jquery'
+import Link from 'next/link'
 import { translate } from 'react-i18next'
 
-class Carousel extends Component {
+import contents from '../contents'
+
+class Carousel extends PureComponent {
   constructor(props) {
     super(props)
-  }
-
-  carouselItems() {
-    const path = this.props.isMobile ? 'mobile' : 'desktop'
-    const items = [
-      {
-        imageUrl: `static/images/${path}/home_bg.jpg`,
-        topic: 'Charoenkrung Road',
-        desc: 'กรุงเจริญ = เจริญกรุง'
-      },
-      {
-        imageUrl: 'static/images/contents/bg_01.jpg',
-        topic: 'Lalalala',
-        desc: 'ลาลาลาลา'
-      },
-      {
-        imageUrl: 'static/images/contents/bg_02.jpg',
-        topic: 'Why Charoenkrung?',
-        desc: 'ทำไมต้องเจริญกรุง'
-      },
-      {
-        imageUrl: 'static/images/contents/bg_03.jpg',
-        topic: 'Everything has its first time...',
-        desc: 'ครั้งแรกของ TED'
-      }
-    ]
-
-    return items.map((item, index) => (
-      <div key={index} className={`carousel-item ${index === 1 ? 'active' : ''} bg_plus_pos_y`}
-        style={{ 'backgroundImage': `url(${item.imageUrl})` }}>
-        <div className="slide_content_container">
-          <h1 className="text-center slide_content_topic">{item.topic}</h1>
-          <h1 className="text-center slide_content_desc">{item.desc}</h1>
-        </div>
-      </div>
-    ))
   }
 
   render() {
@@ -54,7 +21,23 @@ class Carousel extends Component {
             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
           </ol>
           <div className="carousel-inner" role="listbox">
-            {this.carouselItems()}
+            {
+              contents()
+                .sort(() => 0.5 - Math.random())
+                .slice()
+                .splice(0, 4)
+                .map((content, index) => (
+                  <Link key={index} prefetch href={{ pathname: '/blog', query: { uid: content.uid, lng: this.props.router.query.lng } }}>
+                    <div className={`carousel-item ${index === 1 ? 'active' : ''} bg_plus_pos_y`}
+                      style={{ 'backgroundImage': `url(${content.image.url})` }}>
+                      <div className="slide_content_container">
+                        <h1 className="text-center slide_content_topic">{content.image.topic}</h1>
+                        <h1 className="text-center slide_content_desc">{content.image.desc}</h1>
+                      </div>
+                    </div>
+                  </Link>
+                ))
+              }
           </div>
           <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -68,6 +51,6 @@ class Carousel extends Component {
       </div>
     )
   }
-} 
+}
 
 export default translate()(Carousel)

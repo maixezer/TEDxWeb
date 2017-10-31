@@ -54,7 +54,6 @@ class Read extends Component {
       <Layout styles={this.calculateStyles()} currentPage={'read'}
         isMobile={this.state.isMobile} navbarColor={'black'} router={this.props.router}>
         <div id="tedx_read_container">
-          {console.log(this.props.router.query)}
           {
             this.getContents().map((content, index) => (
               <Content key={content.uid} content={content}

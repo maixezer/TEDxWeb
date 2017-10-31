@@ -129,7 +129,7 @@ class Home extends Component {
           </a>
         </section>
         <section id="home">
-          <Carousel isMobile={this.state.isMobile} />
+          <Carousel isMobile={this.state.isMobile} router={this.props.router}/>
         </section>
       </Layout>
     )

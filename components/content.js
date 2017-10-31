@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { translate } from 'react-i18next'
 
 const Content = ({ content, isMobile, enabledHover, fromBlog = false, lng }) => (
-  <Link href={{ pathname: '/blog', query: { uid: content.uid, lng: lng} }}>
+  <Link prefetch href={{ pathname: '/blog', query: { uid: content.uid, lng: lng} }}>
     <div className={fromBlog ? 'content' : 'content has-hover'}
       style={{
         height: fromBlog ? (isMobile ? '400px' : '800px') : '70%',
