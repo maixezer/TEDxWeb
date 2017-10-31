@@ -21,7 +21,11 @@ const Content = ({ content, isMobile, enabledHover, fromBlog = false, lng }) => 
               <div className="image_content">
                 <span className="separator top"></span>
                 <h1 className="text-center content_topic">{content.image.topic}</h1>
-                <h1 className="text-center content_desc">{content.image.desc}</h1>
+                {
+                  content.image.topic_lng === 'en'
+                  ? <h1 className="text-center content_desc">{content.image.desc}</h1>
+                  : undefined
+                }
                 <span className="separator bottom"></span>
                 <h2 className="text-center topic_date">
                   Posted date: {moment(content.postedDate).tz('Asia/Bangkok').format('LL')}

@@ -7,6 +7,7 @@ export default () => {
       image: {
         url: 'static/images/desktop/home_bg.jpg',
         topic: 'Charoenkrung Road',
+        topic_lng: 'en',
         desc: 'กรุงเจริญ = เจริญกรุง'
       },
       content: {
@@ -26,6 +27,7 @@ export default () => {
       image: {
         url: 'static/images/contents/bg_01.jpg',
         topic: 'Everything has its “1st” time',
+        topic_lng: 'en',
         desc: 'เพราะทุกสิ่งย่อมมี “ครั้งแรก”'
       },
       content: {
@@ -54,6 +56,7 @@ export default () => {
       image: {
         url: 'static/images/contents/02_1.jpg',
         topic: '“เจริญกรุง” ย่านบันทึกความทรงจำ',
+        topic_lng: 'th',
         desc: 'เพราะเครื่องมือบันทึกความทรงจำ ไม่ได้ถูกจำกัดอยู่เพียงภาพถ่าย'
       },
       content: {
@@ -89,6 +92,7 @@ export default () => {
       image: {
         url: 'static/images/contents/03_1.jpg',
         topic: '10 Most Beautiful Libraries',
+        topic_lng: 'en',
         desc: ''
       },
       content: {
@@ -202,6 +206,7 @@ export default () => {
       image: {
         url: 'static/images/contents/blank.jpg',
         topic: 'TED Performance',
+        topic_lng: 'en',
         desc: ''
       },
       content: {
@@ -258,6 +263,7 @@ export default () => {
       image: {
         url: 'static/images/contents/05_1.jpg',
         topic: '98 เปอร์เซ็นต์ของคนที่เล่นมือถือขณะทำงาน',
+        topic_lng: 'th',
         desc: 'ประสิทธิภาพจะลดลง 40 เปอร์เซ็นต์ และไอคิวลดลง 10 แต้ม'
       },
       content: {
@@ -295,6 +301,7 @@ export default () => {
       image: {
         url: 'static/images/contents/blank.jpg',
         topic: '8 สัญญาณเพื่อนซี้จอมปลอม',
+        topic_lng: 'th',
         desc: '“มีเพื่อนดีเป็นลาภอันประเสริฐ” แล้วเพื่อนซี้ของคุณตอนนี้ล่ะ จริง หรือ ปลอม?'
       },
       content: {
@@ -349,6 +356,7 @@ export default () => {
       image: {
         url: 'static/images/contents/07_1.jpg',
         topic: '“เพราะความอยากรู้อยากเห็น...ทำให้คุณฉลาดขึ้น”',
+        topic_lng: 'th',
         desc: 'คุณเคยอยากรู้อยากเห็นอะไรจนตัวสั่นหรือไม่? (โดยเฉพาะเรื่องชาวบ้าน)'
       },
       content: {
@@ -381,6 +389,7 @@ export default () => {
       image: {
         url: 'static/images/contents/08_1.jpg',
         topic: 'ทำไมถึงหงุดหงิดเวลาเห็นคนเดินช้า?',
+        topic_lng: 'th',
         desc: ''
       },
       content: {
@@ -423,6 +432,7 @@ Robert Levine นักจิตวิทยาส่งลูกศิษย์
       image: {
         url: 'static/images/contents/09_1.jpg',
         topic: 'ไอเดียที่ยิ่งใหญ่เกิดขึ้นได้ด้วย...กระดาษทิชชู่',
+        topic_lng: 'th',
         desc: 'คุณใช้กระดาษทิชชู่ทำอะไรกันบ้างนอกจาก...?'
       },
       content: {
@@ -456,6 +466,7 @@ Robert Levine นักจิตวิทยาส่งลูกศิษย์
       image: {
         url: 'static/images/contents/10_1.jpg',
         topic: 'เราเอาชีวิตของเราไปฝากไว้กับคำว่า “โชค” มากเกินไปหรือเปล่า?',
+        topic_lng: 'th',
         desc: ''
       },
       content: {
@@ -511,6 +522,7 @@ desperation, perspiration, and inspiration.” <br>
       image: {
         url: 'static/images/contents/11_1.jpg',
         topic: 'เจริญกรุง ย่าน..ที่ระลึก',
+        topic_lng: 'th',
         desc: ''
       },
       content: {
@@ -601,6 +613,7 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
       image: {
         url: 'static/images/contents/blank.jpg',
         topic: '12 ราศี กับนิสัยไม่ดีที่ควรแก้ (แล้วชีวิตจะดีขึ้น)',
+        topic_lng: 'th',
         desc: ''
       },
       content: {
@@ -683,6 +696,7 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
       image: {
         url: 'static/images/contents/blank.jpg',
         topic: 'ย้อนรอย...ร้อย (100) ปี',
+        topic_lng: 'th',
         desc: 'วันพระราชทานธงชาติไทย'
       },
       content: {
@@ -738,8 +752,9 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
       uid: '334a3cf4-8eac-48bd-b80f-29e91d9906dc',
       image: {
         url: 'static/images/contents/14_01.jpg',
-        topic: 'อินสตาแกรม...ทำให้เสียสุขภาพจิต',
-        desc: 'เคยมั้ยที่รู้สึกหดหู่เวลาเล่นไอจี?'
+        topic: 'เคยมั้ยที่รู้สึกหดหู่เวลาเล่นไอจี?',
+        topic_lng: 'th',
+        desc: ''
       },
       content: {
         topic: 'อินสตาแกรม...ทำให้เสียสุขภาพจิต',

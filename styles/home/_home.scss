@@ -33,12 +33,15 @@
           color: $white;
 
           .slide_content_topic {
-            font-family: 'latoBlack';
-            width: 100%;
+            font-family: 'promptSemiBold';
+            width: 80%;
             font-size: 1.5em;
+            margin: 0 auto;
         
             @include media-breakpoint-up(md) {
+              width: 100%;
               font-size: 2em;
+              margin: 0;
             }
           }
         
@@ -62,7 +65,7 @@
 
     .carousel-control-next {
       position: absolute;
-      top: 50%;
+      top: 52%;
       bottom: 50%;
 
       .carousel-control-next-icon {
@@ -75,7 +78,7 @@
 
     .carousel-control-prev {
       position: absolute;
-      top: 50%;
+      top: 52%;
       bottom: 50%;
 
       .carousel-control-prev-icon {

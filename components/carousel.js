@@ -29,10 +29,14 @@ class Carousel extends PureComponent {
                 .map((content, index) => (
                   <Link key={index} prefetch href={{ pathname: '/blog', query: { uid: content.uid, lng: this.props.router.query.lng } }}>
                     <div className={`carousel-item ${index === 1 ? 'active' : ''} bg_plus_pos_y`}
-                      style={{ 'backgroundImage': `url(${content.image.url})` }}>
+                      style={{ 'backgroundImage': `url(${content.image.url})`, cursor: 'pointer' }}>
                       <div className="slide_content_container">
                         <h1 className="text-center slide_content_topic">{content.image.topic}</h1>
-                        <h1 className="text-center slide_content_desc">{content.image.desc}</h1>
+                        {
+                          content.image.topic_lng === 'en'
+                          ? <h1 className="text-center slide_content_desc">{content.image.desc}</h1>
+                          : undefined
+                        }
                       </div>
                     </div>
                   </Link>
