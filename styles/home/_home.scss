@@ -28,6 +28,7 @@
         .slide_content_container {
           display: table-cell;
           vertical-align: middle;
+          padding-top: 2rem;
           visibility: hidden;
           letter-spacing: 0.15em;
           color: $white;
@@ -56,6 +57,32 @@
           .slide_content_container {
             visibility: visible;
           }
+        }
+      }
+    }
+
+    .carousel-control-next {
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+
+      .carousel-control-next-icon {
+        @include media-breakpoint-up(md) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    .carousel-control-prev {
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+
+      .carousel-control-prev-icon {
+        @include media-breakpoint-up(md) {
+          width: 40px;
+          height: 40px;
         }
       }
     }

@@ -61,6 +61,7 @@
       float: none;
       height: 1rem;
       line-height: 1rem;
+      font-family: 'promptSemiBold';
 
       @include media-breakpoint-up(md) {
         width: 200px;

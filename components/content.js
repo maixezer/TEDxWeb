@@ -6,7 +6,7 @@ const Content = ({ content, isMobile, enabledHover, fromBlog = false, lng }) => 
   <Link href={{ pathname: '/blog', query: { uid: content.uid, lng: lng} }}>
     <div className={fromBlog ? 'content' : 'content has-hover'}
       style={{
-        height: fromBlog ? (isMobile ? '400px' : '800px') : '50%',
+        height: fromBlog ? (isMobile ? '400px' : '800px') : '60%',
         width: isMobile || fromBlog ? '100%' : '50%',
         display: isMobile || fromBlog ? 'block' : 'inline-block'
       }}>
@@ -40,7 +40,7 @@ const Content = ({ content, isMobile, enabledHover, fromBlog = false, lng }) => 
             <div className="image_content_topic_container">
               <div className="image_content">
                 <h1 className="text-center content_topic">{content.image.topic}</h1>
-                <h1 className="text-center content_desc">{content.image.desc}</h1>
+                {/* <h1 className="text-center content_desc">{content.image.desc}</h1> */}
               </div>
             </div>
             <div className="text-center content_posted_date">
