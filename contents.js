@@ -40,7 +40,7 @@ export default () => {
           กว่าจะมาเป็น TED ที่เราเห็นกันอยู่ทุกวันนี้ "TED ครั้งแรก” นั้นถูกจัดขึ้นในฐานะงานสัมมนาทางเทคโนโลยี เศรษฐกิจ และการออกแบบในปี ค.ศ. 1984 โดยการริเริ่มของ Richard Saul Wurman แม้งานจะไม่ประสบความสำเร็จทางด้านการเงิน แต่ประเด็นที่ถูกหยิบยกขึ้นมาพูดเมื่อ 33 ปีที่แล้วนั้นเป็นดั่งเมล็ดพันธุ์ของแนวคิดอันยิ่งใหญ่ที่ส่งผลให้โลกเปลี่ยนแปลงมาจนถึงปัจจุบัน
           </span>
           <span>
-          <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/nicholas_negroponte_in_1984_makes_5_predictions" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+          <div style="max-width:854px mx-auto d-block"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/nicholas_negroponte_in_1984_makes_5_predictions" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
           </span>
           <span><b>“5 Predictions”</b><br>
           หนึ่งใน TED ครั้งแรก คือแนวคิดของ Nicholas Negroponte ผู้ก่อตั้ง MIT Media Lab ที่คาดการณ์ถึงเทคโนโลยีการสั่งงานผ่านหน้าจอด้วยปลายนิ้ว ซึ่งฟังดูห่างไกลและเป็นไปได้ยากในเวลานั้น แต่ ณ ตอนนี้สิ่งที่ถูกเรียกว่าหน้าจอสัมผัส หรือ Touchscreen กลับฟังดูคุ้นเคย และกลายมาเป็นส่วนหนึ่งในชิตประจำวัน ผ่านการใช้งานเครื่องมือสื่อสารหรือเครื่องใช้ไฟฟ้าต่างๆ เราจึงอยากชักชวนทุกท่านมาพบกับจุดเริ่มต้นของ TED ผ่านคลิป แสดงการบรรยายของ Nicholas Negroponte ในงานสัมมนาปี ค.ศ. 1984 เพื่อเตรียมความพร้อม ก่อนเข้ามาทำความรู้จัก TEDxCharoenkrung เป็น “ครั้งแรก”
@@ -231,7 +231,7 @@ export default () => {
           แต่รู้หรือไม่ว่า TED นั้นยังรวมไปถึง Talk ในเชิง Performance อีกด้วย
           <a style="color:blue" href="https://www.facebook.com/hashtag/tedxchareonkrung">#TEDxChareonkrung</a> จึงคัดเลือก performance ที่น่าสนใจบางส่วนมาให้ทุกคนได้ลองชมกันค่ะ</span>
           <span>
-          <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/GNZBSZD16cY" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+          <div style="max-width:854px mx-auto d-block"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/GNZBSZD16cY" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
           </span>
           <span><b>- Tom Thum</b><br>
           สำหรับใครที่คิดว่าลมปากมันไม่มีค่า เห็นทีคงต้องคิดกันใหม่
@@ -240,7 +240,7 @@ export default () => {
           หากคุณมีพรสวรรค์ไม่ว่ามันจะเป็นอะไร จงอย่ามองข้าม แต่เลือกที่จะหยิบมันออกมาใข้กันดีกว่า</span>
 
           <span>
-          <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/BepU74BYOtg" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+          <div style="max-width:854px mx-auto d-block"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/BepU74BYOtg" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
           </span>
           <span>
           <b>- Alice Phoebe Lou</b><br>
@@ -250,7 +250,7 @@ export default () => {
           </span>
 
           <span>
-          <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/kaki_king_a_musical_escape_into_a_world_of_light_and_color" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+          <div style="max-width:854px mx-auto d-block"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/kaki_king_a_musical_escape_into_a_world_of_light_and_color" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
           </span>
           <span>
           <b>- kaki king</b><br>
@@ -259,7 +259,7 @@ export default () => {
           </span>
 
           <span>
-          <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/ok_go_how_to_find_a_wonderful_idea" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
+          <div style="max-width:854px mx-auto d-block"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/ok_go_how_to_find_a_wonderful_idea" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
           </span>
           <span>
           <b>- OK Go</b><br>
@@ -555,7 +555,7 @@ desperation, perspiration, and inspiration.” <br>
 ธุรกิจมากมายต้องปิดตัวลงผู้ประกอบการล้มละลาย โครงการใหญ่หลายโครงการที่ไปต่อไม่ได้
 สิ่งก่อสร้างมากมายถูกทิ้งร้างเปรียบเสมือนอนุสาวรีย์ของปี 40 และที่โด่งดังที่สุดก็คือ ตึกสาทร ยูนิค
 ตึกร้างสูงระฟ้ากลางกรุงที่ต้องถูกทิ้งร้างหลังเจอวิกฤตต้มยำกุ้งและยังตั้งตระหง่านอยู่มากว่า 20 ปี</span>
-          <span>Photo Credit: <a style="color:red" class="tedx_link black">http://strangeabandonedplaces.com/sathorn-unique-bangkoks-ghost-skyscraper/</a></span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black" href="http://strangeabandonedplaces.com/sathorn-unique-bangkoks-ghost-skyscraper/">http://strangeabandonedplaces.com/sathorn-unique-bangkoks-ghost-skyscraper/</a></span><br>
 
           <span><b>ถนน..ที่ระลึก<br><br>ถนนเจริญกรุง...<br>
 ถนนคอนกรีตสายแรกของประเทศไทย</b></span>
@@ -581,7 +581,7 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
 ซึ่งสร้างในช่วงต้นปี 1900 เป็นอาคารก่ออิฐและผนังรับน้ำหนัก กระเบื้องหลังคารูปเพชรของหลังคาปั้นหยา
 ทำให้นึกถึงสไตล์ในยุคนั้น ในช่วงปี ค.ศ. 2012-2016 สำนักงานทรัพย์สินส่วนพระมหากษัตริย์ได้ฟื้นฟูอาคารหลังนี้จากการถูกทิ้งร้าง และเพราะสถาปัตยกรรมของอาคารที่พบได้ยาก กรมศิลปากรจึงได้ขึ้นทะเบียนบ้านเลขที่ 1
 เป็นโบราณสถาน แม้ว่า SFDI จะไม่ได้ทำการอีกต่อไปแล้ว แต่ยังคงทิ้งมรดกไว้ในบ้านเลขที่ 1 แห่งนี้</span>
-          <span>Photo Credit: <a style="color:red" class="tedx_link black">http://www.crownproperty.or.th/ข่าวสารและสาระน่ารู้/สาระน่ารู้?&per_page=10</a></span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black" href="http://www.crownproperty.or.th/ข่าวสารและสาระน่ารู้/สาระน่ารู้?&per_page=10">http://www.crownproperty.or.th/ข่าวสารและสาระน่ารู้/สาระน่ารู้?&per_page=10</a></span><br>
 
           <span><b>ธนาคาร..ที่ระลึก<br><br>ธนาคารไทยพาณิชย์ สาขาตลาดน้อย...<br>
 ธนาคารพาณิชย์แห่งแรกของประเทศไทย</b></span>
@@ -591,7 +591,7 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
 เพื่อให้สถาบันการเงินเป็นฐานรองรับการเติบโตด้านเศรษฐกิจของประเทศ ซึ่งประสบผลสำเร็จเป็นอย่างดี กลายเป็นต้นแบบธนาคารพาณิชย์ของไทย โดยมีการปรับเปลี่ยนชื่อเป็น “บริษัท แบงก์สยาม กัมมาจล ทุนจำกัด”
 ในปี 2449 และเปลี่ยนมาเป็น “ธนาคารไทยพาณิชย์” เช่นทุกวันนี้
 อาคารแห่งนี้มีความโดดเด่นด้วยสถาปัตยกรรมโบซาร์ผสมผสานนีโอคลาสสิค ที่ยังคงความงดงามจนถึงปัจจุบัน</span>
-          <span>Photo Credit: <a style="color:red" class="tedx_link black">http://www.artbangkok.com/?p=44008</a></span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black" href="http://www.artbangkok.com/?p=44008">http://www.artbangkok.com/?p=44008</a></span><br>
 
           <span><b>โรงแรม..ที่ระลึก<br><br>โรงแรมโอเรียนเต็ล....<br>
 โรงแรมแห่งแรกของประเทศไทย</b></span>
@@ -600,13 +600,13 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
 ที่นี่เคยต้อนรับแขกผู้มีเกียรติมากมาย อาทิ โจเซฟ คอนราด นักเขียนชื่อดังชาวอังกฤษ รวมทั้งพระประมุขและผู้แทนพระองค์
 จากประเทศต่างๆ ในพระราชพิธีฉลองสิริราชสมบัติครบ 60 ปี ของพระบาทสมเด็จพระเจ้าอยู่หัว รัชกาลที่ 9 เมื่อปี พ.ศ. 2549
 ทั้งเสน่ห์ของโรงแรมแห่งนี้คืออาคารออเธอร์ส วิง ที่งดงามด้วยสถาปัตยกรรมแบบนีโอคลาสสิค และเคยได้รับรางวัลอนุรักษ์สถาปัตยกรรมดีเด่น เมื่อปี 2545</span>
-          <span>Photo Credit: <a style="color:red" class="tedx_link black">https://theluxurytravelexpert.com/2016/01/06/review-mandarin-oriental-bangkok/</a></span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black" href="https://theluxurytravelexpert.com/2016/01/06/review-mandarin-oriental-bangkok/">https://theluxurytravelexpert.com/2016/01/06/review-mandarin-oriental-bangkok/</a></span><br>
 
           <span><b>กงสุล..ที่ระลึก<br><br>สถานกงสุลโปรตุเกส...<br>
 สถานกงสุลแห่งแรก</b></span>
           <span><img src="static/images/contents/11_7.jpg" class="img-fluid mx-auto d-block" width="100%"></span>
           <span>หรือสถานเอกอัครราชทูตโปรตุเกส สร้างขึ้นในสมัยรัชกาลที่ 2 ซึ่งมีชาวโปรตุเกสเข้ามาตั้งถิ่นฐานบริเวณริมแม่น้ำเจ้าพระยาของประเทศไทยมากขึ้น พระบาทสมเด็จพระพุทธเลิศหล้านภาลัย จึงพระราชทานที่ดินในตรอกกัปตันบุชให้แก่พระราชินีมาเรีย แห่งโปรตุเกส เพื่อสร้างเป็นที่พำนักสำหรับกงสุลโปรตุเกสสมัยนั้น สำหรับเป็นศูนย์กลางให้แก่ชาวโปรตุเกสในประเทศไทย โดยตัวอาคารมีการก่อสร้างอย่างงดงามด้วยสถาปัตยกรรมแบบโคโลเนียล ภายในเป็นพื้นไม้ไผ่ฉาบตามแบบฉบับของการสร้างที่อยู่อาศัยของชาวโปรตุเกส ทั้งนี้ อาคารหลังนี้ได้มีการปรุงปรุงและต่อเติมเรื่อยมาเพื่อการใช้งาน และรักษาสภาพอาคารหลังเดิมไว้ให้ใกล้เคียงที่สุด</span>
-          <span>Photo Credit: <a style="color:red" class="tedx_link black">http://www.reurnthai.com/index.php?topic=3447.0</a></span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black" href="http://www.reurnthai.com/index.php?topic=3447.0">http://www.reurnthai.com/index.php?topic=3447.0</a></span><br>
 
           <span><b>มัสยิด..ที่ระลึก<br><br>มัสยิดบ้านอู่<br>
 มัสยิดจดทะเบียนหลังแรกของไทย</b></span>
@@ -617,7 +617,7 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
 คนในย่านนั้นรู้จักกันดีในชื่อ “สุเหร่าแขก” ทั้งนี้ ปัจจุบันนอกจากจะเป็นสถานที่สำคัญทางศาสนา
 ของชาวมุสลิมย่านเจริญกรุง ยังเป็นโรงเรียนสอนศาสนาสำหรับชาวมุสลิม
 และสถานที่ที่นักท่องเที่ยวนิยมแวะเวียนเข้าไปชมอยู่เสมอเมื่อมาเยือนย่านเจริญกรุง</span>
-          <span>Photo Credit: <a style="color:red" class="tedx_link black">https://www.jcpr.co.th/ข่าวประชาสัมพันธ์/ศูนย์สร้างสรรค์งานออกแบบ-ปลุกตำนาน-“เจริญกรุง”โชว์-4-แลนด์มาร์คที่คนไทยต้องรู้.html</a></span>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black" href="https://www.jcpr.co.th/ข่าวประชาสัมพันธ์/ศูนย์สร้างสรรค์งานออกแบบ-ปลุกตำนาน-“เจริญกรุง”โชว์-4-แลนด์มาร์คที่คนไทยต้องรู้.html">https://www.jcpr.co.th/ข่าวประชาสัมพันธ์/ศูนย์สร้างสรรค์งานออกแบบ-ปลุกตำนาน-“เจริญกรุง”โชว์-4-แลนด์มาร์คที่คนไทยต้องรู้.html</a></span>
         `
       },
       postedDate: new Date(Date.UTC(2017, 8, 20))
@@ -794,7 +794,7 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
           <span>ไม่มีความสามารถเหมือนคนอื่นๆ จนหลายคนถึงขั้นเกิดภาวะซึมเศร้าไปจนถึงเริ่มเกลียดตัวเอง</span>
           <span>ซึ่งทางแก้ที่สามารถทำได้ก็คือ เราไม่ควรใช้เวลาในโลกโซเชียลมากเกินไป ควรอยู่กับชีวิตจริงและอยู่กับปัจจุบัน
 ใส่ใจคนและสิ่งที่ทำอยู่ตรงหน้าดีกว่าผู้คนในโลกออนไลน์</span>
-          <span>ขอบคุณข้อมูลจาก: https://www.rsph.org.uk/about-us/news/instagram-ranked-worst-for-young-people-s-mental-health.html</span>
+          <span>ขอบคุณข้อมูลจาก: <a style="color:red" class="tedx_link black" href="https://www.rsph.org.uk/about-us/news/instagram-ranked-worst-for-young-people-s-mental-health.html">https://www.rsph.org.uk/about-us/news/instagram-ranked-worst-for-young-people-s-mental-health.html</a></span>
         `
       },
       postedDate: new Date(Date.UTC(2017, 9, 3))
