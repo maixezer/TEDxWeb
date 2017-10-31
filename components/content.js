@@ -44,7 +44,11 @@ const Content = ({ content, isMobile, enabledHover, fromBlog = false, lng }) => 
             <div className="image_content_topic_container">
               <div className="image_content">
                 <h1 className="text-center content_topic">{content.image.topic}</h1>
-                {/* <h1 className="text-center content_desc">{content.image.desc}</h1> */}
+                {
+                  content.image.topic_lng === 'en'
+                  ? <h1 className="text-center content_desc">{content.image.desc}</h1>
+                  : undefined
+                }
               </div>
             </div>
             <div className="text-center content_posted_date">
