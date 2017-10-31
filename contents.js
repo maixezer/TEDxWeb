@@ -1,4 +1,5 @@
 const faker = require('faker')
+const moment = require('moment-timezone')
 
 export default () => {
   return [
@@ -20,7 +21,7 @@ export default () => {
           <span>TEDxCharoenkrung มุ่งมั่นที่จะเผยแพร่ไอเดียที่มีคุณค่าโดยไม่ได้เน้นเพียงแค่ไอเดียที่เกิดขึ้นในเจริญกรุงเท่านั้น แต่ยังรวมไปถึงเรื่องราวเกี่ยวกับกรุงที่เจริญ เพื่อช่วยจุดประกายพลังความคิดให้กล้าที่จะลุกขึ้นมาพัฒนา เปลี่ยนแปลง “กรุง” ของคุณ ให้ “เจริญ” ไปด้วยกัน<span>
           `
       },
-      postedDate: new Date(2017, 8, 20).toISOString()
+      postedDate: new Date(Date.UTC(2017, 7, 20))
     },
     {
       uid: '68ffa3c1-9e2a-44ab-b545-8dbb39bf680c',
@@ -49,12 +50,12 @@ export default () => {
           </span>
           `
       },
-      postedDate: new Date(2017, 8, 6).toISOString()
+      postedDate: new Date(Date.UTC(2017, 7, 6))
     },
     {
       uid: '187f08ba-6c44-42a4-8dd8-b356ed3a3c33',
       image: {
-        url: 'static/images/contents/02_1.jpg',
+        url: 'static/images/contents/memory_main.jpg',
         topic: '“เจริญกรุง” ย่านบันทึกความทรงจำ',
         topic_lng: 'th',
         desc: 'เพราะเครื่องมือบันทึกความทรงจำ ไม่ได้ถูกจำกัดอยู่เพียงภาพถ่าย'
@@ -63,18 +64,31 @@ export default () => {
         topic: '“เจริญกรุง” ย่านบันทึกความทรงจำ',
         topic_extend: 'เพราะเครื่องมือบันทึกความทรงจำ ไม่ได้ถูกจำกัดอยู่เพียงภาพถ่าย',
         desc: `
-          <img src="static/images/contents/02_1.jpg" class="img-fluid" alt="Responsive image"><br><br>
           <span>ต้องยอมรับว่าการถ่ายภาพ กลายมาเป็นกิจกรรมที่นิยมมากของคนในปัจจุบัน
           ซึ่งก็มีหลากหลายรูปแบบไม่ว่าจะเป็นแบบไฟล์ดิจิทัล หรือภาพถ่ายบนกระดาษ
           ในบางครั้ง “ภาพถ่าย” อาจไม่ได้ถูกนิยามไว้เพียงแค่การเป็น “ภาพ” แต่ยังเป็นสิ่งบันทึกความทรงจำ</span>
-          <img src="static/images/contents/02_2.jpg" class="img-fluid" style="max-width:49%">
-          <img src="static/images/contents/02_3.jpg" class="img-fluid" style="max-width:49%"><br><br>
-          <img src="static/images/contents/02_4.jpg" class="img-fluid" style="max-width:49%">
-          <img src="static/images/contents/02_5.jpg" class="img-fluid" style="max-width:49%"><br><br>
-          <img src="static/images/contents/02_6.jpg" class="img-fluid" style="max-width:49%">
-          <img src="static/images/contents/02_7.jpg" class="img-fluid" style="max-width:49%"><br><br>
-          <img src="static/images/contents/02_8.jpg" class="img-fluid" style="max-width:49%">
-          <img src="static/images/contents/02_9.jpg" class="img-fluid" style="max-width:49%"><br><br>
+          <img src="static/images/contents/rareuk_01.jpg" class="img-fluid mx-auto d-block" alt="ถนนเจริญกรุงบริเวณหัวถนนสุรวงศ์" width="100%">
+          </br><span class="text-center">ถนนเจริญกรุงบริเวณหัวถนนสุรวงศ์</span></br>
+          <img src="static/images/contents/rareuk_02.jpg" class="img-fluid mx-auto d-block" alt="แม่น้ำเจ้าพระยา บริเวณเจริญกรุง ปี 2506" width="100%">
+          </br><span class="text-center">แม่น้ำเจ้าพระยา บริเวณเจริญกรุง ปี 2506</span></br>          
+          <img src="static/images/contents/rareuk_03.jpg" class="img-fluid mx-auto d-block" alt="จุดรับ-ส่งผู้โดยสารรถรางถนนเจริญกรุง ปี 2500" width="100%">
+          </br><span class="text-center">จุดรับ-ส่งผู้โดยสารรถรางถนนเจริญกรุง ปี 2500</span></br>          
+          <img src="static/images/contents/rareuk_04.jpg" class="img-fluid mx-auto d-block" alt="ถนนเจริญกรุง ตัดถนนสีลมที่แยกบางรัก" width="100%">
+          </br><span class="text-center">ถนนเจริญกรุง ตัดถนนสีลมที่แยกบางรัก</span></br>          
+          <img src="static/images/contents/rareuk_05.jpg" class="img-fluid mx-auto d-block" alt="ทางเข้าโรงภาพยนตร์พัฒนากร (สิริรามา) ถนนเจริญกรุง กรุงเทพมหานคร / ถ่ายเมื่อราวปี พ.ศ. ๒๔๕๓" width="100%">
+          </br><span class="text-center">ทางเข้าโรงภาพยนตร์พัฒนากร (สิริรามา) ถนนเจริญกรุง กรุงเทพมหานคร / ถ่ายเมื่อราวปี พ.ศ. ๒๔๕๓</span></br>          
+          <img src="static/images/contents/rareuk_06.jpg" class="img-fluid mx-auto d-block" alt="ประตูพฤฒิมาศ" width="100%">
+          </br><span class="text-center">ประตูพฤฒิมาศ</span></br>
+          <img src="static/images/contents/rareuk_07.jpg" class="img-fluid mx-auto d-block" alt="รถม้า และรถราง บนถนนเจริญกรุง กรุงเทพมหานคร / ถ่ายเมื่อปี พ.ศ. ๒๔๓๗" width="100%">
+          </br><span class="text-center">รถม้า และรถราง บนถนนเจริญกรุง กรุงเทพมหานคร / ถ่ายเมื่อปี พ.ศ. ๒๔๓๗</span></br>
+          <img src="static/images/contents/rareuk_08.jpg" class="img-fluid mx-auto d-block" alt="โรงงานโฟร์โมสต์ เจริญกรุง ปี 2502" width="100%">
+          </br><span class="text-center">โรงงานโฟร์โมสต์ เจริญกรุง ปี 2502</span></br>
+          <img src="static/images/contents/rareuk_09.jpg" class="img-fluid mx-auto d-block" alt="วงเวียนโอเดียน เมื่อปี 2522" width="100%">
+          </br><span class="text-center">วงเวียนโอเดียน เมื่อปี 2522</span></br>
+          <img src="static/images/contents/rareuk_10.jpg" class="img-fluid mx-auto d-block" alt="สี่กั๊กพระยาศรี ถนนเจริญกรุง ตัดถนนเฟื่องนคร / ถ่ายเมื่อราวปี พ.ศ. ๒๔๔๓" width="100%">
+          </br><span class="text-center">สี่กั๊กพระยาศรี ถนนเจริญกรุง ตัดถนนเฟื่องนคร / ถ่ายเมื่อราวปี พ.ศ. ๒๔๔๓</span></br>
+          <img src="static/images/contents/rareuk_11.jpg" class="img-fluid mx-auto d-block" alt="คลังสินค้า บ.เอส อาร์ บาร์เดอร์ ย่านเจริญกรุง ปี 2511" width="100%">
+          </br><span class="text-center">คลังสินค้า บ.เอส อาร์ บาร์เดอร์ ย่านเจริญกรุง ปี 2511</span></br>
 
           <span>เช่นเดียวกับ “เจริญกรุง” ที่ไม่ใช่เพียงสถานที่ แต่เปรียบเสมือน “แกลอรี่”
           ที่ถ่ายทอดเรื่องราวในอดีต และทำให้หวนนึกถึงทุกครั้งที่ไปเยี่ยมเยียน
@@ -85,7 +99,7 @@ export default () => {
           ผ่านภาพเจริญกรุงในอดีตที่เราคัดสรรมาให้ชม</span>
         `
       },
-      postedDate: new Date(2017, 8, 15).toISOString()
+      postedDate: new Date(Date.UTC(2017, 7, 15))
     },
     {
       uid: '804b24d3-9a1a-4192-8126-bd1d45998a90',
@@ -119,54 +133,54 @@ export default () => {
           อาคารสร้างด้วยสแต็กรูปหลายเหลี่ยมทำให้เป็นรูปทรงเรขาคณิต
           ภายในพื้นที่โปร่งโล่งมีหน้าต่างที่มองเห็นท่าเรือของเมือง
           ซึ่งความพิเศษห้องสมุดนี้ คือ ระฆังที่แขวนอยู่เหนือบันไดกลาง เชื่อมต่อกับโรงพยาบาลท้องถิ่น จะดังขึ้นทุกครั้งที่มีทารกคลอด</span>
-          <img src="static/images/contents/03_2.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: ADAM MØRK</span>
+          <img src="static/images/contents/03_2.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: ADAM MØRK</span>
 
           <span><b>2) Lawrence Public Library, by Gould Evans</b><br>
           ห้องสมุดสาธารณะ Lawrence เป็นห้องสมุดเก่าแก่สร้างตั้งแต่ปี1972
           แต่ได้รับการปรับโฉมใหม่ให้ทันสมัยมากขึ้น โดยสถาปนิกคำนึงถึงการใช้งานของห้องสมุด
           ที่ให้ความรู้สึกใกล้ชิดกับแสงธรรมชาติ จึงเป็นที่มาของการออกแบบให้มีหน้าต่างอยู่บนเพดาน
           เพื่อให้แสงจากธรรมชาติสามารถพาดผ่านมายังพื้นห้องสมุดได้</span>
-          <img src="static/images/contents/03_3.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: MIKE SINCLAIR</span>
+          <img src="static/images/contents/03_3.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: MIKE SINCLAIR</span>
 
           <span><b>3) Yangzhou Zhongshuge, by X+Living</b><br>
           หากได้ลองเข้าไปในห้องสมุด Yangzhou Zhongshuge ในเมืองจีน
           คุณจะรู้สึกเหมือนได้เดินข้ามผ่านแม่น้ำที่ลายล้อมไปด้วยหนังสือมากมาย
           ด้วยการออกแบบที่ใช้กระจกสีดำมาทำเป็นพื้น เพื่อสะท้อนแสงไฟบนชั้นหนังสือที่ถูกออกแบบให้เป็นเส้นโค้ง
           ช่วยให้เกิดความรู้สึกถึงอุโมงค์น้ำ แก่ทุกคนที่เข้าไปสัมผัส</span>
-          <img src="static/images/contents/03_4.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: SHAO FENG ARCHITECTURAL PHOTOGRAPHY</span>
+          <img src="static/images/contents/03_4.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: SHAO FENG ARCHITECTURAL PHOTOGRAPHY</span>
 
           <span><b>4) Beyazit Library, by Tabanlioglu Architects</b><br>
           Beyazit Library ในตุรกี สร้างขึ้นในปี 1506 ซึ่งเดิมเป็นห้องครัวและโรงแรม
           ก่อนที่จะกลายเป็นห้องสมุดของรัฐในช่วงปลายศตวรรษที่ 19 โดยสถาปนิกยังคงส่วนของตึกเก่าเอาไว้ และสร้างห้องกระจกสไตล์มินิมอลขึ้นตรงกลางสำหรับเก็บรวบรวมหนังสือต้นฉบับหายากต่างๆ เอาไว้
           เรียกได้ว่าเป็นการผสมผสานระหว่างสิ่งเก่าและใหม่ได้เป็นอย่างดี</span>
-          <img src="static/images/contents/03_5.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: TABANLIOGLU ARCHITECTS</span>
+          <img src="static/images/contents/03_5.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: TABANLIOGLU ARCHITECTS</span>
 
           <span><b>5) Vennesla Library, by Helen & Hard Architects</b><br>
           ห้องสมุด Vennesla ในประเทศนอร์เวย์ ถูกออกแบบให้ดูล้ำสมัยเหมือนเป็นประตูไปสู่อวกาศ ด้วยซุ้มโค้งบนเพดานทั้งหมด 27 ชิ้น ที่มองดูราวกับเป็นโครงกระดูกของห้องสมุดแห่งนี้
           ภายในซุ้มโค้งแต่ละซี่นั้นทำจากวัสดุที่เก็บเสียงเป็นอย่างดีจึงมั่นใจได้ว่า
           ห้องสมุดแห่งนี้จะไม่ปล่อยให้เสียงจากภายนอกเข้ามากวนสมาธิอย่างแน่นอน</span>
-          <img src="static/images/contents/03_6.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: EMILE ASHLEY</span>
+          <img src="static/images/contents/03_6.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: EMILE ASHLEY</span>
 
           <span><b>6) Bodø Library, by DRDH</b><br>
           ห้องสมุด Bodø เป็นสถานที่อีกแห่งในนอร์เวย์ที่นอกจากจะเป็นห้องสมุดแล้ว
           ยังเป็นศูนย์วัฒนธรรมของประเทศนี้อีกด้วย ภายในมีห้องคอนเสิร์ตอีกสามห้อง
           พื้นที่อ่านหนังสือของห้องสมุด Bodo จะมีหน้าต่างบานยาวตั้งแต่เพดานจรดพื้น
           ที่มองออกไปผู้อ่านจะได้พบกับวิวท่าเรือของเมืองนี้</span>
-          <img src="static/images/contents/03_7.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: DAVID GRANDORGE</span>
+          <img src="static/images/contents/03_7.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: DAVID GRANDORGE</span>
 
           <span><b>7) Chicago Public Library, by SOM</b><br>
           ห้องสมุด Chicago ในย่าน Chinatown นี้นำรูปร่างของก้อนกรวดมาออกแบบในการสร้างตึก
           ตัวตึกนั้นทำจากกระจกบานยาวและแผงโซล่าร์กั้นเป็นซี่ๆรอบตัวห้องสมุด
           โดยมีความตั้งใจว่าการออกแบบนี้จะช่วยลดความร้อนและแสงที่ส่องเข้ามามากเกินไปจนแยงตาผู้อ่าน
           ทั้งยังถูกออกแบบให้อยู่ในสภาพแวดล้อมภายนอกที่ถูกตามหลังฮวงจุ้ยอีกด้วยี</span>
-          <img src="static/images/contents/03_8.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: HEDRICH BLESSING PHOTOGRAPHERS</span>
+          <img src="static/images/contents/03_8.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: HEDRICH BLESSING PHOTOGRAPHERS</span>
 
           <span><b>8) Birmingham Library, by Mecanoo</b><br>
           สำหรับห้องสมุด Brimingham ที่ประเทศอังกฤษนี้ดูเหมือนจะได้รับแรงบรรดาลใจ
@@ -175,8 +189,8 @@ export default () => {
            โดยเน้นการใช้วัสดุประเภทโลหะในการทำโครงสร้างภายนอก
           ส่วนภายในนั้นเน้นการออกแบบแบบมินิมอลคือใช้เน้นการใช้สีโทนเดียวเป็นหลัก
           มองดูแล้วให้ความรู้สึกสะอาดตา</span>
-          <img src="static/images/contents/03_9.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: MECANOO</span>
+          <img src="static/images/contents/03_9.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: MECANOO</span>
 
           <span><b>9) Halifax Library, by Schmidt Hammer Lassen</b><br>
           หอสมุด Halifax มีขนาด 156,000 ตารางฟุต ตั้งอยู่ใจกลางเมือง
@@ -184,27 +198,27 @@ export default () => {
           โดยด้านบนบิดเอียงออกจากฐานสร้างความแปลกตา
           ชั้นดาดฟ้าของอาคารเป็นสวนสำหรับการชมวิวฤดูร้อนของโนวาสโกเชีย
           ภายในห้องอ่านหนังสือของห้องสมุดยังสามารถเปลี่ยนเป็นห้องแสดงคอนเสิร์ตได้อีกด้วย</span>
-          <img src="static/images/contents/03_10.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: ADAM MØRK</span>
+          <img src="static/images/contents/03_10.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: ADAM MØRK</span>
 
           <span><b>10) Conarte Library, by Anagrama</b><br>
            "Anagrama" สตูดิโอออกแบบสัญชาติเม็กซิกัน ได้ออกแบบซุ้มอ่านหนังสือภายในร้านหนังสือ Monterrey
           โดยใช้ผนังกำแพงสีฟ้าโปร่งใสที่สามารถมองทะลุผ่านชั้นหนังสือไม้ที่ขัดกัน มองดูคล้ายกับรังไหมสีสันสดใส
           มีบันไดตัดผ่านตรงกลางของโดม ด้านข้างเป็นเบาะที่นั่งสำหรับอ่านหนังสือ ถือเป็นการใช้พื้นที่ได้โดดเด่นและฉลาดี</span>
-          <img src="static/images/contents/03_11.jpg" class="img-fluid"><br><br>
-          <span>Photo Credit: CAROGA</span>
+          <img src="static/images/contents/03_11.jpg" class="img-fluid mx-auto d-block" width="100%"><br>
+          <span class="text-center">Photo Credit: CAROGA</span>
 
           <span>
           ขอบคุณข้อมูลจาก: <a style="color:red" class="tedx_link black" href="https://www.wired.com/2016/09/settle-10-beautiful-libraries-earth/">https://www.wired.com/2016/09/settle-10-beautiful-libraries-earth/</a>
           </span>
         `
       },
-      postedDate: new Date(2017, 8, 17).toISOString()
+      postedDate: new Date(Date.UTC(2017, 7, 17))
     },
     {
       uid: '5bc422bc-c178-44b2-9401-d227cd3e7f8e',
       image: {
-        url: 'static/images/contents/blank.jpg',
+        url: 'static/images/contents/ted_perf_main.png',
         topic: 'TED Performance',
         topic_lng: 'en',
         desc: ''
@@ -217,16 +231,16 @@ export default () => {
           แต่รู้หรือไม่ว่า TED นั้นยังรวมไปถึง Talk ในเชิง Performance อีกด้วย
           <a style="color:blue" href="https://www.facebook.com/hashtag/tedxchareonkrung">#TEDxChareonkrung</a> จึงคัดเลือก performance ที่น่าสนใจบางส่วนมาให้ทุกคนได้ลองชมกันค่ะ</span>
           <span>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/GNZBSZD16cY" frameborder="0" allowfullscreen></iframe>
+          <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/GNZBSZD16cY" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
           </span>
           <span><b>- Tom Thum</b><br>
           สำหรับใครที่คิดว่าลมปากมันไม่มีค่า เห็นทีคงต้องคิดกันใหม่
           เพราะ Tom Thum ได้ใช้ลมปากของเค้าสร้างแรงบรรดาลใจให้หลายๆคนที่มีพรสวรรค์ในการสร้างสรรค์ดนตรี
           โดยปราศจากเครื่องดนตรี อย่าง Beatbox นี้ในการหาเลี้ยงชีพของเค้า
-          หากคุณมีพรสวรรค์ไม่ว่ามันจะเป็นอะไร จงอย่ามองข้าม แต่เลือกที่จะหยิบมันออกมาใข้กันดีกว่า</span><br>
+          หากคุณมีพรสวรรค์ไม่ว่ามันจะเป็นอะไร จงอย่ามองข้าม แต่เลือกที่จะหยิบมันออกมาใข้กันดีกว่า</span>
 
           <span>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/BepU74BYOtg" frameborder="0" allowfullscreen></iframe>
+          <div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/BepU74BYOtg" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
           </span>
           <span>
           <b>- Alice Phoebe Lou</b><br>
@@ -256,7 +270,7 @@ export default () => {
           </span>
         `
       },
-      postedDate: new Date(2017, 8, 19).toISOString()
+      postedDate: new Date(Date.UTC(2017, 7, 19))
     },
     {
       uid: '63d4facb-7175-42f9-84af-5c2210b964c0',
@@ -294,7 +308,7 @@ export default () => {
           - Ralph Waldo Emerson</span>
         `
       },
-      postedDate: new Date(2017, 8, 24).toISOString()
+      postedDate: new Date(Date.UTC(2017, 7, 24))
     },
     {
       uid: '5a71877b-d0d7-42ca-a225-f8691b411951',
@@ -349,7 +363,7 @@ export default () => {
 <a style="color:blue" href="https://www.facebook.com/hashtag/tedxwilmingtonwomen">#TEDxWilmingtonWomen</a> <a style="color:blue" href="https://www.facebook.com/hashtag/tedxchareonkrung">#TEDxChareonkrung</a></span>
         `
       },
-      postedDate: new Date(2017, 8, 25).toISOString()
+      postedDate: new Date(Date.UTC(2017, 7, 25))
     },
     {
       uid: 'c79aa38d-5d10-44d4-9141-0112e38db87e',
@@ -382,19 +396,19 @@ export default () => {
 <a style="color:blue" href="https://www.facebook.com/hashtag/tedxhowto">#TEDhowto</a> <a style="color:blue" href="https://www.facebook.com/hashtag/tedxchareonkrung">#TEDxChareonkrung</a></span>
         `
       },
-      postedDate: new Date(2017, 8, 30).toISOString()
+      postedDate: new Date(Date.UTC(2017, 7, 30))
     },
     {
       uid: 'd43e6ce6-cf27-4957-906c-6c96df067adc',
       image: {
         url: 'static/images/contents/08_1.jpg',
-        topic: 'ทำไมถึงหงุดหงิดเวลาเห็นคนเดินช้า?',
+        topic: '"เคยมั้ย...ที่ต้องหงุดหงิดกับคนเดินช้า"',
         topic_lng: 'th',
         desc: ''
       },
       content: {
-        topic: 'ทำไมถึงหงุดหงิดเวลาเห็นคนเดินช้า?',
-        topic_extend: '',
+        topic: '"เคยมั้ย...ที่ต้องหงุดหงิดกับคนเดินช้า"',
+        topic_extend: 'ทำไมถึงหงุดหงิดเวลาเห็นคนเดินช้า?',
         desc: `
           <span>คุณเคยรู้สึกหงุดหงิดคนที่เดินช้ามั้ย?<br>
 แล้วคุณเคยถามตัวเองกลับมั้ยว่าทำไมจะต้องหงุดหงิดด้วย?</span>
@@ -425,7 +439,7 @@ Robert Levine นักจิตวิทยาส่งลูกศิษย์
           <span><a style="color:blue" href="https://www.facebook.com/hashtag/tedxchareonkrung">#TEDxChareonkrung</a></span>
         `
       },
-      postedDate: new Date(2017, 9, 1).toISOString()
+      postedDate: new Date(Date.UTC(2017, 8, 1))
     },
     {
       uid: '832917bb-c97d-414c-827d-55bf0491a245',
@@ -459,7 +473,7 @@ Robert Levine นักจิตวิทยาส่งลูกศิษย์
           <span><a style="color:blue" href="https://www.facebook.com/hashtag/tedxchareonkrung">#TEDxChareonkrung</a></span>
         `
       },
-      postedDate: new Date(2017, 9, 3).toISOString()
+      postedDate: new Date(Date.UTC(2017, 8, 3))
     },
     {
       uid: '1637b8f3-6e54-452c-8191-c6657ec855da',
@@ -515,7 +529,7 @@ desperation, perspiration, and inspiration.” <br>
           <span>ขอบคุณข้อมูลจาก: <a style="color:red" class="tedx_link black" href="https://wealthygorilla.com/8-tips-increasing-your-luck-in-life/">https://wealthygorilla.com/8-tips-increasing-your-luck-in-life/</a></span>
         `
       },
-      postedDate: new Date(2017, 9, 11).toISOString()
+      postedDate: new Date(Date.UTC(2017, 8, 11))
     },
     {
       uid: '29793cba-9618-48d0-a1a2-62c056b91cee',
@@ -534,18 +548,18 @@ desperation, perspiration, and inspiration.” <br>
 สถานที่..ที่ระลึกในย่าน..ที่ระลึก อย่างเจริญกรุงกันค่ะ</span>
 
           <span><b>ตึก..ที่ระลึก<br><br>ตึกสาธรยูนีค</b></span>
-          <span><img src="static/images/contents/11_2.jpg" class="img-fluid"></span>
+          <span><img src="static/images/contents/11_2.jpg" class="img-fluid mx-auto d-block" width="100%"></span>
           <span><b>สาธร ยูนีค</b> เป็นตึกสูง 49 ชั้น จำนวน 600 ยูนิต ราคาขาย 20,000-30,000 บาท/ตร.ม.
 เปิดตัวขายในปี 2533 ตั้งอยู่ในซอยเจริญกรุง 51 ถนนเจริญกรุง แขวงยานนาวา เขตสาทร
 และจากวิกฤตเศรษฐกิจปี 40 สร้างความบอบช้ำอย่างแสนสาหัสให้คนไทย
 ธุรกิจมากมายต้องปิดตัวลงผู้ประกอบการล้มละลาย โครงการใหญ่หลายโครงการที่ไปต่อไม่ได้
 สิ่งก่อสร้างมากมายถูกทิ้งร้างเปรียบเสมือนอนุสาวรีย์ของปี 40 และที่โด่งดังที่สุดก็คือ ตึกสาทร ยูนิค
 ตึกร้างสูงระฟ้ากลางกรุงที่ต้องถูกทิ้งร้างหลังเจอวิกฤตต้มยำกุ้งและยังตั้งตระหง่านอยู่มากว่า 20 ปี</span>
-          <span>Photo Credit: http://strangeabandonedplaces.com/sathorn-unique-bangkoks-ghost-skyscraper/</span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black">http://strangeabandonedplaces.com/sathorn-unique-bangkoks-ghost-skyscraper/</a></span><br>
 
           <span><b>ถนน..ที่ระลึก<br><br>ถนนเจริญกรุง...<br>
 ถนนคอนกรีตสายแรกของประเทศไทย</b></span>
-          <span><img src="static/images/contents/11_3.jpg" class="img-fluid"></span>
+          <span><img src="static/images/contents/11_3.jpg" class="img-fluid mx-auto d-block" width="100%"></span>
           <span>ถนนเจริญกรุงถือได้ว่าเป็นถนนคอนกรีตสายแรกของประเทศไทยที่ถูกสร้างแบบตะวันตก
 โดยสร้างขึ้นในสมัยพระบาทสมเด็จพระจุลจอมเกล้าเจ้าอยู่หัว รัชกาลที่ 5
 ถูกสร้างแล้วเสร็จในปี พ.ศ. 2407 ซึ่งเมื่อประกอบกับการเป็นพื้นที่ที่ติดริมแม่น้ำเจ้าพระยา
@@ -555,7 +569,7 @@ desperation, perspiration, and inspiration.” <br>
 
           <span><b>บ้าน..ที่ระลึก<br><br>บ้านเลขที่ 1 ซอยกัปตันบุช...<br>
 บ้านหลังแรกของประเทศไทยที่มีรหัสไปรษณีย์</b></span>
-          <span><img src="static/images/contents/11_4.jpg" class="img-fluid"></span>
+          <span><img src="static/images/contents/11_4.jpg" class="img-fluid mx-auto d-block" width="100%"></span>
           <span>เป็นมรดกที่แสดงให้เห็นถึงความเป็นยุโรปในเอเชียตะวันออกเฉียงใต้ ในช่วงเวลาที่เป็นจุดเปลี่ยนของศตวรรษ
 ระหว่างปี ค.ศ.1887 ถึง 1954 เวียดนาม ลาว และกัมพูชา อยู่ในฐานะอาณานิคมแห่งหนึ่งของฝรั่งเศส
 อาณานิคมแห่งนี้ถูกบังคับให้เป็นแหล่งในการจัดหาทรัพยากรให้กับแผ่นดินแม่ บริษัทฝรั่งเศสที่ชื่อว่า
@@ -567,46 +581,46 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
 ซึ่งสร้างในช่วงต้นปี 1900 เป็นอาคารก่ออิฐและผนังรับน้ำหนัก กระเบื้องหลังคารูปเพชรของหลังคาปั้นหยา
 ทำให้นึกถึงสไตล์ในยุคนั้น ในช่วงปี ค.ศ. 2012-2016 สำนักงานทรัพย์สินส่วนพระมหากษัตริย์ได้ฟื้นฟูอาคารหลังนี้จากการถูกทิ้งร้าง และเพราะสถาปัตยกรรมของอาคารที่พบได้ยาก กรมศิลปากรจึงได้ขึ้นทะเบียนบ้านเลขที่ 1
 เป็นโบราณสถาน แม้ว่า SFDI จะไม่ได้ทำการอีกต่อไปแล้ว แต่ยังคงทิ้งมรดกไว้ในบ้านเลขที่ 1 แห่งนี้</span>
-          <span>Photo Credit: http://www.crownproperty.or.th/ข่าวสารและสาระน่ารู้/สาระน่ารู้?&per_page=10</span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black">http://www.crownproperty.or.th/ข่าวสารและสาระน่ารู้/สาระน่ารู้?&per_page=10</a></span><br>
 
           <span><b>ธนาคาร..ที่ระลึก<br><br>ธนาคารไทยพาณิชย์ สาขาตลาดน้อย...<br>
 ธนาคารพาณิชย์แห่งแรกของประเทศไทย</b></span>
-          <span><img src="static/images/contents/11_5.jpg" class="img-fluid"></span>
+          <span><img src="static/images/contents/11_5.jpg" class="img-fluid mx-auto d-block" width="100%"></span>
           <span>เป็นสถาบันการเงินหรือธนาคารแห่งแรกของประเทศไทย
 เริ่มก่อตั้งขึ้นในนาม “บุคคลัภย์” ในสมัยพระบาทสมเด็จพระจุลจอมเกล้าเจ้าอยู่หัว รัชกาลที่ 5
 เพื่อให้สถาบันการเงินเป็นฐานรองรับการเติบโตด้านเศรษฐกิจของประเทศ ซึ่งประสบผลสำเร็จเป็นอย่างดี กลายเป็นต้นแบบธนาคารพาณิชย์ของไทย โดยมีการปรับเปลี่ยนชื่อเป็น “บริษัท แบงก์สยาม กัมมาจล ทุนจำกัด”
 ในปี 2449 และเปลี่ยนมาเป็น “ธนาคารไทยพาณิชย์” เช่นทุกวันนี้
 อาคารแห่งนี้มีความโดดเด่นด้วยสถาปัตยกรรมโบซาร์ผสมผสานนีโอคลาสสิค ที่ยังคงความงดงามจนถึงปัจจุบัน</span>
-          <span>Photo Credit: http://www.artbangkok.com/?p=44008</span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black">http://www.artbangkok.com/?p=44008</a></span><br>
 
           <span><b>โรงแรม..ที่ระลึก<br><br>โรงแรมโอเรียนเต็ล....<br>
 โรงแรมแห่งแรกของประเทศไทย</b></span>
-          <span><img src="static/images/contents/11_6.jpg" class="img-fluid"></span>
+          <span><img src="static/images/contents/11_6.jpg" class="img-fluid mx-auto d-block" width="100%"></span>
           <span>เป็นโรงแรมอย่างเป็นทางการแห่งแรกของไทย ที่ก่อตั้งขึ้นในสมัยรัชกาลที่ 5 หรือประมาณปี พ.ศ. 2413 และเปิดให้ใช้งานได้อย่างเป็นทางการเมื่อปี พ.ศ. 2430 นับเป็นโรงแรมที่เก่าแก่ที่สุดของไทย และเก่าแก่ที่สุดแห่งหนึ่งของเอเชีย
 ที่นี่เคยต้อนรับแขกผู้มีเกียรติมากมาย อาทิ โจเซฟ คอนราด นักเขียนชื่อดังชาวอังกฤษ รวมทั้งพระประมุขและผู้แทนพระองค์
 จากประเทศต่างๆ ในพระราชพิธีฉลองสิริราชสมบัติครบ 60 ปี ของพระบาทสมเด็จพระเจ้าอยู่หัว รัชกาลที่ 9 เมื่อปี พ.ศ. 2549
 ทั้งเสน่ห์ของโรงแรมแห่งนี้คืออาคารออเธอร์ส วิง ที่งดงามด้วยสถาปัตยกรรมแบบนีโอคลาสสิค และเคยได้รับรางวัลอนุรักษ์สถาปัตยกรรมดีเด่น เมื่อปี 2545</span>
-          <span>Photo Credit: https://theluxurytravelexpert.com/2016/01/06/review-mandarin-oriental-bangkok/</span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black">https://theluxurytravelexpert.com/2016/01/06/review-mandarin-oriental-bangkok/</a></span><br>
 
           <span><b>กงสุล..ที่ระลึก<br><br>สถานกงสุลโปรตุเกส...<br>
 สถานกงสุลแห่งแรก</b></span>
-          <span><img src="static/images/contents/11_7.jpg" class="img-fluid"></span>
+          <span><img src="static/images/contents/11_7.jpg" class="img-fluid mx-auto d-block" width="100%"></span>
           <span>หรือสถานเอกอัครราชทูตโปรตุเกส สร้างขึ้นในสมัยรัชกาลที่ 2 ซึ่งมีชาวโปรตุเกสเข้ามาตั้งถิ่นฐานบริเวณริมแม่น้ำเจ้าพระยาของประเทศไทยมากขึ้น พระบาทสมเด็จพระพุทธเลิศหล้านภาลัย จึงพระราชทานที่ดินในตรอกกัปตันบุชให้แก่พระราชินีมาเรีย แห่งโปรตุเกส เพื่อสร้างเป็นที่พำนักสำหรับกงสุลโปรตุเกสสมัยนั้น สำหรับเป็นศูนย์กลางให้แก่ชาวโปรตุเกสในประเทศไทย โดยตัวอาคารมีการก่อสร้างอย่างงดงามด้วยสถาปัตยกรรมแบบโคโลเนียล ภายในเป็นพื้นไม้ไผ่ฉาบตามแบบฉบับของการสร้างที่อยู่อาศัยของชาวโปรตุเกส ทั้งนี้ อาคารหลังนี้ได้มีการปรุงปรุงและต่อเติมเรื่อยมาเพื่อการใช้งาน และรักษาสภาพอาคารหลังเดิมไว้ให้ใกล้เคียงที่สุด</span>
-          <span>Photo Credit: http://www.reurnthai.com/index.php?topic=3447.0</span><br>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black">http://www.reurnthai.com/index.php?topic=3447.0</a></span><br>
 
           <span><b>มัสยิด..ที่ระลึก<br><br>มัสยิดบ้านอู่<br>
 มัสยิดจดทะเบียนหลังแรกของไทย</b></span>
-          <span><img src="static/images/contents/11_8.jpg" class="img-fluid"></span>
+          <span><img src="static/images/contents/11_8.jpg" class="img-fluid mx-auto d-block" width="100%"></span>
           <span>เป็นสถานที่ประกอบศาสนกิจของชาวมุสลิมที่เก่าแก่ที่สุด ได้รับการก่อสร้างขึ้นในสมัยรัชกาลที่ 6
 หรือประมาณปี 2455 โดยพระบาทสมเด็จพระมงกุฎเกล้าเจ้าอยู่หัว รัชกาลที่ 6 ทรงพระราชทานที่ดินผืนนี้
 ให้แก่ชาวมุสลิมที่โยกย้ายถิ่นฐานมาอยู่ในกรุงเทพฯ สมัยนั้น เพื่อเป็นที่ตั้งของอาคารมัสยิดและกุโบร์(สุสาน)
 คนในย่านนั้นรู้จักกันดีในชื่อ “สุเหร่าแขก” ทั้งนี้ ปัจจุบันนอกจากจะเป็นสถานที่สำคัญทางศาสนา
 ของชาวมุสลิมย่านเจริญกรุง ยังเป็นโรงเรียนสอนศาสนาสำหรับชาวมุสลิม
 และสถานที่ที่นักท่องเที่ยวนิยมแวะเวียนเข้าไปชมอยู่เสมอเมื่อมาเยือนย่านเจริญกรุง</span>
-          <span>Photo Credit: https://www.jcpr.co.th/ข่าวประชาสัมพันธ์/ศูนย์สร้างสรรค์งานออกแบบ-ปลุกตำนาน-“เจริญกรุง”โชว์-4-แลนด์มาร์คที่คนไทยต้องรู้.html</span>
+          <span>Photo Credit: <a style="color:red" class="tedx_link black">https://www.jcpr.co.th/ข่าวประชาสัมพันธ์/ศูนย์สร้างสรรค์งานออกแบบ-ปลุกตำนาน-“เจริญกรุง”โชว์-4-แลนด์มาร์คที่คนไทยต้องรู้.html</a></span>
         `
       },
-      postedDate: new Date(2017, 8, 20).toISOString()
+      postedDate: new Date(Date.UTC(2017, 8, 20))
     },
     {
       uid: '88d7cf63-bfeb-4243-bf12-a9afa51c784e',
@@ -689,12 +703,12 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
 เผชิญหน้ากับปัญหาและลองแก้ไขมันดู เราเชื่อว่าคุณจะได้รับผลลัพธ์ที่ดีอย่างแน่นอน</span>
         `
       },
-      postedDate: new Date(2017, 9, 25).toISOString()
+      postedDate: new Date(Date.UTC(2017, 8, 25))
     },
     {
       uid: '54c0736a-3bda-42ba-be85-2de8ad7e1170',
       image: {
-        url: 'static/images/contents/blank.jpg',
+        url: 'static/images/contents/thai_flags_2.jpg',
         topic: 'ย้อนรอย...ร้อย (100) ปี',
         topic_lng: 'th',
         desc: 'วันพระราชทานธงชาติไทย'
@@ -716,9 +730,11 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
 จึงใช้ธงชาติฮอลันดาชักขึ้นเสา แต่ผรั่งเศสไม่ยอมรับฝ่ายไทยจึงแก้ปัญหาโดยชักผ้าสีแดงขึ้นแทน
 ฝรั่งเศสจึงยอมยิงสลุตคำนับตอบ เหตุการณ์ดังกล่าวจึงถือกันว่าเป็นจุดเริ่มต้นของประวัติศาสตร์ธงชาติไทย
 และธงแดงจึงเป็นธงประจำชาติผืนแรกของไทยอย่างไม่เป็นทางการ</span>
+          <img src="static/images/contents/a_01.jpg" class="img-fluid" alt="Responsive image"><br><br>
           <span>เปลี่ยนแปลงสู่ “ธงวงจักร” และ “ธงช้าง”<br>
 - ในสมัยต้นกรุงรัตนโกสินทร์ พระบาทสมเด็จพระพุทธยอดฟ้าจุฬาโลก รัชกาลที่ 1 ทรงพระกรุณาโปรดเกล้าฯ
 ให้เพิ่มรูปจักรสีขาวลงในธงแดง สำหรับใช้เป็นธงของเรือหลวง" เพื่อแสดงความแตกต่างระหว่างเรือหลวงกับเรือสินค้า</span>
+          <img src="static/images/contents/a_02.jpg" class="img-fluid" alt="Responsive image"><br><br>
           <span>- ต่อมาในรัชสมัยพระบาทสมเด็จพระพุทธเลิศหล้านภาลัย รัชกาลที่ 2 พระองค์ทรงได้ช้างเผือกเอก 3 ช้าง
 เป็นเกียรติยศยิ่งต่อแผ่นดิน จึงทรงพระกรุณาโปรดเกล้าฯ ให้เพิ่มรูปช้างเข้าภายในวงจักรของเรือหลวงไว้ด้วย
 อันมีความหมายว่า พระเจ้าแผ่นดินอันมีช้างเผือก ช้างคือสัญลักษณ์แห่งแผ่นดินของกรุงรัตนโกสินทร์</span>
@@ -736,9 +752,11 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
 ธงชาติต้องมีรูปแบบที่สมมาตรเพื่อไม่ให้เกิดเหตุการณ์เช่นนี้ขึ้นอีก จึงเป็นจุดกำเนิดของธงแดงขาวห้าริ้ว
 ซึ่งเป็นรูปแบบสมมาตร และไม่ว่าติดด้านไหนก็ไม่มีลักษณะกลับหัว โดยสีแดงนั้นมาจากสีเดิมของธง
 ส่วนสีขาวมาจากช้างเผือกนั้นเอง</span>
+          <img src="static/images/contents/a_03.jpg" class="img-fluid" alt="Responsive image"><br><br>
           <span>ความภูมิใจของไทย “ธงไตรรงค์”<br>
 เมื่อปี พ.ศ. 2460 รัชกาลที่ 6 ทรงอ่านหนังสือพิมพ์กรุงเทพเดลิเมล์ ฉบับภาษาอังกฤษ มีผู้เขียนเรื่องธงใช้นามปากกาว่า "อะแควเรียส" มีสาระว่า "ธงห้าริ้วสวยงามดี แต่หากจะให้ดีน่าจะมีสีน้ำเงินใส่เข้าไปด้วย เพราะสีน้ำเงิน
 เป็นสีแสดงถึงสถาบันพระมหากษัตริย์ในนานาประเทศ" ซึ่งพระองค์ทรงเห็นด้วย จึงได้เพิ่มสีน้ำเงิน สีทรงโปรดลงตรงกลาง และอีกประการหนึ่ง สีน้ำเงินยังแสดงถึงชัยชนะและความเป็นหนึ่งเดียวของฝ่ายสัมพันธมิตรในสงครามโลกครั้งที่หนึ่ง เช่น ฝรั่งเศส สหราชอาณาจักร สหรัฐอเมริกา เป็นต้น ซึ่งใช้สีแดง ขาว น้ำเงินเป็นสีในธงชาติเป็นส่วนใหญ่ด้วย</span>
+          <img src="static/images/contents/a_04.jpg" class="img-fluid" alt="Responsive image"><br><br>
           <span>พระองค์ทรงพระราชทานชื่อเรียกใหม่ว่า "ธงไตรรงค์" พร้อมความหมาย สีแดงหมายถึงเลือดอันยอมพลีเพื่อธำรงรักษาชาติและศาสนา สีน้ำเงินหมายถึงพระมหากษัตริย์ และ สีขาวหมายถึงความบริสุทธิ์แห่งศาสนา ก่อนจะนำเรื่องเข้าประชุมลงมติเห็นชอบธงสามสีแบบที่คิดขึ้นใหม่ จึงทรงพระกรุณาโปรดเกล้าฯ ให้ใช้ ธงไตรรงค์ เป็นธงประจำชาติ
 และได้พระราชทานธงไตรรงค์ เป็นธงชาติสยาม เมื่อวันที่ 28 กันยายน พ.ศ. 2460 ตามพระราชบัญญัติแก้ไขพระราชบัญญัติธง พุทธศักราช 2460</span>
           <span>ความภาคภูมิใจครั้งแรกของธงชาติไทยคือธงไตรรงค์ของสยามก็ได้เดินผ่านประตูชัยที่กรุงปารีส ประเทศฝรั่งเศส พร้อมกับคณะทหารอาสา ในการเฉลิมฉลองชัยชนะของฝ่ายพันธมิตรเมื่อวันที่ 14 กรกฎาคม ปี พ.ศ. 2462
@@ -746,7 +764,7 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
           <span>ขอบคุณข้อมูลจาก: http://news.sanook.com/3668694/</span>
         `
       },
-      postedDate: new Date(2017, 9, 28).toISOString()
+      postedDate: new Date(Date.UTC(2017, 8, 28))
     },
     {
       uid: '334a3cf4-8eac-48bd-b80f-29e91d9906dc',
@@ -779,11 +797,11 @@ Societe Francaise des Distilleries de l’Indochine (SFDI) เข้ามาช
           <span>ขอบคุณข้อมูลจาก: https://www.rsph.org.uk/about-us/news/instagram-ranked-worst-for-young-people-s-mental-health.html</span>
         `
       },
-      postedDate: new Date(2017, 10, 3).toISOString()
+      postedDate: new Date(Date.UTC(2017, 9, 3))
     }].sort((a, b) => {
-      const dateA = new Date(a.postedDate),
-        dateB = new Date(b.postedDate);
-      // Compare the 2 dates
-      return dateA > dateB;
+      const da = new Date(a.postedDate).getTime();
+      const db = new Date(b.postedDate).getTime();
+      
+      return da > db ? -1 : da < db ? 1 : 0
     })
 }

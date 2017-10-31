@@ -51,7 +51,12 @@
       .content_topic {
         font-family: 'promptSemiBold';
         width: 100%;
-        font-size: 1.5em;    
+        font-size: 1.5em;
+
+        @include media-breakpoint-up(md) {
+          width: 70%;
+          margin: 0 auto;
+        }
       }
 
       .content_desc {
