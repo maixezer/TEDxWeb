@@ -48,7 +48,7 @@ class About extends Component {
         display: 'Instagram'
       },
       email: {
-        link: '#',
+        link: 'mailto:tedxchraroenkrung@gmail.com',
         display: 'E-mail'
       }
     }
