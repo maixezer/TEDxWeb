@@ -54,8 +54,8 @@ class Home extends Component {
       {
         height: 'inherit',
         width: 'inherit',
-        bgColor: '#fff',
-        headerColor: '#fff'
+        bgColor: 'transparent',
+        headerColor: 'transparent'
       }
   }
 
@@ -75,7 +75,7 @@ class Home extends Component {
     if (!scroll) {
       if (isElementInView('#home')) {
         scroll = true
-        this.updateStyle(false, 'black', 'white')
+        this.updateStyle(false, 'white', 'black')
       }
       else if (isElementInView('#landing')) {
         scroll = true
