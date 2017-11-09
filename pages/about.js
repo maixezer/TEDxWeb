@@ -40,7 +40,7 @@ class About extends Component {
         display: 'Facebook'
       },
       twitter: {
-        link: '#',
+        link: 'https://twitter.com/TEDxCharoenkrun',
         display: 'Twitter'
       },
       instagram: {
