@@ -90,9 +90,6 @@ class Navbar extends Component {
                 <a id="read" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('read')}>{this.props.t('common:read')}</a>
               </li>
             </Link>
-            <li className="nav-item tedx_menu_item">
-              <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo()}>{this.props.t('common:partners')}</a>
-            </li>
             <Link prefetch href={{ pathname: '/partners', query: this.modifyLanguageQuery() }}>
               <li className="nav-item tedx_menu_item">
                 <a id="partners" className={`nav-link tedx_link ${this.state.colorStyle}`} href="#" onClick={() => this.navigateTo('partners')}>{this.props.t('common:partners')}</a>
