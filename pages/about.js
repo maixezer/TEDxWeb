@@ -43,10 +43,6 @@ class About extends Component {
         link: 'https://twitter.com/TEDxCharoenkrun',
         display: 'Twitter'
       },
-      instagram: {
-        link: '#',
-        display: 'Instagram'
-      },
       email: {
         link: 'mailto:tedxchraroenkrung@gmail.com',
         display: 'E-mail'
