@@ -38,40 +38,34 @@ class Partner extends Component {
     const path = this.state.isMobile ? 'mobile' : 'desktop'
     return [
       {
-        topic: 'Patron Partner',
-        imageUrl: [
-          `static/images/partners/isuzu.png`,
-        ]
+        topic: 'PATRON PARTNER',
+        images: [
+          {imageUrl: `static/images/partners/isuzu.png`, description: 'Financial Support'},
+          {imageUrl: `static/images/partners/sheraton.png`, description: 'Venue Support<br>Catering Service'},
+          {imageUrl: `static/images/partners/warehouse.png`, description: 'Venue Support'},
+          {imageUrl: `static/images/partners/index.png`, description: 'Event Organizer Support'}
+        ],
       },
       {
-        topic: 'Platinum Partners',
-        imageUrl: [
-          `static/images/partners/isuzu.png`,
-          `static/images/partners/isuzu.png`,
-          `static/images/partners/isuzu.png`
-        ]
+        topic: 'PLATINUM PARTNERS',
+        images: [
+          {imageUrl: `static/images/partners/tcdc.png`, description: 'Venue Support'},
+          {imageUrl: `static/images/partners/thai.png`, description: 'Production and Live<br>Streaming System'}
+        ],
       },
       {
-        topic: 'Gold Partners',
-        imageUrl: [
-          `static/images/partners/isuzu.png`,
-        ]
-      },
-      {
-        topic: 'Venue',
-        imageUrl: [
-          `static/images/partners/isuzu.png`,
-          `static/images/partners/isuzu.png`,
-          `static/images/partners/isuzu.png`
-        ]
-      },
-      {
-        topic: 'Envent & Organizer',
-        imageUrl: [
-          `static/images/partners/isuzu.png`,
-          `static/images/partners/isuzu.png`,
-          `static/images/partners/isuzu.png`
-        ]
+        topic: 'GOLD PARTNERS',
+        images: [
+          {imageUrl: `static/images/partners/noble.png`, description: 'Financial Support'},
+          {imageUrl: `static/images/partners/yim.png`, description: 'Production Support'},
+          {imageUrl: `static/images/partners/rabit.png`, description: 'Venue Support'},
+          {imageUrl: `static/images/partners/pana.png`, description: 'Production Support'},
+          {imageUrl: `static/images/partners/gopro.png`, description: 'Production Support'},
+          {imageUrl: `static/images/partners/pop.png`, description: 'Ticketing'},
+          {imageUrl: `static/images/partners/uber.png`, description: 'Transportation Support'},
+          {imageUrl: `static/images/partners/spri.png`, description: 'Catering Support'},
+          {imageUrl: `static/images/partners/heaven.png`, description: 'Mobile Toilet<br>Support'},
+        ],
       },
       ]
   }
@@ -94,17 +88,10 @@ class Partner extends Component {
             PARTNERS
           </div>
           <div id="tedx_partners_description">
-            Duis bibendum magna eget accumsan faucibus. Nunc rhoncus ante augue, ac
-            sollicitudin diam volutpat et. Donec egestas erat eu ex commodo sollicitudin.
-            Sed pretium bibendum est, quis ullamcorper magna egestas id. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Curabitur et facilisis quam.
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vivamus sapien tellus, dapibus a est id, fermentum
-            bibendum eros. Quisque libero turpis, luctus ut consectetur vel, molestie
-            quis lacus.
+
           </div>
           <div id="tedx_partners_header_middle">
-            In 2017,we were thrilled to work with
+            In 2017, we were thrilled to work with
           </div>
           <div id="tedx_partners_contents">
             {
