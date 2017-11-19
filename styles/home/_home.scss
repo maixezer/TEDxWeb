@@ -3,15 +3,15 @@
   height: 100%;
   display: table;
   
-  background-image: url('../../static/images/register/mobile/secondpage.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url('../../static/images/register/mobile/secondpage.jpg');
+  // background-repeat: no-repeat;
+  // background-size: cover;
   
-  @include media-breakpoint-up(md) {
-    background-attachment: fixed;
-    background-image: url('../../static/images/register/desktop/secondpage.jpg');
-    background-size: 100% 100%;
-  }
+  // @include media-breakpoint-up(md) {
+  //   background-attachment: fixed;
+  //   background-image: url('../../static/images/register/desktop/secondpage.jpg');
+  //   background-size: 100% 100%;
+  // }
 
   #apply {
     padding-top: 8rem;
