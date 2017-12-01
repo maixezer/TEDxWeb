@@ -49,6 +49,7 @@ class Partner extends Component {
       {
         topic: 'PLATINUM PARTNERS',
         images: [
+          {imageUrl: `static/images/partners/ais.png`, description: 'Financial Support'},
           {imageUrl: `static/images/partners/tcdc.png`, description: 'Venue Support'},
           {imageUrl: `static/images/partners/thai.png`, description: 'Production and Live<br>Streaming System'}
         ],
@@ -65,6 +66,7 @@ class Partner extends Component {
           {imageUrl: `static/images/partners/uber.png`, description: 'Transportation Support'},
           {imageUrl: `static/images/partners/spri.png`, description: 'Catering Support'},
           {imageUrl: `static/images/partners/heaven.png`, description: 'Mobile Toilet<br>Support'},
+          {imageUrl: `static/images/partners/oldtown.png`, description: 'Venue Support'}
         ],
       },
       ]
@@ -88,7 +90,7 @@ class Partner extends Component {
             PARTNERS
           </div>
           <div id="tedx_partners_description">
-
+            Apart from our staffs, TEDxCharoenkrung has received precious supports from our partners who value ‘ideas worth spreading’. We appreciate your believe in sharing, giving, learning and doing which everyone can reach. Making changes in good ways to society is always be our goal.
           </div>
           <div id="tedx_partners_header_middle">
             In 2017, we were thrilled to work with
